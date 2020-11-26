@@ -10,9 +10,9 @@ class Header extends Component {
     render()
     {
     return (
-     <div>
+     <div className = "header">
      <Navbar collapseOnSelect expand="lg" variant="dark">
-     <Navbar.Brand href="#home" bsPrefix ='brand'>BYOG</Navbar.Brand>
+     <Navbar.Brand href="#home" bsPrefix ='brand'>BYOB</Navbar.Brand>
      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
      <Navbar.Collapse id="responsive-navbar-nav">
      <Nav className="mr-auto"></Nav>
