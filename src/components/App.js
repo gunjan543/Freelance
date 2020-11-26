@@ -1,10 +1,13 @@
 import React from 'react'
+import Services from './services/Services';
 
 function App() {
   return (
     <div>
-      <h1>Freelance</h1>
-    </div>
+    	
+
+      <Services/>
+    </div>    
   );
 }
 
