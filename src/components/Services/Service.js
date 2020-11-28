@@ -6,7 +6,7 @@ function Service(props){
   return(
 
         <div className = "col-md-4 p-4  text-center">
-        <div className = "block bg-light px-3 py-5">
+        <div className = "block px-3 py-5">
         <div className = "mt-3">
         {props.image}
         <p>{props.description}</p>

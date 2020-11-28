@@ -22,10 +22,10 @@ render()
      <Nav className="mr-auto"></Nav>
 
      <Nav>
-     <Nav.Link href="#deets">Home</Nav.Link>
-     <Nav.Link href="#deets">About</Nav.Link>
-     <Nav.Link href="#memes"> Services </Nav.Link>
-     <Nav.Link href="#deets" bsPrefix="lastItem">Contact us</Nav.Link>
+     <Nav.Link href="#">Home</Nav.Link>
+     <Nav.Link href="#about">About</Nav.Link>
+     <Nav.Link href="#services"> Services </Nav.Link>
+     <Nav.Link href="#footer" bsPrefix="lastItem">Contact us</Nav.Link>
     </Nav>
 
     <Button variant="outline-light">Login/Signup</Button>

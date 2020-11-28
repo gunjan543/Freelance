@@ -1,9 +1,9 @@
 
-h1{
+.Signup h1{
     text-align: center;
     font-weight: 900;
   }
-  p{
+ .Signup p{
     text-align: center;
   }
   .wrap
@@ -91,14 +91,14 @@ h1{
     background-color: #eee;
   }
 
- a{
+ .Signup a{
     font-size: 15px;
     margin-bottom: 0;
     color: #182628;
     font-weight: 700;
   }
 
-  a:hover{
+  .Signup a:hover{
     color: #3B945E;
     text-decoration: none;
   }
