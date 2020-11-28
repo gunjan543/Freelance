@@ -3,7 +3,7 @@
     background-color: #65CCB8;
     font-family: 'Quicksand', sans-serif;
     padding-bottom:4.5rem;
-
+    margin-top: 0px;
 }
 
 .navbar{
@@ -13,17 +13,9 @@
     margin-left: 1rem;
 }
 
-.brand{
-    font-size: 3rem;
-    margin: 1rem;
-    color: #f2f2f2;  
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.brand:hover{
-    color: #ffff;
-    text-decoration: none;   
+.brand img:hover{
+  
+    transform: scale(1.05);
 }
 
 .lastItem{
@@ -41,11 +33,13 @@
     opacity: 0.8;
     color: #fff;
 }
+
 .carousel {
     max-width: 80%;
     width:1020px;
     height:650px;
     margin: auto;
+    margin-top: 1rem;
   }
   
 @media (max-width: 900px) {

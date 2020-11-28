@@ -7,7 +7,7 @@ function Contact(){
 
 
 	return(
-    <footer>
+    <footer id = "#footer">
       <nav className="footer-inner">
         <section className="footer-item">
           <img src={logo} alt = ""/>
