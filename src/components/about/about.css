@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+#about{
+	padding-top:6rem;
+	border:10px solid #182628;
+	font-family: "Quicksand", sans-serif;
+	background-color: white;
+	text-align:center;
+	padding-bottom: 5rem;
+	overflow: hidden;
+
+
+
+}
+.about-block{
+	
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 10px;
+	width:100%;
+	color:white;
+	margin:100px auto;
+	margin-top:50px;
+	background-image: linear-gradient(to bottom right, #182628, #3B945E); 
+	padding:4rem;
+	overflow: hidden;
+}
+
+.about-block p{
+
+	margin-top: 25px;
+	font-size: 15px;
+
+	
+
+}
+
+.about-section{
+    background: url("images/Freelancing-1.jpg") no-repeat left;
+    background-size: 55%;
+    background-color: red;
+    overflow: hidden;
+    padding: 100px 0;
+    
+ 
+}
+
+.inner-container{
+
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 10px;
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    background-image: linear-gradient(to bottom right, #182628, #3B945E); 
+    padding: 100px;
+    color:#f2f2f2;
+    margin:auto;
+}
+
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text{
+    font-size: 13px;
+    
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+    color:#f2f2f2;
+}
+
+
+.profile-block{
+
+	margin-top: 0;
+	padding:50px;
+	background-color: #182628;
+}
+
+
+.profile-container{
+
+	margin:20px 40px;
+	background-color: #182628;
+	font-family: "Quicksand", sans-serif;
+	/*color:#f2f2f2;*/
+}
+
+
+.profiles{
+
+	display:flex;
+	justify-content: space-around;
+	margin:20px 80px;
+	font-family: "Quicksand", sans-serif;
+}
+
+.profile{
+	flex-basis: 260px;
+}
+
+.profile .profile-img{
+
+	height:260px;
+	width:260px;
+	border-radius:50%;
+	filter:grayscale(100%);
+	cursor: pointer;
+	transition:400ms;
+}
+
+.profile-img:hover{
+
+	filter:grayscale(0);
+}
+
+.user-name{
+
+	margin-top: 30px;
+	font-size:35px;
+	color:#f2f2f2;
+
+}
+
+.profile h5{
+
+	font-size: 18px;
+	font-weight: 100;
+	letter-spacing: 3px;
+	color: #f2f2f2;
+}
+
+.profile p{
+
+	font-size: 16px;
+	margin-top:20px;
+	text-align: justify;
+	color:#f2f2f2;
+
+}
+
+
+
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        padding: 60px;
+    }
+}
+
+@media only screen and (max-width: 1150px){
+
+	.profiles{
+		flex-direction: column;
+	}
+
+	.profile{
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.profile p{
+		text-align: center;
+		margin:20px 60px 80px 60px;
+		font-size:20px;
+	}
+
+
+}
+
+
+@media only screen and (max-width: 900px){
+
+	.profiles{
+
+		margin:20px 0;
+	}
+
+	.profile p{
+
+		margin:20px 10px 80px 10px;
+	}
+
+}
+
