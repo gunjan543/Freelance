@@ -1,0 +1,104 @@
+
+h1{
+    text-align: center;
+    font-weight: 900;
+  }
+  p{
+    text-align: center;
+  }
+  .wrap
+  {
+      display: flex;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      text-align: center;
+  }
+  /*Form*/
+  .box{
+    flex: 0 0 50%;
+    margin-top: 12rem;
+  }
+  
+  .box input
+  {
+    padding: 10px 0;
+    margin-bottom: 30px;
+    width: 70%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #182628;
+  }
+  
+  .box input[type="submit"]
+  {
+    border-bottom: none;
+    cursor: pointer;
+    background: #3B945E;
+    color: #f2f2f2;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    width: 20%;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 3px 4px #65ccb8;
+    margin-top: 25px;
+  }
+
+  .box input[type="submit"]:hover
+  {
+    opacity: 0.8;
+  }
+  
+  .box form div{
+    position: relative;
+  }
+  
+  .box form div label{
+    position: absolute;
+    top:10px;
+    left: 15%;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .box input:focus ~ label,
+  .box input:valid ~ label
+  {
+    top: -12px;
+    left: 15%;
+    color:#3B945E;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .box input:focus ,
+  .box input:valid 
+  {
+    border-bottom: 2px solid #3B945E;
+  }
+
+
+  .box input[type="checkbox"]
+  {
+    position: relative;
+    top: 5px;
+    left: -1rem;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+
+ a{
+    font-size: 15px;
+    margin-bottom: 0;
+    color: #182628;
+    font-weight: 700;
+  }
+
+  a:hover{
+    color: #3B945E;
+    text-decoration: none;
+  }

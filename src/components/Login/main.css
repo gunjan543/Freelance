@@ -24,7 +24,7 @@ button:hover{
   opacity: 0.8;
 }
 
-/*dividing divs*/
+/*dividing-main*/
 #wrapper {
     display: flex;
     margin-left: 1rem;

@@ -4,12 +4,12 @@ import "./main.css";
 import "./Signup.css";
 import "./google.css";
 
-const Login = () => {
+const SignUp = () => {
     return ( 
         <div className="Signup">
             <Logo />
-            <h1>Log In to BYOB</h1>
-            <p>Don't have an account? <a href="#">Sign Up</a></p>
+            <h1>Sign Up to BYOB</h1>
+            <p>Already have an account? <a href="#">Log In</a></p>
             
             <div className="wrap">
             <div className="box">
@@ -22,14 +22,12 @@ const Login = () => {
                     <input type="password" required />
                     <label>Password</label>
                 </div>
-                <input type="checkbox" id="Remember me" name="Remember me" value="Remember me" />
-                <label for="Remember me"> Remember me</label>
-                <br></br>
-                <a href="">Forgot Password ?</a>
-                <br></br>
-                <input type="submit" name="Log In" value="submit" />
+                <div>
+                    <input type="password" required />
+                    <label>Confirm Password</label>
+                </div>
+                <input type="submit" name="Signup" value="submit" />
             </form>
-           
             </div>
 
             <div className="vertical-row"></div>
@@ -38,7 +36,7 @@ const Login = () => {
             <div class="right">
             <a class="btn btn-block btn-social  btn-google google" href="/auth/google" role="button">
             <i class="fab fa-google fa-3x"></i>
-            Login with Google
+            Sign Up with Google
           </a>
             </div>
         </div>
@@ -46,4 +44,4 @@ const Login = () => {
      );
 }
  
-export default Login;
+export default SignUp;
