@@ -14,7 +14,7 @@ render()
       
 <div className = "header">
 
-<Navbar collapseOnSelect expand="lg" variant="dark">
+<Navbar sticky="top" collapseOnSelect expand="lg" variant="dark">
   <Navbar.Brand href="#home" bsPrefix ='brand'><img src={logo}></img></Navbar.Brand>
    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
@@ -28,7 +28,7 @@ render()
      <Nav.Link href="#footer" bsPrefix="lastItem">Contact us</Nav.Link>
     </Nav>
 
-    <Button variant="outline-light">Login/Signup</Button>
+    <Button variant="outline-light" href="/MainLog">Login/Signup</Button>
 
   </Navbar.Collapse>
 </Navbar>
