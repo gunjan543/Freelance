@@ -9,7 +9,7 @@ const Login = () => {
         <div className="Signup">
             <Logo />
             <h1>Log In to BYOB</h1>
-            <p>Don't have an account? <a href="#">Sign Up</a></p>
+            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
             
             <div className="wrap">
             <div className="box">

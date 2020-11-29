@@ -15,7 +15,7 @@ import Logo from '../Logo/logo';
                  <h2>Become Employee</h2>
                  <p>Find suitable work for yourself according to your time and convenience among 1000's of jobs</p>
                  <br></br>
-                 <button>Employee Register </button>
+                 <a href="/MainLog/login"><button>Employee Register</button></a>
              </div>
 
              <div className="vertical-row"></div>
@@ -24,7 +24,7 @@ import Logo from '../Logo/logo';
                  <h2>Become Employer</h2>
                  <p>Find suitable employee for your work according to your time requirements among 1000's of employee</p>
                  <br></br>
-                 <button>Employer Register </button>
+                 <a href="/MainLog/login"><button>Employee Register</button></a>
              </div>
           </div>
 
