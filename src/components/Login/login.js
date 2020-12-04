@@ -27,14 +27,12 @@ const Login = () => {
                 <br></br>
                 <a href="">Forgot Password ?</a>
                 <br></br>
-                <input type="submit" name="Log In" value="submit" />
+               <a href="/MainLog/login/employee"><input type="submit" name="Log In" value="submit" /></a> 
             </form>
            
             </div>
 
             <div className="vertical-row"></div>
-
-            
             <div class="right">
             <a class="btn btn-block btn-social  btn-google google" href="/auth/google" role="button">
             <i class="fab fa-google fa-3x"></i>
