@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../Logo/logo';
+import Logo from '../../../../src/components/Logo/logo';
 import './employee.css';
 
 const TechnicalForm = () => {

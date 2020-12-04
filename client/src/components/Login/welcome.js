@@ -1,7 +1,7 @@
 import React from 'react';
 import welcome from '../images/welcome.png';
 import signin from '../images/signin.png';
-import Logo from '../Logo/logo';
+import Logo from '../../../../src/components/Logo/logo';
 import "./main.css";
 
 const Welcome = () => {
