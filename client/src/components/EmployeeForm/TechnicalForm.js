@@ -1,10 +1,13 @@
 import React from 'react';
-import Logo from '../../../../src/components/Logo/logo';
+import Logo from '../Logo/logo';
 import './employee.css';
-
+import {  isAuth } from '../../helpers/auth';
+import { Redirect } from 'react-router-dom';
 const TechnicalForm = () => {
     return ( 
-        <div className>
+        
+        <div>
+        {isAuth() ? <Redirect to='/' /> : null}
             <Logo />
             <div className="box3">
             <div class="title">  

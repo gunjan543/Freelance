@@ -14,7 +14,7 @@ sgMail.setApiKey(process.env.MAIL_KEY);
 
 
 exports.registerController = (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, category} = req.body;
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -37,7 +37,8 @@ exports.registerController = (req, res) => {
       {
         name,
         email,
-        password
+        password,
+        category
       },
       process.env.JWT_ACCOUNT_ACTIVATION,
       {
@@ -86,14 +87,15 @@ exports.activationController = (req, res) => {
         });
       } 
       else {
-        const { name, email, password } = jwt.decode(token);
+        const { name, email, password, category } = jwt.decode(token);
 
         console.log(email);
         
         const user = new User({
           name,
           email,
-          password
+          password,
+          category
         });
         
         user.save((err, user) => {
@@ -156,7 +158,7 @@ exports.signinController = (req, res) => {
           expiresIn: '7d'
         }
       );
-      const { _id, name, email, role } = user;
+      const { _id, name, email, role,category } = user;
 
       return res.json({
         token,
@@ -164,7 +166,8 @@ exports.signinController = (req, res) => {
           _id,
           name,
           email,
-          role
+          role,
+          category
         }
       });
     });

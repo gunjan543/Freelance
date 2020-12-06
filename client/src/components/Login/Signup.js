@@ -9,7 +9,9 @@ import "./main.css";
 import "./Signup.css";
 import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
-
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown'
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -19,13 +21,15 @@ const Register = () => {
         password1:"",
         password2:"",
     });
-
+    let category = "";
     const {email,name,password1, password2, textChange} = formData
     const handleChange = text => e => {
         console.log(name,email,password1, password2)
         setFormData({ ...formData, [text]: e.target.value });
       };
-    
+    const handleSelect = (e) =>{
+      category=e;
+    }
     const handleSubmit = e => {
         e.preventDefault();
         if (name && email && password1) {
@@ -35,6 +39,7 @@ const Register = () => {
               .post( `${process.env.REACT_APP_API_URL}/register`, {
                 name,
                 email,
+                category,
                 password: password1
               })
               .then(res => {
@@ -44,6 +49,7 @@ const Register = () => {
                   email: '',
                   password1: '',
                   password2: '',
+                  
                   textChange: 'Submitted'
                 });
     
@@ -110,6 +116,16 @@ const Register = () => {
                     required />
                     <label>Confirm Password</label>
                 </div>
+                <DropdownButton
+                  alignRight
+                  title="Choose Category"
+                  id="dropdown  -menu-align-right"
+                  onSelect={handleSelect}
+                >
+                  <Dropdown.Item eventKey="employee">Register As Employee</Dropdown.Item>
+                  <Dropdown.Item eventKey="employer">Register As Employer</Dropdown.Item>
+                
+                </DropdownButton>
                 <input type="submit" name="Signup" value="submit" />
             </form>
             </div>
@@ -121,6 +137,9 @@ const Register = () => {
             
             </div>
         </div>
+    
+
+
         </div>
      );
 }
