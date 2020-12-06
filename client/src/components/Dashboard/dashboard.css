@@ -1,0 +1,19 @@
+.dash
+{
+    background-color: #65CCB8;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 0px;
+}
+
+.help h1
+{
+    text-align: center;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    font-weight: 900;
+    color: #f2f2f2;
+}
+.help{
+    background-color:#182628;
+}
+

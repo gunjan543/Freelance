@@ -1,0 +1,48 @@
+.accord{
+    background-color: royalblue;
+}
+.container{
+    display: flex;
+    background-image: linear-gradient(to right , #65ccb8, #f2f2f2);
+}
+.accord h1{
+    color:#182628;
+    font-size: 1.6rem;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.accord h4{
+    color: #f2f2f2;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-left: 2px;
+    margin-top: 10px;
+}
+
+.accord p{ 
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-left: 20px;
+    margin-top: 4px;
+}
+.accord i{
+    margin-right: 1rem;
+}
+
+.accord a{
+    color: #182628;
+    margin-left: 30rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.accord a:hover{
+    color:#f2f2f2;
+    text-decoration: none;
+}
+
+

@@ -49,7 +49,7 @@ const TechnicalForm = () => {
                 <option value="">Select</option>
                 <option value="Aadhar Card">Aadhar Card</option>
                 <option value="Driving License">Driving License</option>
-                <option value="Voter Id">Voted ID</option>
+                <option value="Voter Id">Voter ID</option>
                 </select>
                 </div>
                 </div>
