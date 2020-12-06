@@ -28,7 +28,7 @@ render()
      <Nav.Link href="#footer" bsPrefix="lastItem">Contact us</Nav.Link>
     </Nav>
 
-    <Button variant="outline-light" href="/MainLog">Login/Signup</Button>
+    <Button variant="outline-light" href="/login">Login/Signup</Button>
 
   </Navbar.Collapse>
 </Navbar>

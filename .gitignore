@@ -11,7 +11,7 @@
 
 # production
 /build
-
+config/config.env
 # misc
 .DS_Store
 client/.env

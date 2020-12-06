@@ -8,15 +8,12 @@ import Register from './components/Login/Signup';
 import Activate from './components/Login/activate';
 import Reset from './components/Login/Reset';
 import Forget from './components/Login/ForgetPassword';
-import Main from './components/Login/main';
-import Help from './components/Dashboard/help';
-import EmployeeTechProfile from './components/Dashboard/EmployeeTechProfile';
-import EmployeeDash from './components/Dashboard/employee';
-import EmployerDash from './components/Dashboard/employer';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import {Redirect, Switch} from 'react-router-dom';
-
+import EmployeeForm from './components/EmployeeForm/employeeForm'
+import TechnicalForm from './components/EmployeeForm/TechnicalForm';
+import NonTechnicalForm from './components/EmployeeForm/non-technical';
 
 class App extends Component{
   render(){
@@ -32,13 +29,11 @@ class App extends Component{
            <Footer/>
          </div>
 } />  
-      <Route path="/MainLog" exact strict component={Main} />
-      <Route path="/Help" exact strict component={Help} />
-      <Route path="/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />
-      <Route path="/MainLog/login" exact strict component={Login} />
-      <Route path="/EmployeeDash" exact strict component={EmployeeDash} />
-      <Route path="/EmployerDash" exact strict component={EmployerDash} />
+      
+      <Route path="/employee" exact strict component={EmployeeForm} />
       <Route path='/login' exact render={props => <Login {...props} />} />
+      <Route path='/employee/technical' exact render={props => <TechnicalForm {...props} />} />
+      <Route path='/employee/nontechnical' exact render={props => <NonTechnicalForm {...props} />} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/password/forget' exact render={props => <Forget {...props} />} />
       <Route path='/users/activate/:token' exact render={props => <Activate {...props} />} />
