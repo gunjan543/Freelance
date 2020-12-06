@@ -12,7 +12,9 @@ import Main from './components/Login/main';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import {Redirect, Switch} from 'react-router-dom';
-
+import EmployeeForm from './components/EmployeeForm/employeeForm'
+import TechnicalForm from './components/EmployeeForm/TechnicalForm';
+import NonTechnicalForm from './components/EmployeeForm/non-technical';
 
 class App extends Component{
   render(){
@@ -28,9 +30,11 @@ class App extends Component{
            <Footer/>
          </div>
 } />  
-      <Route path="/MainLog" exact strict component={Main} />
-      <Route path="/MainLog/login" exact strict component={Login} />
+      
+      <Route path="/employee" exact strict component={EmployeeForm} />
       <Route path='/login' exact render={props => <Login {...props} />} />
+      <Route path='/employee/technical' exact render={props => <TechnicalForm {...props} />} />
+      <Route path='/employee/nontechnical' exact render={props => <NonTechnicalForm {...props} />} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/password/forget' exact render={props => <Forget {...props} />} />
       <Route path='/users/activate/:token' exact render={props => <Activate {...props} />} />
