@@ -69,10 +69,25 @@ const Login = ({history}) => {
                   textChange: 'Submitted'
                 });
                 //if autheticated but not admin redirect to private
-                isAuth() && isAuth().role === 'admin'
-                  ? history.push('/admin')
-                  : history.push('/private');
-                toast.success(`Hey ${res.data.user.name}, Welcome back!`);
+
+                if(isAuth() && isAuth().role === 'admin'){
+                  history.push('/admin');
+                }
+                else if(isAuth() && isAuth.category === 'employee'){
+                  console.log(isAuth() && isAuth().category === 'employee');
+                 history.push('/employee');
+                
+
+                }
+                else if(isAuth() && isAuth().category === 'employer'){
+                  history.push('/employer');
+                }
+
+                
+                // isAuth() && isAuth().role === 'admin'
+                //   ? history.push('/admin')
+                //   : history.push('/private');
+                // toast.success(`Hey ${res.data.user.name}, Welcome back!`);
               });
             })
             .catch(err => {

@@ -31,7 +31,7 @@ const Activate = ({ match }) => {
     e.preventDefault();
 
     axios
-      .post(`http://localhost:5000/api/activation`, {
+      .post(`${process.env.REACT_APP_API_URL}/activation`, {
         token
       })
       .then(res => {
