@@ -1,14 +1,15 @@
 import React from 'react';
-import Navbars from './Navbar';
 import './profile.css';
-import "../Header/header.css";
 import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card'
+import "../Header/header.css";
+import Card from 'react-bootstrap/Card';
+import Navbars from './Navbar';
 
 const EmployeeTechProfile = () => {
     return ( 
         <div>
-        <div className="header"><Navbars /></div>
+          <div className="header"><Navbars /></div>
+       
         <div className="accord">
         <Accordion>
         <Card>
@@ -43,7 +44,6 @@ const EmployeeTechProfile = () => {
        </Accordion.Toggle>
        <Accordion.Collapse eventKey="2">
        <Card.Body>
-        <div className="container"><h4>Highest Qualification - </h4><p>Btech CSE</p></div>
         <div className="container"><h4>Specialisation - </h4><p>Freelancer</p></div>
         <div className="container"><h4>Skills - </h4><p>Fullstack Web developer</p></div>
         <div className="container"><h4>Years of experience - </h4><p>5 years</p></div>

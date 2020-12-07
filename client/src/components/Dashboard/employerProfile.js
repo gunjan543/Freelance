@@ -1,14 +1,15 @@
 import React from 'react';
-import Navbars from './Navbar';
 import './profile.css';
-import "../Header/header.css";
 import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card'
+import "../Header/header.css";
+import Card from 'react-bootstrap/Card';
+import Navbars from './Navbar';
 
-const EmployeeTechProfile = () => {
+const EmployerProfile = () => {
     return ( 
         <div>
-        <div className="header"><Navbars /></div>
+          <div className="header"><Navbars /></div>
+       
         <div className="accord">
         <Accordion>
         <Card>
@@ -17,9 +18,9 @@ const EmployeeTechProfile = () => {
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="0">
         <Card.Body>
+        <div className="container"><h4>Organisation Name - </h4><p>ABC Limited</p></div>
         <div className="container"><h4>Full Name - </h4><p>John Baeur</p></div>
-        <div className="container"><h4>Date of Birth - </h4><p>04/07/2000</p></div>
-        <div className="container"><h4>Gender - </h4><p>Male</p></div>           
+        <div className="container"><h4>Date of Birth - </h4><p>04/07/2000</p></div>         
         </Card.Body>
         </Accordion.Collapse>
         </Card>
@@ -34,29 +35,6 @@ const EmployeeTechProfile = () => {
         <div className="container"><h4>ID Proof - </h4><p>Driving Licence - 6535667767267</p></div>
         <div className="container"><h4>Address-</h4><p>543 street , malviya Nagar Jaipur Ahdbj bdyuegdb bdyuegdb</p></div>
         <div className="container"><h4>Postal Code - </h4><p>203987</p></div>
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card>
-  <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="2">
-        <h1><i class="fa fa-graduation-cap"></i>Specialisation and Skills</h1>
-       </Accordion.Toggle>
-       <Accordion.Collapse eventKey="2">
-       <Card.Body>
-        <div className="container"><h4>Highest Qualification - </h4><p>Btech CSE</p></div>
-        <div className="container"><h4>Specialisation - </h4><p>Freelancer</p></div>
-        <div className="container"><h4>Skills - </h4><p>Fullstack Web developer</p></div>
-        <div className="container"><h4>Years of experience - </h4><p>5 years</p></div>
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card>
-  <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="3">
-        <h1><i class="fa fa-clock-o"></i>Duration Available</h1>
-       </Accordion.Toggle>
-       <Accordion.Collapse eventKey="3">
-       <Card.Body>
-       <input type="checkbox" id="duration" name="duration" value="Available" /><label for="Duration"> Available </label>
         </Card.Body>
     </Accordion.Collapse>
   </Card>
@@ -78,4 +56,4 @@ const EmployeeTechProfile = () => {
      );
 }
  
-export default EmployeeTechProfile;
+export default EmployerProfile;
