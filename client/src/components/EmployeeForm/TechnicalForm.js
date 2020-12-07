@@ -3,7 +3,12 @@ import Logo from '../Logo/logo';
 import './employee.css';
 import {  isAuth } from '../../helpers/auth';
 import { Redirect } from 'react-router-dom';
+import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 const TechnicalForm = () => {
+const history=useHistory();
+const handleSubmit = () => {
+     history.push('/employee/technical/employeeDash');
+}
     return ( 
         
         <div>
@@ -15,7 +20,7 @@ const TechnicalForm = () => {
             <h3>Just one last step !  :) </h3>
             </div>  
             <div class="form">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div class="input_field"><label>Name</label><input type="text" className="input" required/></div>
                 <div class="input_field"><label>Date of Birth</label><input type="date" className="input"  required/></div>
                 <div class="input_field"><label>Email address</label><input type="email" className="input"  required/></div>
@@ -52,7 +57,7 @@ const TechnicalForm = () => {
                 <option value="">Select</option>
                 <option value="Aadhar Card">Aadhar Card</option>
                 <option value="Driving License">Driving License</option>
-                <option value="Voter Id">Voted ID</option>
+                <option value="Voter Id">Voter ID</option>
                 </select>
                 </div>
                 </div>

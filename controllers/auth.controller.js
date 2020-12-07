@@ -83,6 +83,7 @@ exports.activationController = (req, res) => {
       if (err) {
         console.log('Activation error');
         return res.status(401).json({
+         
           errors: 'Expired link. Signup again'
         });
       } 
@@ -110,7 +111,6 @@ exports.activationController = (req, res) => {
             return res.json({
               success: true,
               message: 'Signup Success'
-              
             });
           }
         });
