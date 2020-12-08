@@ -118,6 +118,7 @@ const Register = () => {
                 </div>
                 <DropdownButton
                   alignRight
+                  className="category"
                   title="Choose Category"
                   id="dropdown  -menu-align-right"
                   onSelect={handleSelect}

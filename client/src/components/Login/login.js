@@ -135,7 +135,7 @@ const Login = ({history}) => {
                 <br></br>
                 <a href="/users/password/forget">Forgot Password ?</a>
                 <br></br>
-                <input type="submit" name="Log In" value="submit" />
+                <input type="submit" value="Login"/>     
             </form>
            
             </div>
@@ -154,13 +154,7 @@ const Login = ({history}) => {
                       onClick={renderProps.onClick}
                       disabled={renderProps.disabled}
                       className='google'
-                    >
-                      <div>
-                        <i className='fab fa-google '>   </i>
-                        <h5>Sign in with Google</h5>
-                      </div>
-                      
-                    </button>
+                    ><h6><i className='fab fa-google'></i>  Log in with Google</h6></button>
                   )}
                 ></GoogleLogin>
             </div>
