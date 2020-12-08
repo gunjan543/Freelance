@@ -22,12 +22,14 @@ const Register = () => {
         password2:"",
     });
     let category = "";
-    const {email,name,password1, password2, textChange} = formData
+    const {email,name,password1, password2} = formData
+
     const handleChange = text => e => {
         console.log(name,email,password1, password2)
         setFormData({ ...formData, [text]: e.target.value });
       };
-    const handleSelect = (e) =>{
+   
+     const handleSelect = (e) =>{
       category=e;
     }
     const handleSubmit = e => {

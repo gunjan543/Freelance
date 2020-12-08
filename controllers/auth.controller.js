@@ -3,7 +3,6 @@ const expressJwt = require('express-jwt');
 const _ = require('lodash');
 const { OAuth2Client } = require('google-auth-library');
 const fetch = require('node-fetch');
-
 const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const expressJWT = require('express-jwt');
@@ -32,7 +31,8 @@ exports.registerController = (req, res) => {
         });
       }
     });
-
+/*Every model method that accepts query conditions 
+can be executed by means of a callback or the exec method. */
     const token = jwt.sign(
       {
         name,
@@ -43,7 +43,7 @@ exports.registerController = (req, res) => {
       process.env.JWT_ACCOUNT_ACTIVATION,
       {
         expiresIn: '15m'
-      }
+      }  
     );
 
     const emailData = {

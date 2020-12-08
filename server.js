@@ -14,9 +14,7 @@ app.use(cors());
 //connect to DB
 connectDB();
 
-require('dotenv').config({
-    path:'./config/config.env'
-});
+
 
 
 //bodyParser
@@ -25,8 +23,7 @@ app.use(bodyParser.json());
 
 //Config for only development
 if (process.env.NODE_ENV === 'development') {
-    app.use(cors({
-        
+    app.use(cors({        
         origin: process.env.CLIENT_URL
     }))
     app.use(morgan('dev'))
@@ -42,7 +39,7 @@ const { connect } = require("http2");
 
 app.use('/api/', authRouter);
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin","*");
+
     res.status(404).json({
         success: false,
         message: "Page not founded"

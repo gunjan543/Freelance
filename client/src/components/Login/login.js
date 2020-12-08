@@ -18,7 +18,7 @@ const Login = ({history}) => {
         password1: '',
         textChange: 'Sign In'
       });
-      const { email, password1, textChange } = formData;
+      const { email, password1} = formData;
       const handleChange = text => e => {
         setFormData({ ...formData, [text]: e.target.value });
       };
@@ -52,6 +52,7 @@ const Login = ({history}) => {
     
       const handleSubmit = e => {
         //console.log(process.env.REACT_APP_API_URL);
+        //Prevent a link from opening the URL
         e.preventDefault();
         if (email && password1) {
           setFormData({ ...formData, textChange: 'Submitting' });

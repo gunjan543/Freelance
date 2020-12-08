@@ -15,7 +15,7 @@ render()
 <div className = "header">
 
 <Navbar sticky="top" collapseOnSelect expand="lg" variant="dark">
-  <Navbar.Brand href="#home" bsPrefix ='brand'><img src={logo}></img></Navbar.Brand>
+  <Navbar.Brand href="#home" bsPrefix ='brand'><img src={logo} alt="BYOB Logo"></img></Navbar.Brand>
    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
 
