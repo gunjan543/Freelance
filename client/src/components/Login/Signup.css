@@ -34,22 +34,22 @@
   
   .box input[type="submit"]
   {
-    border-bottom: none;
     cursor: pointer;
-    background: #3B945E;
-    color: #f2f2f2;
-    margin-bottom: 0;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(59, 148, 94, 1));
+    
     text-transform: uppercase;
-    width: 20%;
-    border-radius: 10px;
+    width: 30%;
+    border-radius: 6px;
     font-weight: 800;
-    box-shadow: 3px 4px #65ccb8;
-    margin-top: 25px;
+    padding: 7px;
+    margin-top: 2rem;
+    border-color: #57ba98;
+    color: #182628;
   }
 
   .box input[type="submit"]:hover
   {
-    opacity: 0.8;
+    background: #57ba98;
   }
   
   .box form div{
