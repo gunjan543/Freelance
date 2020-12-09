@@ -20,6 +20,7 @@ const Login = ({history}) => {
         password1: '',
         textChange: 'Sign In'
       });
+
       const { email, password1, textChange } = formData;
       const handleChange = text => e => {
         setFormData({ ...formData, [text]: e.target.value });
@@ -33,6 +34,7 @@ const Login = ({history}) => {
           .then(res => {
             console.log(res.data);
             informParent(res);
+
           })
           .catch(error => {
             console.log('GOOGLE SIGNIN ERROR', error.response);
@@ -80,17 +82,23 @@ const Login = ({history}) => {
                 if(isAuth() && isAuth().role === 'admin'){
                   history.push('/admin');
                 }
-                else if(isAuth() && isAuth().category === 'employee'){
+
+                else if(isAuth() && isAuth().form === false){
+                  history.push('/employee');
+                }
+
+                else{
+                if(isAuth() && isAuth().category === 'employee'){
                   console.log(isAuth() && isAuth().category === 'employee');
-                 history.push('/employee');
+                 history.push('/employee/employeeDash');
                 
 
                 }
                 else if(isAuth() && isAuth().category === 'employer'){
-                  history.push('/employerdashboard');
+                  history.push('/employer/employerDash');
                 }
 
-                
+              }
                 
               });
             })

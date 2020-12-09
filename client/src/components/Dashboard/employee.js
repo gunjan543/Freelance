@@ -7,17 +7,7 @@ import Axios from 'axios';
 
 export default class EmployeeDash extends Component  {
 
-componentDidMount(){
-  Axios.get(`${process.env.REACT_APP_API_URL}`)
-  .then(res=>{
-    console.log(res);
 
-  },
-  err => {
-    console.log(err)
-  })
-
-}
 
 
     render (){ 

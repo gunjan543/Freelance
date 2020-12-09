@@ -370,23 +370,13 @@ exports.googleController = (req, res) => {
 
 exports.technicalFormController = (req,res)=>{
 
-  User.update(
+  
+  User.findOneAndUpdate(
     {email:req.body.email},
-    {
-            "dateOfBirth":req.body.dateOfBirth,
-            "contactNumber":req.body.contactNumber,
-            "durationAvailable":req.body.durationAvailable,
-            "highestQualification":req.body.highestQualification,
-            "specialisation":req.body.specialisation,
-            "skills":req.body.skills,
-            "yearsOfExperience":req.body.yearsOfExperience,
-            "gender":req.body.gender,
-            "idProof":req.body.idProof,
-            "idNumber":req.body.idNumber,
-            "address":req.body.address,
-            "postalCode":req.body.postalCode,
-            
-    }
-  )
-
+    req.body,
+    {upsert:true},function(err, doc){
+    
+    return res.send('Succesfully saved.');
+  }
+  );
 }

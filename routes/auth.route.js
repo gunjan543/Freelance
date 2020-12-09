@@ -13,7 +13,7 @@ const {
     forgotPasswordController,
     resetPasswordController,
     googleController,
-    facebookController
+    technicalFormController
 } = require('../controllers/auth.controller.js')
 
 //Validation
@@ -24,9 +24,22 @@ const {
     resetPasswordValidator
 } = require('../helpers/valid')
 
-router.post("/technicalForm", (req,res)=>{
-    console.log(req.body);
+
+router.post('/getUser', (req, res)=>{
+
+    console.log(req.body.email);
+    User.findOne({email:req.body.email}, function(err, user){
+
+        if(!err){
+            console.log("success");
+            res.send(user);
+        }
+        else{
+            console.log(err);
+        }
+    })
 })
+router.post("/technicalForm", technicalFormController);
 
 router.post('/register',
     validRegister,

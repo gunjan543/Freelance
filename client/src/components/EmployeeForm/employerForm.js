@@ -9,11 +9,7 @@ import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 const EmployerForm = () => {
 
 const history=useHistory();
-axios.get("http://localhost:4000/getData").then(res => {
-  this.setState({
-    data: res.data
-  });
-});
+
 const handleSubmit = () => {
      history.push('/employer/employerDash');
 }
