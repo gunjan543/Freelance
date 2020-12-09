@@ -74,6 +74,11 @@ const userSchema = new mongoose.Schema({
         },
         resume:{
           type:Object
+        },
+
+        form:{
+          type:Boolean,
+          default:'false'
         }
 
       },

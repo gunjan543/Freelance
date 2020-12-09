@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
 import Logo from '../Logo/logo';
 //import authSvg from "../assets/auth.svg";
@@ -11,7 +10,10 @@ import "./Signup.css";
 import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
 import {GoogleLogin} from 'react-google-login';
+
+
 const Login = ({history}) => {
+
 
     const [formData, setFormData] = useState({
         email: '',
@@ -52,6 +54,8 @@ const Login = ({history}) => {
     
       const handleSubmit = e => {
         //console.log(process.env.REACT_APP_API_URL);
+
+
         e.preventDefault();
         if (email && password1) {
           setFormData({ ...formData, textChange: 'Submitting' });
@@ -68,14 +72,17 @@ const Login = ({history}) => {
                   password1: '',
                   textChange: 'Submitted'
                 });
-                //if autheticated but not admin redirect to private
+                localStorage.setItem('token', res.data.token);
+                
 
+                //if autheticated but not admin redirect to private
+                
                 if(isAuth() && isAuth().role === 'admin'){
                   history.push('/admin');
                 }
                 else if(isAuth() && isAuth().category === 'employee'){
                   console.log(isAuth() && isAuth().category === 'employee');
-                 history.push('/employeedashboard');
+                 history.push('/employee');
                 
 
                 }
@@ -84,10 +91,7 @@ const Login = ({history}) => {
                 }
 
                 
-                // isAuth() && isAuth().role === 'admin'
-                //   ? history.push('/admin')
-                //   : history.push('/private');
-                // toast.success(`Hey ${res.data.user.name}, Welcome back!`);
+                
               });
             })
             .catch(err => {

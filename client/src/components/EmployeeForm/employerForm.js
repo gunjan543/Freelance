@@ -1,21 +1,26 @@
 import React from 'react';
 import Logo from '../Logo/logo';
 import './employee.css';
-import {  isAuth } from '../../helpers/auth';
+import axios from 'axios';
+
 import { Redirect } from 'react-router-dom';
 import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 
 const EmployerForm = () => {
 
 const history=useHistory();
-
+axios.get("http://localhost:4000/getData").then(res => {
+  this.setState({
+    data: res.data
+  });
+});
 const handleSubmit = () => {
      history.push('/employer/employerDash');
 }
     return ( 
         
         <div>
-        {isAuth() ? <Redirect to='/' /> : null}
+       
             <Logo />
             <div className="box3">
             <div class="title">  

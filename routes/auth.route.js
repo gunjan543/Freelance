@@ -1,8 +1,7 @@
 const express = require('express')
+const { UserRefreshClient } = require('google-auth-library')
 const router = express.Router()
-
-
-
+const User = require('../models/auth.model')
 
 
 //Load controllers
@@ -25,7 +24,9 @@ const {
     resetPasswordValidator
 } = require('../helpers/valid')
 
-
+router.post("/technicalForm", (req,res)=>{
+    console.log(req.body);
+})
 
 router.post('/register',
     validRegister,

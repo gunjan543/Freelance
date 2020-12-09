@@ -20,12 +20,12 @@ const Activate = ({ match, history }) => {
     /*get token from params */
     let token = match.params.token;
     let { name } = jwt.decode(token);
-
+    console.log(match);
     if (token) {
       setFormData({ ...formData, name, token });
     }
 
-    console.log(token, name);
+  
   }, [match.params]);
   const { name, token, show } = formData;
 
@@ -44,13 +44,7 @@ const Activate = ({ match, history }) => {
         });
      
         toast.success(res.data.message);
-        if(category === 'employee'){
-         history.push('/employee');
-
-        }
-        else{
-          history.push('/employer');
-        }
+        history.push('/activate/login');
       })
       .catch(err => {
         console.log(err);

@@ -12,8 +12,12 @@ import 'react-toastify/dist/ReactToastify.css';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
+import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 
-const Register = () => {
+
+
+const Register = (history) => {
+  //const history=useHistory();
     const [formData, setFormData] = useState({
 
         name:"",
@@ -22,19 +26,21 @@ const Register = () => {
         password2:"",
     });
     let category = "";
-    const {email,name,password1, password2, textChange} = formData
+    const {email,name,password1, password2} = formData
+
     const handleChange = text => e => {
-        console.log(name,email,password1, password2)
+        
         setFormData({ ...formData, [text]: e.target.value });
       };
-    const handleSelect = (e) =>{
+   
+     const handleSelect = (e) =>{
       category=e;
     }
     const handleSubmit = e => {
         e.preventDefault();
         if (name && email && password1) {
           if (password1 === password2) {
-            setFormData({ ...formData, textChange: 'Submitting' });
+            setFormData({ ...formData });
             axios
               .post( `${process.env.REACT_APP_API_URL}/register`, {
                 name,
@@ -48,12 +54,14 @@ const Register = () => {
                   name: '',
                   email: '',
                   password1: '',
-                  password2: '',
+                  password2: ''
                   
-                  textChange: 'Submitted'
-                });
-    
+                }
+               
+                );
+                
                 toast.success(res.data.message);
+                
               })
               .catch(err => {
                 setFormData({
@@ -61,8 +69,8 @@ const Register = () => {
                   name: '',
                   email: '',
                   password1: '',
-                  password2: '',
-                  textChange: 'Sign Up'
+                  password2: ''
+                  
                 });
                 console.log(err.response);
                 toast.error(err.response.data.errors);

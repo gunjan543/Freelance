@@ -3,13 +3,15 @@ const expressJwt = require('express-jwt');
 const _ = require('lodash');
 const { OAuth2Client } = require('google-auth-library');
 const fetch = require('node-fetch');
-
 const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const expressJWT = require('express-jwt');
 const { errorHandler } = require('../helpers/dbErrorHandling');
 const sgMail = require('@sendgrid/mail');
+
+//const { Next } = require('react-bootstrap/lib/Pagination');
 sgMail.setApiKey(process.env.MAIL_KEY);
+//import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 
 
 
@@ -33,6 +35,10 @@ exports.registerController = (req, res) => {
       }
     });
 
+    
+  
+/*Every model method that accepts query conditions 
+can be executed by means of a callback or the exec method. */
     const token = jwt.sign(
       {
         name,
@@ -43,7 +49,7 @@ exports.registerController = (req, res) => {
       process.env.JWT_ACCOUNT_ACTIVATION,
       {
         expiresIn: '15m'
-      }
+      }  
     );
 
     const emailData = {
@@ -89,8 +95,7 @@ exports.activationController = (req, res) => {
       } 
       else {
         const { name, email, password, category } = jwt.decode(token);
-
-        console.log(email);
+        
         
         const user = new User({
           name,
@@ -361,3 +366,27 @@ exports.googleController = (req, res) => {
       }
     });
 };
+
+
+exports.technicalFormController = (req,res)=>{
+
+  User.update(
+    {email:req.body.email},
+    {
+            "dateOfBirth":req.body.dateOfBirth,
+            "contactNumber":req.body.contactNumber,
+            "durationAvailable":req.body.durationAvailable,
+            "highestQualification":req.body.highestQualification,
+            "specialisation":req.body.specialisation,
+            "skills":req.body.skills,
+            "yearsOfExperience":req.body.yearsOfExperience,
+            "gender":req.body.gender,
+            "idProof":req.body.idProof,
+            "idNumber":req.body.idNumber,
+            "address":req.body.address,
+            "postalCode":req.body.postalCode,
+            
+    }
+  )
+
+}
