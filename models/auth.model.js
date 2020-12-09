@@ -73,7 +73,7 @@ const userSchema = new mongoose.Schema({
           type:String
         },
         resume:{
-          type:Object
+          type:String
         },
 
         form:{

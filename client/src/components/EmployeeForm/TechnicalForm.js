@@ -1,10 +1,6 @@
 import React from 'react';
 import Logo from '../Logo/logo';
 import './employee.css';
-import {  isAuth } from '../../helpers/auth';
-import { Redirect } from 'react-router-dom';
-import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
-import jwt from 'jsonwebtoken'
 import { Component } from 'react';
 import Axios from 'axios';
 
@@ -30,17 +26,13 @@ export default class TechnicalForm extends Component {
             idNumber:'',
             address:'',
             postalCode:'',
-            resume:{}
+            resume:{},
+            form:true
         };
         console.log(name);
-      }
-
-      
-    
-    
-
+      } 
     handleChange = text => e => {
-        
+                
         this.setState({ ...this.state, [text]: e.target.value });
         console.log(e.target.value);
       };
@@ -69,15 +61,6 @@ export default class TechnicalForm extends Component {
 
     };    
         
-    
-
-
-              
-
-    
-
-    
-
     render(){
     return ( 
         
@@ -94,27 +77,27 @@ export default class TechnicalForm extends Component {
             <div class="form">
             <form onSubmit={this.handleSubmit}>
                 <div class="input_field"><label>Name</label><input type="text" className="input" required value = {this.state.name}/></div>
-                <div class="input_field"><label>Date of Birth</label><input type="date" className="input"  required/></div>
+                <div class="input_field"><label>Date of Birth</label><input type="date" className="input" onChange = {this.handleChange('dateOfBirth')} required/></div>
                 <div class="input_field"><label>Email address</label><input type="email" className="input" value = {this.state.email} required/></div>
                 <div class="input_field"><label>Contact Number</label><input type="text" className="input" onChange = {this.handleChange('contactNumber')} required/></div>
-                <div class="input_field"><label>Duration available(in months)</label><input type="number" className="input" required/></div>
-                <div class="input_field"><label>Highest Qualification</label><input type="text" className="input"  required/></div>
+                <div class="input_field"><label>Duration available(in months)</label><input type="number" className="input" onChange = {this.handleChange('durationAvailable')} required/></div>
+                <div class="input_field"><label>Highest Qualification</label><input type="text" className="input" onChange = {this.handleChange('highestQualification')} required/></div>
                 
-                <div class="input_field"><label>Specialisation</label>
+                <div class="input_field" onChange = {this.handleChange('specialisation')}><label>Specialisation</label>
                 <div class="custom_select">
                 <select>
                 <option value="">Select</option>
-                <option value="IT">IT/Engineer/Freelancer</option>
+                <option value="IT">Engineer/Freelancer</option>
                 <option value="Teacher">Teacher</option>
                 </select>
                 </div>
                 </div>
 
-                <div class="input_field"><label>Skills</label><textarea className="textarea"></textarea></div>
-                <div class="input_field"><label>Years of Experience</label><input type="number" className="input" required/></div>
+                <div class="input_field" onChange = {this.handleChange('skills')}><label>Skills</label><textarea className="textarea"></textarea></div>
+                <div class="input_field" onChange = {this.handleChange('yearsOfExperience')}><label>Years of Experience</label><input type="number" className="input" required/></div>
                 
-                <div class="input_field"><label>Gender</label>
-                <div class="custom_select">
+                <div class="input_field" onChange = {this.handleChange('gender')}><label>Gender</label>
+                <div class="custom_select" >
                 <select>
                 <option value="">Select</option>
                 <option value="male">Male</option>
@@ -123,7 +106,7 @@ export default class TechnicalForm extends Component {
                 </div>
                 </div>
 
-                <div class="input_field"><label>ID Proof</label>
+                <div class="input_field" onChange = {this.handleChange('idProof')}><label>ID Proof</label>
                 <div class="custom_select">
                 <select>
                 <option value="">Select</option>
@@ -134,10 +117,10 @@ export default class TechnicalForm extends Component {
                 </div>
                 </div>
 
-                <div class="input_field"><label>ID Number</label><input type="number" className="input" required/></div>
-                <div class="input_field"><label>Address</label><textarea className="textarea"></textarea></div>
-                <div class="input_field"><label>Postal Code</label><input type="text" className="input"  required/></div>
-                <div class="input_field"><label>Resume</label><input type="file" className="input" /></div>
+                <div class="input_field" onChange = {this.handleChange('idNumber')}><label>ID Number</label><input type="number" className="input" required/></div>
+                <div class="input_field" onChange = {this.handleChange('address')}><label>Address</label><textarea className="textarea"></textarea></div>
+                <div class="input_field" onChange = {this.handleChange('postalCode')}><label>Postal Code</label><input type="text" className="input"  required/></div>
+                <div class="input_field"><label>Resume</label><input type="text" className="input" onChange={this.handleChange('resume')} /></div>
                 <div class="input_field"><input type="submit" className="btn" value="Submit"/></div>
                 
             </form>

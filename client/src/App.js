@@ -41,8 +41,8 @@ class App extends Component{
            <Footer/>
          </div>
 } />  
-      <Route path="/employee/nontechnical/employeeDash" exact strict component={EmployeeDash} />
-      <Route path="/employee/technical/employeeDash" exact strict component={EmployeeDash} />
+      
+      <Route path="/employee/employeeDash" exact strict component={EmployeeDash} />
       <Route path="/employee/nontechnical/employeeDash/EmployeeNonTechProfile" exact strict component={EmployeeNonTechProfile} />
       <Route path="/employee/technical/employeeDash/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />
       <Route path="/employee/nontechnical/employeeDash/help" exact strict component={Help} />
