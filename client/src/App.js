@@ -50,7 +50,7 @@ class App extends Component{
       <Route path="/employer/employerDash/help" exact strict component={Help} />
       <Route path="/employee" exact strict component={EmployeeForm} />
       <Route path='/login' exact render={props => <Login {...props} />} />
-      <Route path='/employee/technical' exact render={props => <TechnicalForm {...props} name = {'Aditi'} email = {'aditi14032000'}/>} />
+      <Route path='/employee/technical' exact render={props => <TechnicalForm {...props}/>} />
       <Route path='/employee/nontechnical' exact render={props => <NonTechnicalForm {...props} />} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/password/forget' exact render={props => <Forget {...props} />} />

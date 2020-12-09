@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken');
 const expressJWT = require('express-jwt');
 const { errorHandler } = require('../helpers/dbErrorHandling');
 const sgMail = require('@sendgrid/mail');
+
 //const { Next } = require('react-bootstrap/lib/Pagination');
 sgMail.setApiKey(process.env.MAIL_KEY);
 //import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
@@ -365,3 +366,27 @@ exports.googleController = (req, res) => {
       }
     });
 };
+
+
+exports.technicalFormController = (req,res)=>{
+
+  User.update(
+    {email:req.body.email},
+    {
+            "dateOfBirth":req.body.dateOfBirth,
+            "contactNumber":req.body.contactNumber,
+            "durationAvailable":req.body.durationAvailable,
+            "highestQualification":req.body.highestQualification,
+            "specialisation":req.body.specialisation,
+            "skills":req.body.skills,
+            "yearsOfExperience":req.body.yearsOfExperience,
+            "gender":req.body.gender,
+            "idProof":req.body.idProof,
+            "idNumber":req.body.idNumber,
+            "address":req.body.address,
+            "postalCode":req.body.postalCode,
+            
+    }
+  )
+
+}

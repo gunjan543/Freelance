@@ -5,32 +5,85 @@ import {  isAuth } from '../../helpers/auth';
 import { Redirect } from 'react-router-dom';
 import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 import jwt from 'jsonwebtoken'
+import { Component } from 'react';
+import Axios from 'axios';
 
+export default class TechnicalForm extends Component {
+    
+    constructor(){
+        
+        super();
+        let {name, email, category} = JSON.parse(localStorage.getItem('user'));
+        this.state = {
+            name: name,
+            email:email,
+            category:category,
+            dateOfBirth:'',
+            contactNumber:0,
+            durationAvailable:'',
+            highestQualification:'',
+            specialisation:'',
+            skills:'',
+            yearsOfExperience:0,
+            gender:'',
+            idProof:'',
+            idNumber:'',
+            address:'',
+            postalCode:'',
+            resume:{}
+        };
+        console.log(name);
+      }
 
-const TechnicalForm = (props) => {
-
-    var cookie = document.cookie;
-    var output = {};
-    cookie.split(/\s*;\s*/).forEach(function(pair) {
-    pair = pair.split(/\s*=\s*/);
-    output[pair[0]] = pair.splice(1).join('=');
-    });
-    var json = JSON.stringify(output, null, 4);
-    console.log(json);
-    cookie = JSON.parse(json);
-    console.log(cookie.token);
-    const { _id} = jwt.decode(cookie.token);
-    console.log(_id);
+      
     
     
+
+    handleChange = text => e => {
+        
+        this.setState({ ...this.state, [text]: e.target.value });
+        console.log(e.target.value);
+      };
+   
+
+    handleSubmit = e => {
+        e.preventDefault();
+
+        this.setState({...this.state});
+        Axios
+        .post(`${process.env.REACT_APP_API_URL}/technicalForm`,
+          this.state
+           
+        )
+        .then(res => {
+            console.log(res);
+        }
+
+
+        )
+        .catch(err => {
+            console.log(err);
+              
+            });
+           
+
+    };    
+        
     
-    const history=useHistory();
-    const handleSubmit = () => {
-    history.push('/employee/technical/employeeDash');
-    }
+
+
+              
+
+    
+
+    
+
+    render(){
     return ( 
         
         <div>
+
+            
         
             <Logo />
             <div className="box3">
@@ -39,11 +92,11 @@ const TechnicalForm = (props) => {
             <h3>Just one last step !  :) </h3>
             </div>  
             <div class="form">
-            <form onSubmit={handleSubmit}>
-                <div class="input_field"><label>Name</label><input type="text" className="input" required/></div>
+            <form onSubmit={this.handleSubmit}>
+                <div class="input_field"><label>Name</label><input type="text" className="input" required value = {this.state.name}/></div>
                 <div class="input_field"><label>Date of Birth</label><input type="date" className="input"  required/></div>
-                <div class="input_field"><label>Email address</label><input type="email" className="input"  required/></div>
-                <div class="input_field"><label>Contact Number</label><input type="text" className="input"  required/></div>
+                <div class="input_field"><label>Email address</label><input type="email" className="input" value = {this.state.email} required/></div>
+                <div class="input_field"><label>Contact Number</label><input type="text" className="input" onChange = {this.handleChange('contactNumber')} required/></div>
                 <div class="input_field"><label>Duration available(in months)</label><input type="number" className="input" required/></div>
                 <div class="input_field"><label>Highest Qualification</label><input type="text" className="input"  required/></div>
                 
@@ -94,5 +147,4 @@ const TechnicalForm = (props) => {
        
      );
 }
- 
-export default TechnicalForm;
+}

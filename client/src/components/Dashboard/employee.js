@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../Header/header.css';
 import Navbars from './Navbar';
 import './dashboard.css';
+import Axios from 'axios';
 
 
-const EmployeeDash = () => {
+export default class EmployeeDash extends Component  {
 
-  const handleLink =()=>{
-    console.log(window.location.pathname);
-  }
+componentDidMount(){
+  Axios.get(`${process.env.REACT_APP_API_URL}`)
+  .then(res=>{
+    console.log(res);
 
-    return ( 
+  },
+  err => {
+    console.log(err)
+  })
+
+}
+
+
+    render (){ 
+      return(
   <div>
   <div className="dash"> 
-  <Navbars forLink={handleLink}/>
+  <Navbars/>
   </div> 
   <h1>No work right now!</h1>
   
   </div>
 
-);}
- 
-export default EmployeeDash;
+      );}
+      }
+

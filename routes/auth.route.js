@@ -24,6 +24,9 @@ const {
     resetPasswordValidator
 } = require('../helpers/valid')
 
+router.post("/technicalForm", (req,res)=>{
+    console.log(req.body);
+})
 
 router.post('/register',
     validRegister,

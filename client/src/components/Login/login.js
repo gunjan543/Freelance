@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
 import Logo from '../Logo/logo';
 //import authSvg from "../assets/auth.svg";
@@ -11,14 +10,17 @@ import "./Signup.css";
 import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
 import {GoogleLogin} from 'react-google-login';
+
+
 const Login = ({history}) => {
-    var pathArray= window.location.pathname.split('/');
+
+
     const [formData, setFormData] = useState({
         email: '',
         password1: '',
         textChange: 'Sign In'
       });
-      const { email, password1} = formData;
+      const { email, password1, textChange } = formData;
       const handleChange = text => e => {
         setFormData({ ...formData, [text]: e.target.value });
       };
@@ -52,7 +54,8 @@ const Login = ({history}) => {
     
       const handleSubmit = e => {
         //console.log(process.env.REACT_APP_API_URL);
-        //Prevent a link from opening the URL
+
+
         e.preventDefault();
         if (email && password1) {
           setFormData({ ...formData, textChange: 'Submitting' });
@@ -69,33 +72,26 @@ const Login = ({history}) => {
                   password1: '',
                   textChange: 'Submitted'
                 });
-                //if autheticated but not admin redirect to private
+                localStorage.setItem('token', res.data.token);
+                
 
+                //if autheticated but not admin redirect to private
+                
                 if(isAuth() && isAuth().role === 'admin'){
                   history.push('/admin');
                 }
-
-                else if(isAuth() && pathArray[1] === 'login'){
-
-                if(isAuth() && isAuth().category === 'employee'){
+                else if(isAuth() && isAuth().category === 'employee'){
                   console.log(isAuth() && isAuth().category === 'employee');
-                 history.push('/employeedashboard');
+                 history.push('/employee');
                 
 
                 }
                 else if(isAuth() && isAuth().category === 'employer'){
                   history.push('/employerdashboard');
                 }
-              }
-              else if(isAuth() && pathArray[1] === 'activate'){
-                history.push('/employee');
-              }
 
                 
-                // isAuth() && isAuth().role === 'admin'
-                //   ? history.push('/admin')
-                //   : history.push('/private');
-                // toast.success(`Hey ${res.data.user.name}, Welcome back!`);
+                
               });
             })
             .catch(err => {
@@ -143,7 +139,7 @@ const Login = ({history}) => {
                 <br></br>
                 <a href="/users/password/forget">Forgot Password ?</a>
                 <br></br>
-                <input type="submit" name="Log In" value="submit" />
+                <input type="submit" value="Login"/>     
             </form>
            
             </div>
@@ -162,13 +158,7 @@ const Login = ({history}) => {
                       onClick={renderProps.onClick}
                       disabled={renderProps.disabled}
                       className='google'
-                    >
-                      <div>
-                        <i className='fab fa-google '>   </i>
-                        <h5>Sign in with Google</h5>
-                      </div>
-                      
-                    </button>
+                    ><h6><i className='fab fa-google'></i>  Log in with Google</h6></button>
                   )}
                 ></GoogleLogin>
             </div>

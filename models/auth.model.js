@@ -35,7 +35,52 @@ const userSchema = new mongoose.Schema({
 
         category:{
           type:String
+        },
+        dateOfBirth:{
+          type:Date
+        },
+        contactNumber:{
+          type:String
+        },
+        durationAvailable:{
+          type:Number
+        },
+        highestQualification:{
+          type:String
+        },
+        specialisation:{
+          type:String
+        },
+        skills:{
+          type:String
+        },
+        yearsOfExperience:{
+          type:Number
+        },
+        gender:{
+          type:String
+        },
+        idProof:{
+          type:String  
+        },
+        idNumber:{
+          type:String
+        },
+        address:{
+          type:String
+        },
+        postalCode:{
+          type:String
+        },
+        resume:{
+          type:Object
+        },
+
+        form:{
+          type:Boolean,
+          default:'false'
         }
+
       },
       {
         timeStamp: true
