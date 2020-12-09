@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 const EmployeeForm = () => {
     return ( 
         <div className="EmployeeForm">
-         {isAuth() ? <Redirect to='/' /> : null}
+        
             <Logo />
             <div className="box2">
                 <h2>Choose your speciality</h2>

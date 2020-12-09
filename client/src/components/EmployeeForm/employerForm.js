@@ -1,18 +1,26 @@
 import React from 'react';
 import Logo from '../Logo/logo';
-import {  isAuth } from '../../helpers/auth';
-import { Redirect } from 'react-router-dom';
 import './employee.css';
-import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
-const NonTechnicalForm = () => {
-  const history=useHistory();
+import axios from 'axios';
 
-  const handleSubmit = () => {
-     history.push('/employee/nontechnical/employeeDash');
-  }
-  return ( 
-    <div>
-         {isAuth() ? <Redirect to='/' /> : null}
+import { Redirect } from 'react-router-dom';
+import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
+
+const EmployerForm = () => {
+
+const history=useHistory();
+axios.get("http://localhost:4000/getData").then(res => {
+  this.setState({
+    data: res.data
+  });
+});
+const handleSubmit = () => {
+     history.push('/employer/employerDash');
+}
+    return ( 
+        
+        <div>
+       
             <Logo />
             <div className="box3">
             <div class="title">  
@@ -21,36 +29,11 @@ const NonTechnicalForm = () => {
             </div>  
             <div class="form">
             <form onSubmit={handleSubmit}>
+                <div class="input_field"><label>Organisation Name</label><input type="text" className="input" /></div>
                 <div class="input_field"><label>Name</label><input type="text" className="input" required/></div>
                 <div class="input_field"><label>Date of Birth</label><input type="date" className="input"  required/></div>
                 <div class="input_field"><label>Email address</label><input type="email" className="input"  required/></div>
                 <div class="input_field"><label>Contact Number</label><input type="text" className="input"  required/></div>
-                <div class="input_field"><label>Duration available(in months)</label><input type="number" className="input" required/></div>
-               
-                <div class="input_field"><label>Specialisation</label>
-                <div class="custom_select">
-                <select>
-                <option value="">Select</option>
-                <option value="IT">Painter</option>
-                <option value="Teacher">Plumber</option>
-                <option value="Teacher">Staff</option>
-                <option value="Teacher">House Worker/Maid</option>
-                </select>
-                </div>
-                </div>
-
-                <div class="input_field"><label>Skills</label><textarea className="textarea"></textarea></div>
-                <div class="input_field"><label>Years of Experience</label><input type="number" className="input" required/></div>
-                
-                <div class="input_field"><label>Gender</label>
-                <div class="custom_select">
-                <select>
-                <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                </select>
-                </div>
-                </div>
 
                 <div class="input_field"><label>ID Proof</label>
                 <div class="custom_select">
@@ -58,7 +41,7 @@ const NonTechnicalForm = () => {
                 <option value="">Select</option>
                 <option value="Aadhar Card">Aadhar Card</option>
                 <option value="Driving License">Driving License</option>
-                <option value="Voter Id">Voted ID</option>
+                <option value="Voter Id">Voter ID</option>
                 </select>
                 </div>
                 </div>
@@ -66,14 +49,15 @@ const NonTechnicalForm = () => {
                 <div class="input_field"><label>ID Number</label><input type="number" className="input" required/></div>
                 <div class="input_field"><label>Address</label><textarea className="textarea"></textarea></div>
                 <div class="input_field"><label>Postal Code</label><input type="text" className="input"  required/></div>
+                
                 <div class="input_field"><input type="submit" className="btn" value="Submit"/></div>
                 
             </form>
             </div>
             </div>
             </div>
-   );
+       
+     );
 }
-
  
-export default NonTechnicalForm;
+export default EmployerForm;

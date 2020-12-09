@@ -8,7 +8,9 @@ const jwt = require('jsonwebtoken');
 const expressJWT = require('express-jwt');
 const { errorHandler } = require('../helpers/dbErrorHandling');
 const sgMail = require('@sendgrid/mail');
+//const { Next } = require('react-bootstrap/lib/Pagination');
 sgMail.setApiKey(process.env.MAIL_KEY);
+//import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 
 
 
@@ -31,6 +33,9 @@ exports.registerController = (req, res) => {
         });
       }
     });
+
+    
+  
 /*Every model method that accepts query conditions 
 can be executed by means of a callback or the exec method. */
     const token = jwt.sign(
@@ -83,13 +88,13 @@ exports.activationController = (req, res) => {
       if (err) {
         console.log('Activation error');
         return res.status(401).json({
+         
           errors: 'Expired link. Signup again'
         });
       } 
       else {
         const { name, email, password, category } = jwt.decode(token);
-
-        console.log(email);
+        
         
         const user = new User({
           name,
@@ -110,7 +115,6 @@ exports.activationController = (req, res) => {
             return res.json({
               success: true,
               message: 'Signup Success'
-              
             });
           }
         });

@@ -12,7 +12,7 @@ import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
 import {GoogleLogin} from 'react-google-login';
 const Login = ({history}) => {
-
+    var pathArray= window.location.pathname.split('/');
     const [formData, setFormData] = useState({
         email: '',
         password1: '',
@@ -74,7 +74,10 @@ const Login = ({history}) => {
                 if(isAuth() && isAuth().role === 'admin'){
                   history.push('/admin');
                 }
-                else if(isAuth() && isAuth().category === 'employee'){
+
+                else if(isAuth() && pathArray[1] === 'login'){
+
+                if(isAuth() && isAuth().category === 'employee'){
                   console.log(isAuth() && isAuth().category === 'employee');
                  history.push('/employeedashboard');
                 
@@ -83,6 +86,10 @@ const Login = ({history}) => {
                 else if(isAuth() && isAuth().category === 'employer'){
                   history.push('/employerdashboard');
                 }
+              }
+              else if(isAuth() && pathArray[1] === 'activate'){
+                history.push('/employee');
+              }
 
                 
                 // isAuth() && isAuth().role === 'admin'
