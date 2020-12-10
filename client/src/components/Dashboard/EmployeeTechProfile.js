@@ -9,7 +9,7 @@ import Axios from 'axios';
 export default class EmployeeTechProfile extends Component {
 
   constructor(){
-    super();
+  super();
   let { email} = JSON.parse(localStorage.getItem('user'));
   this.state = {
     email:email,

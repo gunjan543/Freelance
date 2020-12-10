@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './profile.css';
 import Accordion from 'react-bootstrap/Accordion';
 import "../Header/header.css";
 import Card from 'react-bootstrap/Card';
 import Navbars from './Navbar';
+import Axios from 'axios';
+export default class EmployerProfile extends Component {
 
-const EmployerProfile = () => {
+  constructor(){
+    super();
+    let { email} = JSON.parse(localStorage.getItem('user'));
+    this.state = {
+      email:email,
+      user:{}
+    
+    }
+  
+    }
+    
+    componentDidMount(){
+  
+      console.log(this.state.email);
+     Axios
+      .post(`${process.env.REACT_APP_API_URL}/getUser`, this.state)
+      .then( res=>{ 
+       const user = res.data;
+       this.setState({user});
+    }
+      )
+    }
+    render(){ 
     return ( 
         <div>
           <div className="header"><Navbars /></div>
@@ -18,9 +42,9 @@ const EmployerProfile = () => {
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="0">
         <Card.Body>
-        <div className="container"><h4>Organisation Name - </h4><p>ABC Limited</p></div>
-        <div className="container"><h4>Full Name - </h4><p>John Baeur</p></div>
-        <div className="container"><h4>Date of Birth - </h4><p>04/07/2000</p></div>         
+        <div className="container"><h4>Organisation Name - </h4><p>{this.state.user.organisationName}</p></div>
+        <div className="container"><h4>Full Name - </h4><p>{this.state.user.name}</p></div>
+        <div className="container"><h4>Date of Birth - </h4><p>{this.state.user.dateOfBirth}</p></div>         
         </Card.Body>
         </Accordion.Collapse>
         </Card>
@@ -30,11 +54,11 @@ const EmployerProfile = () => {
        </Accordion.Toggle>
        <Accordion.Collapse eventKey="1">
        <Card.Body>
-        <div className="container"><h4>Email - </h4><p>John@gmail.com</p></div>
-        <div className="container"><h4>Contact Number - </h4><p>7656768767</p></div>
-        <div className="container"><h4>ID Proof - </h4><p>Driving Licence - 6535667767267</p></div>
-        <div className="container"><h4>Address-</h4><p>543 street , malviya Nagar Jaipur Ahdbj bdyuegdb bdyuegdb</p></div>
-        <div className="container"><h4>Postal Code - </h4><p>203987</p></div>
+        <div className="container"><h4>Email - </h4><p>{this.state.user.email}</p></div>
+        <div className="container"><h4>Contact Number - </h4><p>{this.state.user.contactNumber}</p></div>
+        <div className="container"><h4>ID Proof - </h4><p>{this.state.user.idProof}-{this.state.user.idNumber}</p></div>
+        <div className="container"><h4>Address-</h4><p>{this.state.user.address}</p></div>
+        <div className="container"><h4>Postal Code - </h4><p>{this.state.user.postalCode}</p></div>
         </Card.Body>
     </Accordion.Collapse>
   </Card>
@@ -44,8 +68,8 @@ const EmployerProfile = () => {
        </Accordion.Toggle>
        <Accordion.Collapse eventKey="4">
        <Card.Body>
-        <div className="container"><h4>password - </h4><p>JOHNABC</p></div>
-        <div className="container"><a href="#">Change password</a></div>
+        
+        <div className="container"><a href="/users/password/forget">Change password</a></div>
         </Card.Body>
     </Accordion.Collapse>
   </Card>
@@ -55,5 +79,4 @@ const EmployerProfile = () => {
         
      );
 }
- 
-export default EmployerProfile;
+}

@@ -19,7 +19,7 @@ import EmployeeDash from './components/Dashboard/employee';
 import EmployeeNonTechProfile from './components/Dashboard/EmployeeNonTechProfile';
 import EmployeeTechProfile from './components/Dashboard/EmployeeTechProfile';
 import Help from './components/Dashboard/help';
-
+import EmployerProfile from './components/Dashboard/employerProfile';
 
 
 class App extends Component{
@@ -43,12 +43,12 @@ class App extends Component{
          </div>
 } />  
       <Route path="/employer" exact strict component ={EmployerForm} />
-      <Route path="/employee/employeeDash" exact strict component={EmployeeDash} />
+      <Route path="/user/userDash" exact strict component={EmployeeDash} />
       <Route path="/employee/nontechnical/employeeDash/EmployeeNonTechProfile" exact strict component={EmployeeNonTechProfile} />
       <Route path="/employee/technical/employeeDash/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />
-      <Route path="/employee/nontechnical/employeeDash/help" exact strict component={Help} />
-      <Route path="/employee/technical/employeeDash/help" exact strict component={Help} />
-      <Route path="/employer/employerDash/help" exact strict component={Help} />
+
+      <Route path="/user/userDash/help" exact strict component={Help} />
+      <Route path="/user/userDash/employerProfile" exact strict component={EmployerProfile} />
       <Route path="/employee" exact strict component={EmployeeForm} />
       <Route path='/login' exact render={props => <Login {...props} />} />
       <Route path='/employee/technical' exact render={props => <TechnicalForm {...props}/>} />
