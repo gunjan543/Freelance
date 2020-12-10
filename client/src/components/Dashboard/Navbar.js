@@ -4,10 +4,10 @@ import "../Header/header.css";
 import React from 'react';
 
 const Navbars = (props) => {
-  var pathArray= window.location.pathname.split('/');
-  var one=pathArray[1];
-  var two=pathArray[2];
-  var three=pathArray[3];
+  let {category} = JSON.parse(localStorage.getItem('user'));
+  
+  var two="technical";
+  
   
     return ( 
   <div>
@@ -19,7 +19,7 @@ const Navbars = (props) => {
   <Nav className="mr-auto"></Nav>
  
   {
-   one === 'employee' ?
+   category === 'employee' ?
     two ==='nontechnical' ? 
     <div> 
     <Nav> 
@@ -39,9 +39,9 @@ const Navbars = (props) => {
     :  
     <div> 
     <Nav>
-    <Nav.Link href="/employer/employerDash">Home</Nav.Link>
-    <Nav.Link href="/employer/employerDash/employerProfile">Profile</Nav.Link>
-    <Nav.Link href="/employer/employerDash/help" bsPrefix="lastItem">Help</Nav.Link>
+    <Nav.Link href="/user/userDash">Home</Nav.Link>
+    <Nav.Link href="/user/userDash/employerProfile">Profile</Nav.Link>
+    <Nav.Link href="/user/userDash/help" bsPrefix="lastItem">Help</Nav.Link>
     </Nav>
     </div>
   }

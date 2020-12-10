@@ -7,7 +7,7 @@ import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 
 export default class EmployerForm extends Component {
     
-    constructor(){
+    constructor(props){
         
         super();
         
@@ -45,7 +45,7 @@ export default class EmployerForm extends Component {
         )
         .then(res => {
             console.log(res);
-            history.push('/employee/employeeDash');
+            this.props.history.push('/user/userDash');
             
         }
 
