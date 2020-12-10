@@ -20,13 +20,10 @@ import EmployeeNonTechProfile from './components/Dashboard/EmployeeNonTechProfil
 import EmployeeTechProfile from './components/Dashboard/EmployeeTechProfile';
 import Help from './components/Dashboard/help';
 import EmployerProfile from './components/Dashboard/employerProfile';
+import EmployerDash from './components/Dashboard/employerDash';
 
 
 class App extends Component{
-  
-
-
-
   render(){
   return (
     <Router>
@@ -42,17 +39,22 @@ class App extends Component{
            <Footer/>
          </div>
 } />  
-      <Route path="/employer" exact strict component ={EmployerForm} />
-      <Route path="/user/userDash" exact strict component={EmployeeDash} />
-      <Route path="/employee/nontechnical/employeeDash/EmployeeNonTechProfile" exact strict component={EmployeeNonTechProfile} />
-      <Route path="/employee/technical/employeeDash/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />
+      
+      <Route path="/employeeDash/technical" exact render={props => <EmployeeDash {...props}/>} />
+      {/* <Route path="/employeeDash/nonTechnical" exact strict component={EmployeeDash} />
+      <Route path="/employeeDash/technical/EmployeeNonTechProfile" exact strict component={EmployeeNonTechProfile} />
+      <Route path="/employeeDash/nonTechnical/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />
+      <Route path="/employeeDash/technical/help" exact strict component={Help} />
+      <Route path="/employeeDash/nonTechnical/help" exact strict component={Help} />
+      <Route path="/employerDash/help" exact strict component={Help} />
+      <Route path="/employerDash/employerProfile" exact strict component={EmployerProfile} />
+      <Route path="/employerDash" exact strict component={EmployerDash} /> */}
 
-      <Route path="/user/userDash/help" exact strict component={Help} />
-      <Route path="/user/userDash/employerProfile" exact strict component={EmployerProfile} />
-      <Route path="/employee" exact strict component={EmployeeForm} />
-      <Route path='/login' exact render={props => <Login {...props} />} />
       <Route path='/employee/technical' exact render={props => <TechnicalForm {...props}/>} />
       <Route path='/employee/nontechnical' exact render={props => <NonTechnicalForm {...props} />} />
+      <Route path="/employer" exact strict component ={EmployerForm} />
+      <Route path="/employee" exact strict component={EmployeeForm} />
+      <Route path='/login' exact render={props => <Login {...props} />} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/password/forget' exact render={props => <Forget {...props} />} />
       <Route path='/users/activate/:token' exact render={props => <Activate {...props} />} />

@@ -6,20 +6,14 @@ import Axios from 'axios';
 
 
 export default class EmployeeDash extends Component  {
-
-
-
-
-    render (){ 
-      return(
+render (){ 
+return(
   <div>
   <div className="dash"> 
-  <Navbars/>
+  <Navbars />
   </div> 
   <h1>No work right now!</h1>
-  
   </div>
-
       );}
       }
 

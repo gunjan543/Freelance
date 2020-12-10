@@ -6,7 +6,7 @@ import Axios from 'axios';
 
 export default class TechnicalForm extends Component {
     
-    constructor(){
+    constructor(props){
         
         super();
         let {name, email, category} = JSON.parse(localStorage.getItem('user'));
@@ -49,25 +49,19 @@ export default class TechnicalForm extends Component {
         )
         .then(res => {
             console.log(res);
+            
         }
-
-
         )
         .catch(err => {
             console.log(err);
               
             });
-           
-
+            this.props.history.push('/employeeDash/technical')
     };    
         
     render(){
     return ( 
-        
         <div>
-
-            
-        
             <Logo />
             <div className="box3">
             <div class="title">  
