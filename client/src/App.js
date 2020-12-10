@@ -11,7 +11,8 @@ import Forget from './components/Login/ForgetPassword';
 import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import {Switch} from 'react-router-dom';
-import EmployeeForm from './components/EmployeeForm/employeeForm'
+import EmployeeForm from './components/EmployeeForm/employeeForm';
+import EmployerForm from './components/EmployeeForm/employerForm';
 import TechnicalForm from './components/EmployeeForm/TechnicalForm';
 import NonTechnicalForm from './components/EmployeeForm/non-technical';
 import EmployeeDash from './components/Dashboard/employee';
@@ -41,7 +42,7 @@ class App extends Component{
            <Footer/>
          </div>
 } />  
-      
+      <Route path="/employer" exact strict component ={EmployerForm} />
       <Route path="/employee/employeeDash" exact strict component={EmployeeDash} />
       <Route path="/employee/nontechnical/employeeDash/EmployeeNonTechProfile" exact strict component={EmployeeNonTechProfile} />
       <Route path="/employee/technical/employeeDash/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />

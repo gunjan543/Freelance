@@ -32,7 +32,9 @@ const userSchema = new mongoose.Schema({
           data: String,
           default: ''
         },
-
+        organisationName:{
+          type:String
+        },
         category:{
           type:String
         },
