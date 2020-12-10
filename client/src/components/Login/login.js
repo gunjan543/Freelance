@@ -95,7 +95,7 @@ const Login = ({history}) => {
 
                 }
                 else if(isAuth() && isAuth().category === 'employer'){
-                  history.push('/employer/employerDash');
+                  history.push('/employer');
                 }
 
               }
