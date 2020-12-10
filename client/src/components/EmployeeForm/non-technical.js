@@ -8,7 +8,7 @@ const NonTechnicalForm = () => {
   const history=useHistory();
 
   const handleSubmit = () => {
-     history.push('/employee/nontechnical/employeeDash');
+     history.push('/employeeDash/nonTechnical');
   }
   return ( 
     <div>

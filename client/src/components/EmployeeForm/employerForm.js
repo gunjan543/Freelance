@@ -7,10 +7,9 @@ import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 
 export default class EmployerForm extends Component {
     
-    constructor(props){
+    constructor(){
         
-        super();
-        
+        super()
         let {name, email, category} = JSON.parse(localStorage.getItem('user'));
         this.state = {
             name: name,
@@ -45,7 +44,7 @@ export default class EmployerForm extends Component {
         )
         .then(res => {
             console.log(res);
-            this.props.history.push('/user/userDash');
+            this.props.history.push("/employerDash");
             
         }
 

@@ -5,11 +5,10 @@ import React from 'react';
 
 const Navbars = (props) => {
   let {category} = JSON.parse(localStorage.getItem('user'));
+  var subCategory = '';
+  subCategory = category === 'employee' ?  (JSON.parse(localStorage.getItem('subCategory'))) : ''
   
-  var two="technical";
-  
-  
-    return ( 
+  return ( 
   <div>
   <Navbar collapseOnSelect expand="lg" variant="dark">
   <Navbar.Brand href="#home" bsPrefix ='brand'><img src={logo}></img></Navbar.Brand>
@@ -20,28 +19,28 @@ const Navbars = (props) => {
  
   {
    category === 'employee' ?
-    two ==='nontechnical' ? 
+   subCategory==='nontechnical' ? 
     <div> 
     <Nav> 
-    <Nav.Link href="/employee/nontechnical/employeeDash">Home</Nav.Link>
-    <Nav.Link href="/employee/nontechnical/employeeDash/EmployeeNonTechProfile">Profile</Nav.Link>
-    <Nav.Link href="/employee/nontechnical/employeeDash/help" bsPrefix="lastItem">Help</Nav.Link>
+    <Nav.Link href="/employeeDash/technical/EmployeeNonTechProfile">Profile</Nav.Link>
+    <Nav.Link href="/employeeDash/technical/help" bsPrefix="lastItem">Help</Nav.Link>
+    <Nav.Link href="/employeeDash/technical">Home</Nav.Link>
     </Nav>
     </div>
     : 
     <div> 
     <Nav>
-    <Nav.Link href="/employee/technical/employeeDash">Home</Nav.Link>
-    <Nav.Link href="/employee/technical/employeeDash/EmployeeTechProfile">Profile</Nav.Link>
-    <Nav.Link href="/employee/technical/employeeDash/help" bsPrefix="lastItem">Help</Nav.Link>
+    <Nav.Link href="/employeeDash/nonTechnical">Home</Nav.Link>
+    <Nav.Link href="/employeeDash/nonTechnical/EmployeeTechProfile">Profile</Nav.Link>
+    <Nav.Link href="/employeeDash/nonTechnical/help" bsPrefix="lastItem">Help</Nav.Link>
     </Nav>
     </div>
     :  
     <div> 
     <Nav>
-    <Nav.Link href="/user/userDash">Home</Nav.Link>
-    <Nav.Link href="/user/userDash/employerProfile">Profile</Nav.Link>
-    <Nav.Link href="/user/userDash/help" bsPrefix="lastItem">Help</Nav.Link>
+    <Nav.Link href="/employerDash">Home</Nav.Link>
+    <Nav.Link href="/employerDash/employerProfile">Profile</Nav.Link>
+    <Nav.Link href="/employerDash/help" bsPrefix="lastItem">Help</Nav.Link>
     </Nav>
     </div>
   }

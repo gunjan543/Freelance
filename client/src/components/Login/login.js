@@ -76,6 +76,7 @@ const Login = ({history}) => {
                 });
                 localStorage.setItem('token', res.data.token);
                 
+                
 
                 //if autheticated but not admin redirect to private
                 
@@ -90,7 +91,7 @@ const Login = ({history}) => {
                 else{
                 if(isAuth() && isAuth().category === 'employee'){
                   console.log(isAuth() && isAuth().category === 'employee');
-                 history.push('/employee/employeeDash');
+                 history.push('/employee');
                 
 
                 }
