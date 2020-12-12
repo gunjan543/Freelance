@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /client/node_modules
+/config
 /.pnp
 .pnp.js
 
@@ -11,10 +12,11 @@
 
 # production
 /build
-config/config.env
+/config/config.env
+/client/.env
 # misc
 .DS_Store
-client/.env
+ client/.env
 .env.local
 .env.development.local
 .env.test.local
