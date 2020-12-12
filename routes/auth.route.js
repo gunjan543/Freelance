@@ -49,6 +49,25 @@ router.post('/getUsers', (req, res)=>{
     })
     })
 
+router.post('/employerRequest',(req,res)=>{
+    let userId = req.body.userID;
+    let employerId = req.body.employerID;
+    User.findOneAndUpdate(
+        {_id:employerId},
+        { "$push": { "request": userId } },
+        {upsert:true},function(err, doc){
+        
+        
+      });
+
+      User.findOneAndUpdate(
+        {_id:userId},
+        { "$push": { "request": employerId } },
+        {upsert:true},function(err, doc){
+        
+      });
+      return res.send('Succesfully saved.');
+})
 
 router.post("/technicalForm", technicalFormController);
 
