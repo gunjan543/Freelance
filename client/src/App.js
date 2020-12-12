@@ -41,14 +41,14 @@ class App extends Component{
 } />  
       
       <Route path="/employeeDash/technical" exact render={props => <EmployeeDash {...props}/>} />
-      {/* <Route path="/employeeDash/nonTechnical" exact strict component={EmployeeDash} />
+      <Route path="/employeeDash/nonTechnical" exact strict component={EmployeeDash} />
       <Route path="/employeeDash/technical/EmployeeNonTechProfile" exact strict component={EmployeeNonTechProfile} />
       <Route path="/employeeDash/nonTechnical/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />
       <Route path="/employeeDash/technical/help" exact strict component={Help} />
       <Route path="/employeeDash/nonTechnical/help" exact strict component={Help} />
       <Route path="/employerDash/help" exact strict component={Help} />
       <Route path="/employerDash/employerProfile" exact strict component={EmployerProfile} />
-      <Route path="/employerDash" exact strict component={EmployerDash} /> */}
+      <Route path="/employerDash" exact strict component={EmployerDash} />
 
       <Route path='/employee/technical' exact render={props => <TechnicalForm {...props}/>} />
       <Route path='/employee/nontechnical' exact render={props => <NonTechnicalForm {...props} />} />
