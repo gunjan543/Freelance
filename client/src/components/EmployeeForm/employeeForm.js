@@ -10,7 +10,7 @@ const EmployeeForm = () => {
     { 
         let  {email} = JSON.parse(localStorage.getItem('user'));
         var user ={email:email,subCategory:e.target.value}
-        //localStorage.setItem('subCategory', e.target.value);
+        localStorage.setItem('subCategory', e.target.value);
         
         Axios
         .post(`${process.env.REACT_APP_API_URL}/technicalForm`,
