@@ -44,7 +44,8 @@ router.post('/getUsers', (req, res)=>{
     console.log(req.body);
     User.find({category:req.body.category}).
     then(users =>{
-        console.log(users[0].name);
+        console.log(users);
+        res.send(users);
     })
     })
 

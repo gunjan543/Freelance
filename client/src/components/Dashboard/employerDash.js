@@ -11,26 +11,30 @@ export default class EmployerDash extends Component {
     super();
     this.state = {
       category:'employee',
-      user:{}
+      users:[]
     }
     }
     
     componentDidMount(){
-  
-      console.log(this.state);
       Axios
       .post(`${process.env.REACT_APP_API_URL}/getUsers`, this.state)
       .then( res=>{ 
-       const user = res.data;
-       this.setState({user});
+       const users = res.data;
+       this.setState({users});
+       
     }
       )
     }
     render(){ 
+      console.log(this.state.users);
+      const listOfEmployee = this.state.users.map(user => <li>{user.name}</li>);
     return ( 
+      <div>
   <div className="dash"> 
   <Navbars />
-  
   </div>
+  <p>{listOfEmployee}</p>
+  </div>
+
 );}
     }
