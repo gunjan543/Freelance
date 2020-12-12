@@ -25,15 +25,37 @@ export default class EmployerDash extends Component {
     }
       )
     }
+
+    sendRequest(userID){
+      console.log(userID);
+
+      let {_id} = JSON.parse(localStorage.getItem('user'));
+      Axios.post(`${process.env.REACT_APP_API_URL}/employerRequest`,{userID: userID, employerID:_id})
+      .then(res =>{
+        console.log(res);
+      })
+    }
+
+    displayUser(user){
+      return this.state.users.map((user)=>{
+        return <div>
+        <li id = "username">{user.name}</li>
+        <button type="submit" onClick = {()=>{this.sendRequest(user._id)}}>Click </button>
+        </div>
+      })
+     
+
+    }
     render(){ 
       console.log(this.state.users);
-      const listOfEmployee = this.state.users.map(user => <li>{user.name}</li>);
+     
+        
     return ( 
       <div>
   <div className="dash"> 
   <Navbars />
   </div>
-  <p>{listOfEmployee}</p>
+  <div>{ this.displayUser()}</div>
   </div>
 
 );}

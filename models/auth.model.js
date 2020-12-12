@@ -85,12 +85,16 @@ const userSchema = new mongoose.Schema({
         form:{
           type:Boolean,
           default:'false'
+        },
+        request:{
+          type:Array
         }
 
       },
       {
         timeStamp: true
       }
+
     );
 
 
