@@ -18,7 +18,8 @@ const userSchema = new mongoose.Schema({
           required: true
         },
         subCategory:{
-          type:String
+          type:String,
+          default:''
         },
         //saved as hash after encryption
         hashed_password: {

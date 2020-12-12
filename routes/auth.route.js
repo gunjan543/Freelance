@@ -39,6 +39,16 @@ router.post('/getUser', (req, res)=>{
         }
     })
 })
+
+router.post('/getUsers', (req, res)=>{
+    console.log(req.body);
+    User.find({category:req.body.category}).
+    then(users =>{
+        console.log(users[0].name);
+    })
+    })
+
+
 router.post("/technicalForm", technicalFormController);
 
 router.post('/register',

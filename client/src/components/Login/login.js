@@ -84,24 +84,26 @@ const Login = ({history}) => {
                   history.push('/admin');
                 }
 
-                else if(isAuth() && isAuth().form === false){
+                else if(isAuth() && isAuth().category === 'employee'){
+                  if(isAuth().form === false)
                   history.push('/employee');
+                  else
+                  {
+                    if(isAuth().subCategory==='technical')
+                    history.push('/employeeDash/technical')
+                    else
+                    history.push('/employeeDash/nonTechnical')
+                  }
                 }
-
-                else{
-                if(isAuth() && isAuth().category === 'employee'){
-                  console.log(isAuth() && isAuth().category === 'employee');
-                 history.push('/employee');
-                
-
-                }
-                else if(isAuth() && isAuth().category === 'employer'){
+                else {
+                  if(isAuth().form === false)
                   history.push('/employer');
+                  else
+                  history.push('/employerDash');
                 }
-
               }
                 
-              });
+              );
             })
             .catch(err => {
               setFormData({
@@ -110,7 +112,7 @@ const Login = ({history}) => {
                 password1: '',
                 textChange: 'Sign In'
               });
-              console.log(err.response);
+              console.log(err);
               toast.error(err.response.data.errors);
             });
         } else {
