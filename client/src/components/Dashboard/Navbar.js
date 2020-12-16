@@ -40,6 +40,7 @@ const Navbars = (props) => {
     <Nav>
     <Nav.Link href="/employerDash">Home</Nav.Link>
     <Nav.Link href="/employerDash/employerProfile">Profile</Nav.Link>
+    <Nav.Link href="/employerDash/requests" bsPrefix="lastItem">Requests</Nav.Link>
     <Nav.Link href="/employerDash/help" bsPrefix="lastItem">Help</Nav.Link>
     </Nav>
     </div>

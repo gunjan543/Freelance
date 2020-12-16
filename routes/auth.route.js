@@ -49,6 +49,16 @@ router.post('/getUsers', (req, res)=>{
     })
     })
 
+    router.post('/getApplicants', (req, res)=>{
+        console.log(req.body);
+        User.find({_id:req.body._id}).
+        then(users =>{
+            User.find({_id:(users[0].request[0].personId)}).
+            then(user =>{
+                res.send(user);
+        }) 
+      })
+    })
 router.post('/employerRequest',(req,res)=>{
     let userId = req.body.userID;
     let employerId = req.body.employerID;
@@ -65,6 +75,24 @@ router.post('/employerRequest',(req,res)=>{
         { "$push": { "request": employerId } },
         {upsert:true},function(err, doc){
         
+      });
+      return res.send('Succesfully saved.');
+})
+
+router.post('/jobApplied',(req,res)=>{
+    let jobId = req.body.jobID;
+    let employeeId = req.body.employeeID;
+    let employerId=req.body.employerId;
+    User.findOneAndUpdate(
+        {_id:employerId},
+        { "$addToSet": {"request": {personId:employeeId,jobId:jobId}} },
+        {upsert:true},function(err, doc){
+      });
+
+      User.findOneAndUpdate(
+        {_id:employeeId},
+        { "$addToSet": {"request": {personId:employerId,jobId:jobId}} },
+        {upsert:true},function(err, doc){
       });
       return res.send('Succesfully saved.');
 })
@@ -115,6 +143,14 @@ router.post("/addJob",(req,res)=>{
         })
 })
 
+router.post('/getJobs', (req, res)=>{
+    console.log(req.body);
+    Job.find({}).
+    then(jobs =>{
+        console.log(jobs);
+        res.send(jobs);
+    })
+    })
 
 router.post("/technicalForm", technicalFormController);
 
