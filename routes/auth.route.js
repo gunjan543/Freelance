@@ -2,7 +2,7 @@ const express = require('express')
 const { UserRefreshClient } = require('google-auth-library')
 const router = express.Router()
 const User = require('../models/auth.model')
-
+const Job = require('../models/job.model')
 
 //Load controllers
 
@@ -68,6 +68,53 @@ router.post('/employerRequest',(req,res)=>{
       });
       return res.send('Succesfully saved.');
 })
+
+router.post("/addJob",(req,res)=>{
+
+    console.log("Request Received");
+    const {
+    employerId,
+    employerName,
+    organisationName,
+    title,
+    description,
+    category,
+    contact,
+    duration,
+    specialisation,
+    skills,
+    yearsOfExperience,
+    location,
+    postalCode} = req.body;
+
+    const job = new Job({
+    employerId,
+    employerName,
+    organisationName,
+    title,
+    description,
+    category,
+    contact,
+    duration,
+    specialisation,
+    skills,
+    yearsOfExperience,
+    location,
+    postalCode
+    });
+    job.save((err, job)=>{
+        if(err)
+        {return res.status(401);
+        }
+        else{
+            return res.json({
+                sucess:true,
+                message:'job Posted'
+            })
+        }
+        })
+})
+
 
 router.post("/technicalForm", technicalFormController);
 

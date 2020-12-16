@@ -21,7 +21,7 @@ import EmployeeTechProfile from './components/Dashboard/EmployeeTechProfile';
 import Help from './components/Dashboard/help';
 import EmployerProfile from './components/Dashboard/employerProfile';
 import EmployerDash from './components/Dashboard/employerDash';
-
+import JobDescription from './components/JobDescription/Jd';
 
 class App extends Component{
   render(){
@@ -49,7 +49,7 @@ class App extends Component{
       <Route path="/employerDash/help" exact strict component={Help} />
       <Route path="/employerDash/employerProfile" exact strict component={EmployerProfile} />
       <Route path="/employerDash" exact strict component={EmployerDash} />
-
+      <Route path="/addJob" exact strict component={JobDescription} />
       <Route path='/employee/technical' exact render={props => <TechnicalForm {...props}/>} />
       <Route path='/employee/nontechnical' exact render={props => <NonTechnicalForm {...props} />} />
       <Route path="/employer" exact strict component ={EmployerForm} />
