@@ -4,17 +4,19 @@ import Navbars from './Navbar';
 import './dashboard.css';
 import { Component } from 'react';
 import Axios from 'axios';
-
+import { useHistory } from "react-router-dom";
 
 export default class EmployerDash extends Component {
-  constructor(){
+  constructor(props){
     super();
     this.state = {
       category:'employee',
       users:[]
     }
-    }
+   
     
+    }
+   
     componentDidMount(){
       Axios
       .post(`${process.env.REACT_APP_API_URL}/getUsers`, this.state)
@@ -22,9 +24,10 @@ export default class EmployerDash extends Component {
        const users = res.data;
        this.setState({users});
        
-    }
+      }
       )
     }
+   
 
     sendRequest(userID){
       console.log(userID);
@@ -42,20 +45,25 @@ export default class EmployerDash extends Component {
         <li id = "username">{user.name}</li>
         <button type="submit" onClick = {()=>{this.sendRequest(user._id)}}>Click </button>
         </div>
-      })
+      });
      
-
+  
     }
     render(){ 
+      const {history} = this.props;
       console.log(this.state.users);
-     
+      function handleClick(){
+      
+        history.push("/addJob");
+      }
         
     return ( 
       <div>
   <div className="dash"> 
   <Navbars />
   </div>
-  <div>{ this.displayUser()}</div>
+  {/* <div>{ this.displayUser()}</div> */}
+  <button type = "Submit" onClick = {handleClick}>Add a Job </button>
   </div>
 
 );}
