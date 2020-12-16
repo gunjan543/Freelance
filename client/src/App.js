@@ -22,6 +22,7 @@ import Help from './components/Dashboard/help';
 import EmployerProfile from './components/Dashboard/employerProfile';
 import EmployerDash from './components/Dashboard/employerDash';
 import JobDescription from './components/JobDescription/Jd';
+import Requests from './components/Dashboard/request';
 
 class App extends Component{
   render(){
@@ -60,6 +61,7 @@ class App extends Component{
       <Route path='/users/activate/:token' exact render={props => <Activate {...props} />} />
       <Route path='/users/password/reset/:token' exact render={props => <Reset {...props} />} />
       <Route path='/activate/login' exact render={props => <Login {...props} />} />
+      <Route path='/employerDash/requests' exact render={props => <Requests {...props} />} />
       </div>
       </Switch>   
     </Router>  

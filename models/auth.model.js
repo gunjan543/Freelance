@@ -86,10 +86,11 @@ const userSchema = new mongoose.Schema({
           type:Boolean,
           default:'false'
         },
-        request:{
-          type:Array
-        }
-
+        request:[{
+          _id:false,
+          personId:String,
+          jobId:String 
+        }]
       },
       {
         timeStamp: true
