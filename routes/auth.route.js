@@ -50,24 +50,31 @@ router.post('/getUsers', (req, res)=>{
     })
 
     router.post('/getApplicants', (req, res)=>{
-        console.log(req.body);
+        
+        let applicants=[];
         User.find({_id:req.body._id}).
         then(users =>{
-            User.find({_id:(users[0].request[0].personId)}).
-            then(user =>{
-                res.send(user);
-        }) 
+           users[0].request.map((currentValue) => {
+            console.log(currentValue.personId);
+             User.find({_id:currentValue.personId}).then(
+                 applicant=>{
+                       applicants.push(applicant);  
+                 }
+             )
+           }
+        )
+        res.send(applicants);
+        console.log(applicants);
+    }) 
       })
-    })
+
 router.post('/employerRequest',(req,res)=>{
     let userId = req.body.userID;
     let employerId = req.body.employerID;
     User.findOneAndUpdate(
         {_id:employerId},
         { "$push": { "request": userId } },
-        {upsert:true},function(err, doc){
-        
-        
+        {upsert:true},function(err, doc){ 
       });
 
       User.findOneAndUpdate(
