@@ -5,7 +5,7 @@ export default class Requests extends Component{
     constructor(props){
         super(); 
         this.state={
-            users:[]
+            users:{}
         }
         }
         componentDidMount(){
@@ -14,8 +14,8 @@ export default class Requests extends Component{
             .post(`${process.env.REACT_APP_API_URL}/getApplicants`, {_id})
             .then( res=>{ 
              const users = res.data;
-             console.log(users);
              this.setState({users});
+             console.log(this.state.users);
             }
             )
           }
