@@ -48,23 +48,24 @@ router.post('/getUsers', (req, res)=>{
         res.send(users);
     })
     })
-
+    let applicants=[];
     router.post('/getApplicants', (req, res)=>{
         
-        let applicants=[];
+        
         User.find({_id:req.body._id}).
         then(users =>{
            users[0].request.map((currentValue) => {
             console.log(currentValue.personId);
              User.find({_id:currentValue.personId}).then(
                  applicant=>{
-                       applicants.push(applicant);  
+                       applicants.push(applicant[0]);  
                  }
              )
            }
         )
         res.send(applicants);
         console.log(applicants);
+        applicants =[]
     }) 
       })
 
@@ -106,6 +107,7 @@ router.post('/jobApplied',(req,res)=>{
 
 router.post("/addJob",(req,res)=>{
 
+    console.log(req.body);
     console.log("Request Received");
     const {
     employerId,

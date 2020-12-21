@@ -5,7 +5,7 @@ export default class Requests extends Component{
     constructor(props){
         super(); 
         this.state={
-            users:{}
+            users:[]
         }
         }
         componentDidMount(){
@@ -21,8 +21,11 @@ export default class Requests extends Component{
           }
          
     render(){
+
+
         return(
-            <h1>Hello</h1>
+
+          <h1> hello</h1>
         )
     }
  
