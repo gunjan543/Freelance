@@ -1,52 +1,102 @@
-.header
-{
-    background-color: #65CCB8;
-    font-family: 'Quicksand', sans-serif;
-    padding-bottom:0rem;
-    margin-top: 0px;
-}
-.container{
-    display: flex;
-    background-image: linear-gradient(to right , #65ccb8, #f2f2f2);
-}
-.accord h1{
-    color:#182628;
-    font-size: 1.6rem;
-    margin-top: 40px;
-    margin-bottom: 35px;
-    text-align: center;
+.data{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 50%;
+    top:15%;
+    margin-left: -200px; /* margin is -0.5 * dimension */
+    margin-top: -55px; 
+   
 }
 
-.accord h4{
-    color: #f2f2f2;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    margin-left: 2px;
-    margin-top: 10px;
+p{
+    color: black;
 }
 
-.accord p{ 
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    margin-left: 20px;
-    margin-top: 4px;
-}
-.accord i{
-    margin-right: 1rem;
+.data-containers{
+    display:flex;
+    margin-top: 1rem;
+    margin-left: -40px;
 }
 
-.accord a{
+.data-container{
+  padding: 1rem;
+}
+
+.data-container h4,a{
     color: #182628;
-    margin-left: 30rem;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 800;
 }
 
-.accord a:hover{
-    color:#f2f2f2;
-    text-decoration: none;
+.data-container p{
+    color: #3b945e;
+    font-size: 1rem;
+    margin-top: -5px;
+}
+.data-container a:hover{
+    color:#3b945e;
+}
+/* h3 text */
+.data-container h3{
+  font-weight: 800;
+  font-size: 1.5em;
+  width: 10em;
+  line-height: 1.2em;
+  padding-bottom: 0.5rem;
+  background: conic-gradient(
+    #182628 16.666%, 
+    #65ccb8 16.666%, 
+    #57ba98 33.333%, 
+    #3b945e 33.333%,
+    #182628 50%, 
+    #65ccb8 50%, 
+    #57ba98 66.666%, 
+    #3b945e 66.666%, 
+    #182628 83.333%, 
+    #65ccb8 83.333%  
+   );
+  background-size: 57%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  animation: rainbow-text-animation-rev 0.5s ease forwards;
+
+  cursor: pointer;
 }
 
+.data-container h3:hover{
+    animation: rainbow-text-animation 0.5s ease forwards;
+}
 
+@keyframes rainbow-text-animation {
+    0% {
+      background-size: 57%;
+      background-position: 0 0;
+    }
+    20% {
+      background-size: 57%;
+      background-position: 0 1em;
+    }
+    100% {
+      background-size: 300%;
+      background-position: -9em 1em;
+    }
+  }
+  
+  /* Move the background and make it smaller. */
+  /* Animation shown when entering the page and after the hover animation. */
+  @keyframes rainbow-text-animation-rev {
+    0% {
+      background-size: 300%;
+      background-position: -9em 1em;
+    }
+    20% {
+      background-size: 57%;
+      background-position: 0 1em;
+    }
+    100% {
+      background-size: 57%;
+      background-position: 0 0;
+    }
+  }

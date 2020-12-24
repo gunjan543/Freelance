@@ -90,6 +90,7 @@ const userSchema = new mongoose.Schema({
           _id:false,
           personId:String,
           jobId:String, 
+          jobTitle:String
         }]
       },
       {

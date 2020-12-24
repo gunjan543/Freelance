@@ -1,38 +1,52 @@
 import React from 'react';
-import '../Header/header.css';
-import Navbars from './Navbar';
-import './dashboard.css';
+import Navbar2 from './Navbar2';
+import './styles.css';
 import { Component } from 'react';
-import Axios from 'axios';
-import { useHistory } from "react-router-dom";
+import lady from "../images/lady.png";
 
 export default class EmployerDash extends Component {
   constructor(props){
     super();
+    let { name } = JSON.parse(localStorage.getItem('user'));
     this.state = {
       category:'employee',
-    
+      name:name
     }
-   
-    
     }
-
+    componentDidMount () {
+      const script = document.createElement("script");
+      script.src = "./theme.js";
+      script.async = true;
+      document.body.appendChild(script);
+  }
     render(){ 
       const {history} = this.props;
-      
       function handleClick(){
-      
-        history.push("/addJob");
+      history.push("/addJob");
       }
         
     return ( 
-      <div>
-  <div className="dash"> 
-  <Navbars />
-  </div>
-  {/* <div>{ this.displayUser()}</div> */}
-  <button type = "Submit" onClick = {handleClick}>Add a Job </button>
-  </div>
-
+    <div className="employer">
+    <div className="dash"> 
+    <Navbar2 />
+    </div>
+    {/* <div>{ this.displayUser()}</div> */}
+    <button class="logoutBtn">
+        <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span>Logout</span>
+      </button>
+      <div className="employerUser">
+    <h2>Welcome {this.state.name}</h2>
+    <h6>Nice to see you again!</h6>
+    <h4>Want a suitable employee for your work?</h4>
+    <button type = "Submit" onClick = {handleClick}>Just Add a Job </button>
+    <h5>You will soon be hearing from interested employees in the requests tab</h5>
+    <img  className="empImg" src={lady} alt = ""/>
+    </div>
+   
+    </div>
 );}
     }
