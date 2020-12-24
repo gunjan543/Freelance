@@ -48,7 +48,7 @@ router.post('/getUsers', (req, res)=>{
         res.send(users);
     })
     })
-    let applicants=[];
+    let applicants = [{applicant:{}, jobTitle:" "}]
     router.post('/getApplicants', (req, res)=>{
         
         
@@ -56,9 +56,10 @@ router.post('/getUsers', (req, res)=>{
         then(users =>{
            users[0].request.map((currentValue) => {
             console.log(currentValue.personId);
+            console.log(currentValue.jobTitle);
              User.find({_id:currentValue.personId}).then(
                  applicant=>{
-                       applicants.push(applicant[0]);  
+                       applicants.push({applicant:applicant[0],jobTitle:currentValue.jobTitle});  
                  }
              )
            }
@@ -91,15 +92,16 @@ router.post('/jobApplied',(req,res)=>{
     let jobId = req.body.jobID;
     let employeeId = req.body.employeeID;
     let employerId=req.body.employerId;
+    let jobTitle=req.body.jobTitle;
     User.findOneAndUpdate(
         {_id:employerId},
-        { "$addToSet": {"request": {personId:employeeId,jobId:jobId}} },
+        { "$addToSet": {"request": {personId:employeeId,jobId:jobId,jobTitle:jobTitle}} },
         {upsert:true},function(err, doc){
       });
 
       User.findOneAndUpdate(
         {_id:employeeId},
-        { "$addToSet": {"request": {personId:employerId,jobId:jobId}} },
+        { "$addToSet": {"request": {personId:employerId,jobId:jobId,jobTitle:jobTitle}} },
         {upsert:true},function(err, doc){
       });
       return res.send('Succesfully saved.');
