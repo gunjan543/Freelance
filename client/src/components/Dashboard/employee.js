@@ -1,45 +1,34 @@
 import React from "react";
 import Axios from 'axios';
+import Navbar2 from './Navbar2';
+import './dashboard.css';
+import './styles.css';
+import lady from "../images/lady.png";
 
 class EmployeeDash extends React.Component {
   constructor(props) {
     super(props);
+    let { name } = JSON.parse(localStorage.getItem('user'));
     this.state = {
       jobs: [{}],
       category: "",
-      // duration:"",
-      // yearsOfExperience:""
+      name:name
     };
   }
-
-
-
   handleChangeCategory = event => {
     this.setState({ category: event.target.value });
   };
 
-  // handleChangeDuration = event => {
-  //   this.setState({ duration: event.target.value });
-  // };
-
-  // handleChangeYearsOfExperience = event => {
-  //   this.setState({ yearsOfExperience: event.target.value });
-  //   console.log(state.yearsOfExperience);
-  // };
 
   getUnique(arr, comp) {
     const unique = arr
       //store the comparison values in array
       .map(e => e[comp])
-
       // store the keys of the unique objects
       .map((e, i, final) => final.indexOf(e) === i && i)
-
       // eliminate the dead keys & store unique objects
       .filter(e => arr[e])
-
       .map(e => arr[e]);
-
     return unique;
   }
   sendRequest(jobs){
@@ -67,98 +56,60 @@ class EmployeeDash extends React.Component {
     
 
     const CategoryuniqueJobs = this.getUnique(this.state.jobs, "category");
-    // const DurationuniqueJobs = this.getUnique(this.state.jobs, "duration");
-    // const YearsOfExperienceuniqueJobs = this.getUnique(this.state.jobs, "yearsOfExperience");
-   
     const jobs = this.state.jobs;
     const category = this.state.category;
-    // const duration = this.state.duration;
-    // const yearsOfExperience = this.state.yearsOfExperience;
-
     const filterCategoryDropdown = jobs.filter(function(result) {
       return result.category === category;
     });
-    // const filterDurationDropdown = jobs.filter(function(result) {
-    //   return result.duration === duration;
-    // });
-    // const filterYearsOfExperienceDropdown = jobs.filter(function(result) {
-    //   return result.yearsOfExperience === yearsOfExperience;
-    // });
 
     return (
-      <div>
+      <div className="employeeDash">
         {/* select category */}
-
-          <label>
-            Select Category
+         <Navbar2 />
+         <button class="logoutBtn">
+        <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span>Logout</span>
+        </button>
+        <h2>Welcome {this.state.name}</h2>
+        <h3>Nice to see you again! :)</h3>
+        <h4>Apply to jobs by selecting your area of specialisation</h4>
+         <div className="employee">
+         <div className="select">
             <select
               value={this.state.category}
               onChange={this.handleChangeCategory}
             >
+              <option id="first">Select category</option>
               {CategoryuniqueJobs.map(job => (
                 <option key={job._id} value={job.category}>
                   {job.category}
                 </option>
               ))}
             </select>
-          </label>
+        </div>
+        </div>
           <div>
             {filterCategoryDropdown.map(job => (
-              <div key={job._id} style={{ margin: "10px" }}>
-                {job.title}
+              <div key={job._id}  className="dropdownEmployee">
+                <div className="data-containerss"><h3>Organisation Name : </h3><p>{job.organisationName}</p></div>
+                <div className="data-containerss"><h3>Job Title : </h3><p>{job.title}</p></div>                                     
+                <div className="data-containerss"><h3>Job Description : </h3><p>{job.description}</p></div>  
+                <div className="data-containerss"><h3>Duration : </h3><p>{job.duration} months</p></div>  
+                <div className="data-containerss"><h3>Specialisation : </h3><p>{job.specialisation}</p></div>  
+                <div className="data-containerss"><h3>Skills : </h3><p>{job.skills}</p></div>  
+                <div className="data-containerss"><h3>package offered : </h3><p>{job.ctc}</p></div>  
+                <div className="data-containerss"><h3>Location : </h3><p> {job.location}</p></div>  
                 <button onClick={this.sendRequest(job)}>Apply Now</button>
                 <br />
               </div>
             ))}
-          </div>
-
-{/* select duration */}
-
-          {/* <label>
-            Select Duration
-            <select
-              value={this.state.duration}
-              onChange={this.handleChangeDuration}
-            >
-              {DurationuniqueJobs.map(job => (
-                <option key={job._id} value={job.duration}>
-                  {job.duration}
-                </option>
-              ))}
-            </select>
-          </label>
-          <div>
-            {filterDurationDropdown.map(job => (
-              <div key={job._id} style={{ margin: "10px" }}>
-                {job.title}
-                <br />
-              </div>
-            ))}
-          </div> */}
-
-{/* select yearsOfExperience */}
-          {/* <label>
-            Select Years Of Experience
-            <select
-              value={this.state.yearsOfExperience}
-              onChange={this.handleChangeYearsOfExperience}
-            >
-              {YearsOfExperienceuniqueJobs.map(job => (
-                <option key={job._id} value={job.yearsOfExperience}>
-                  {job.yearsOfExperience}
-                </option>
-              ))}
-            </select>
-          </label>
-          <div>
-            {filterYearsOfExperienceDropdown.map(job => (
-              <div key={job._id} style={{ margin: "10px" }}>
-                {job.title}
-                <br />
-              </div>
-            ))}
-          </div> */}
-        
+          
+          </div>  
+          <h5>You will soon be hearing from interested employers</h5>
+          <img className="empImg" src={lady} alt = ""/>      
       </div>
     );
   }

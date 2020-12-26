@@ -1,19 +1,141 @@
-.dash
-{
-    background-color: #65CCB8;
-    font-family: 'Quicksand', sans-serif;
-    margin-top: 0px;
-}
-
-.help h1
-{
+.employeeDash{
     text-align: center;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
-    font-weight: 900;
-    color: #f2f2f2;
-}
-.help{
-    background-color:#182628;
+    margin-top: 8%;
 }
 
+.employeeDash h2{
+    font-weight: 800;
+}
+
+.employeeDash h3{
+    color: #3b945e;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.employeeDash h4{
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 6%;
+}
+
+.employeeDash h5{
+    color: #3b945e;
+    font-weight: 800;
+    font-size: 1rem;
+    padding-top: 2rem;
+    
+}
+.employeeDash img{
+    height:30vh;
+    width:35vh;
+    margin:auto;
+   padding-top: 1rem;
+  
+}
+
+.employee{
+    margin-left: 42%;
+    margin-top: 3%;
+}
+
+.select select { 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    -ms-appearance: none; 
+    appearance: none; 
+    outline: 0; 
+    background: #2C3E50; 
+    background-image: linear-gradient(180deg,#57ba98,#3b945e);
+    border:2px solid black; 
+    font-weight: 800;
+
+} 
+.select { 
+    position: relative; 
+    display: block; 
+    width: 20em; 
+    height: 3em; 
+    line-height: 3; 
+    background: #2C3E50; 
+    overflow: hidden; 
+    border-radius: .25em; 
+    
+} 
+.select select { 
+    width: 100%; 
+    height: 100%; 
+    margin: 0; 
+    padding: 0 0 0 .5em; 
+    color: #fff; 
+    cursor: pointer; 
+    padding-left: 3rem;
+} 
+select::-ms-expand { 
+    display: none; 
+}  
+.select::after { 
+    content: '\25BC'; 
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    padding: 0 1em; 
+    background: #34495E; 
+    pointer-events: none; 
+} 
+.select:hover::after { 
+    color:#3b945e ; 
+} 
+  
+.dropdownEmployee{
+    margin-left: 30%;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    border-left-width: 8px;
+    width:40%;
+    padding:1em;
+    background-color: #ecf3f9;
+    box-shadow: 5px 5px 2px grey;
+}
+
+.dropdownEmployee button{
+    width:30%;
+}
+.data-containerss{
+    display: flex;
+}
+.data-containerss p{
+    font-weight: 900;
+    font-size: 1rem;
+    padding-left: 8px;
+    margin-top: -1%;
+    color:#3b945e;
+}
+
+.data-containerss h3{
+    font-weight: 900;
+    color: #182628;
+}
+
+
+@media only screen and (max-width: 600px){
+  .employeeDash {
+    margin-top: 13%;
+  }
+
+  .employeeDash h4{
+      font-size: 1rem;
+      margin-left: 5%;
+  }
+  .select{
+      width: 16em;
+      margin-left: -20%;
+  }
+  .dropdownEmployee{
+      width:60%;
+  }
+  .dropdownEmployee button{
+      width:40%;
+  }
+}

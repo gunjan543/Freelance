@@ -6,12 +6,14 @@
     top:15%;
     margin-left: -200px; /* margin is -0.5 * dimension */
     margin-top: -55px; 
-   
 }
 
-p{
-    color: black;
+.data-container h1{
+    font-weight: 800;
+    margin-left: 5rem;
+    font-size: 2.5rem;
 }
+
 
 .data-containers{
     display:flex;
@@ -28,7 +30,12 @@ p{
     font-size: 1rem;
     font-weight: 800;
 }
-
+.data-container h3{
+  margin-left: 3%;
+}
+.data-container h4,.data-container a{
+  margin-left: 5%;
+}
 .data-container p{
     color: #3b945e;
     font-size: 1rem;
@@ -38,10 +45,10 @@ p{
     color:#3b945e;
 }
 /* h3 text */
-.data-container h3{
+.data-container h3,.data-container h1{
   font-weight: 800;
   font-size: 1.5em;
-  width: 10em;
+  width: 16em;
   line-height: 1.2em;
   padding-bottom: 0.5rem;
   background: conic-gradient(
@@ -56,7 +63,7 @@ p{
     #182628 83.333%, 
     #65ccb8 83.333%  
    );
-  background-size: 57%;
+  background-size: 100%;
   background-repeat: repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
@@ -64,11 +71,24 @@ p{
 
   cursor: pointer;
 }
-
+.data-container h1{
+  font-size: 2rem;
+}
 .data-container h3:hover{
     animation: rainbow-text-animation 0.5s ease forwards;
 }
+.data-container h1:hover{
+    animation: rainbow-text-animation 0.5s ease forwards;
+}
 
+.data-container:last-child{
+  padding-bottom: 10rem;
+}
+
+.data-container ::checkbox { 
+    color: red;
+    opacity: 1; 
+  }
 @keyframes rainbow-text-animation {
     0% {
       background-size: 57%;

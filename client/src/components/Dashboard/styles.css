@@ -236,6 +236,12 @@
  padding-top: 1rem;
 }
 
+.employerUser h5{
+  font-weight: 800;
+  font-size: 1rem;
+  color: #3b945e;
+}
+
 .requests h1{
   font-size: 20rem;
 }

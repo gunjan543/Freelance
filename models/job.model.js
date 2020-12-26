@@ -13,17 +13,12 @@ const jobSchema = new mongoose.Schema({
         type:String,     
     },
 
-    
-    
-
-
     description: {
       type: String,
       trim: true,
       required: true
     },
 
-   
     organisationName:{
       type:String
     },
@@ -54,7 +49,9 @@ const jobSchema = new mongoose.Schema({
     postalCode:{
       type:String
     },
-    
+    ctc:{
+      type:String
+    }
   },
   {
     timeStamp: true
