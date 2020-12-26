@@ -92,7 +92,7 @@ const Login = ({history}) => {
                     if(isAuth().subCategory==='technical')
                     history.push('/employeeDash/technical')
                     else
-                    history.push('/employeeDash/nonTechnical')
+                    history.push('/nonTechnical')
                   }
                 }
                 else {

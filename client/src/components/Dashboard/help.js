@@ -1,12 +1,12 @@
 import React from 'react';
 import './dashboard.css';
-import Navbars from './Navbar';
+import Navbar2 from './Navbar2';
 
 const Help = () => {
     return ( 
         <div className="help">
         <div className="dash">
-        <Navbars />
+        <Navbar2 />
         </div>
         <h1>Contact our Developers</h1>
         <div className = "profile-block">

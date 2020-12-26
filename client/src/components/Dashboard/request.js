@@ -48,7 +48,6 @@ export default class Requests extends Component{
                    <h5>Contact for further procedure</h5>
                    <p>Email:{user.applicant.email}</p>
                    <p>Contact Number:{user.applicant.contactNumber}</p>
-                  
                    </div>
                )
            })}

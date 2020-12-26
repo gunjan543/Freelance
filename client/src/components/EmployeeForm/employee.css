@@ -15,22 +15,23 @@
 
 .box2 h2
 {
-  margin: 0 0 3rem;
+  margin: 0 0 1rem;
   padding: 0;
   color: #f2f2f2;
   font-weight: 900;
+
 }
 
 .box2 button
 {
-   margin-bottom: 8px;
+  margin-bottom: 8px;
    font-size: 1.1rem;
-   padding: 8px;
+   width:70%;
 }
 
 .box2 p
 {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     letter-spacing: 1px;
     font-weight: 700;
 }

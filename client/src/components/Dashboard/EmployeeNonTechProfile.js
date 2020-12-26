@@ -1,81 +1,73 @@
-import React from 'react';
-import './profile.css';
-import Accordion from 'react-bootstrap/Accordion';
-import "../Header/header.css";
-import Card from 'react-bootstrap/Card';
-import Navbars from './Navbar';
+import React ,{Component} from 'react';
+import Navbar2 from './Navbar2';
+import Axios from 'axios';
 
-const EmployeeTechProfile = () => {
-    return ( 
-        <div>
-          <div className="header"><Navbars /></div>
-       
-        <div className="accord">
-        <Accordion>
-        <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="0">
-        <h1><i class="fa fa-user"></i>Personal Info</h1>
-        </Accordion.Toggle>
-        <Accordion.Collapse eventKey="0">
-        <Card.Body>
-        <div className="container"><h4>Full Name - </h4><p>John Baeur</p></div>
-        <div className="container"><h4>Date of Birth - </h4><p>04/07/2000</p></div>
-        <div className="container"><h4>Gender - </h4><p>Male</p></div>           
-        </Card.Body>
-        </Accordion.Collapse>
-        </Card>
-        <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="1">
-        <h1><i class="fa fa-address-book"></i>Contact Details</h1>
-       </Accordion.Toggle>
-       <Accordion.Collapse eventKey="1">
-       <Card.Body>
-        <div className="container"><h4>Email - </h4><p>John@gmail.com</p></div>
-        <div className="container"><h4>Contact Number - </h4><p>7656768767</p></div>
-        <div className="container"><h4>ID Proof - </h4><p>Driving Licence - 6535667767267</p></div>
-        <div className="container"><h4>Address-</h4><p>543 street , malviya Nagar Jaipur Ahdbj bdyuegdb bdyuegdb</p></div>
-        <div className="container"><h4>Postal Code - </h4><p>203987</p></div>
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card>
-  <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="2">
-        <h1><i class="fa fa-graduation-cap"></i>Specialisation and Skills</h1>
-       </Accordion.Toggle>
-       <Accordion.Collapse eventKey="2">
-       <Card.Body>
-        <div className="container"><h4>Specialisation - </h4><p>Freelancer</p></div>
-        <div className="container"><h4>Skills - </h4><p>Fullstack Web developer</p></div>
-        <div className="container"><h4>Years of experience - </h4><p>5 years</p></div>
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card>
-  <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="3">
-        <h1><i class="fa fa-clock-o"></i>Duration Available</h1>
-       </Accordion.Toggle>
-       <Accordion.Collapse eventKey="3">
-       <Card.Body>
-       <input type="checkbox" id="duration" name="duration" value="Available" /><label for="Duration"> Available </label>
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card>
-  <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="4">
-        <h1><i class="fa fa-key"></i>Change password</h1>
-       </Accordion.Toggle>
-       <Accordion.Collapse eventKey="4">
-       <Card.Body>
-        <div className="container"><h4>password - </h4><p>JOHNABC</p></div>
-        <div className="container"><a href="#">Change password</a></div>
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card>
-</Accordion>
-</div>
-        </div>
-        
+export default class EmployeeNonTechProfile extends Component {
+
+  constructor(){
+  super();
+  let { email} = JSON.parse(localStorage.getItem('user'));
+  this.state = {
+    email:email,
+    user:{}
+  }
+  }
+  
+  componentDidMount(){
+
+    console.log(this.state.email);
+   Axios
+    .post(`${process.env.REACT_APP_API_URL}/getUser`, this.state)
+    .then( res=>{ 
+     const user = res.data;
+     this.setState({user});
+  }
+    )
+  }
+  render(){  
+  return ( 
+      <div>
+      <Navbar2 />
+      <button class="logoutBtn">
+      <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
+      <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+      <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+      </svg>
+      <span>Logout</span>
+      </button>
+      
+      <div className="data"> 
+      <div className="data-container"><h1>Profile</h1></div>
+      <div className="data-container">
+      <h3>Personal Info  <i class="fa fa-user"></i></h3>
+      <div className="data-containers"><h4>Full Name - </h4><p>{this.state.user.name}</p></div>
+      <div className="data-containers"><h4>Date of Birth - </h4><p>{this.state.user.dateOfBirth}</p></div>    
+      <div className="data-containers"><h4>Gender -  </h4><p> {this.state.user.gender}</p></div>
+      </div>
+      <div className="data-container">
+      <h3>Contact Details  <i class="fa fa-address-book"></i></h3>
+      <div className="data-containers"><h4>Email - </h4><p>{this.state.user.email}</p></div>
+      <div className="data-containers"><h4>Contact Number - </h4><p>{this.state.user.contactNumber}</p></div>
+      <div className="data-containers"><h4>ID Proof - </h4><p>{this.state.user.idProof}-{this.state.user.idNumber}</p></div>
+      <div className="data-containers"><h4>Address-</h4><p>{this.state.user.address}</p></div>
+      <div className="data-containers"><h4>Postal Code - </h4><p>{this.state.user.postalCode}</p></div>
+      </div>
+      <div className="data-container">
+      <h3>Specialisation and Skills<i class="fa fa-graduation-cap"></i></h3>
+      <div className="data-containers"><h4>Specialisation - </h4><p>{this.state.user.specialisation}</p></div>
+      <div className="data-containers"><h4>Skills - </h4><p>{this.state.user.skills}</p></div>
+      <div className="data-containers"><h4>Years of experience - </h4><p>{this.state.user.yearsOfExperience}</p></div>
+      </div>
+      <div className="data-container">
+      <h3>Duration Available<i class="fa fa-clock-o"></i></h3>
+      <input type="checkbox" id="duration" name="duration" value="Available" /><label for="Duration"> Available </label>
+      </div>
+      <div className="data-container">
+      <h3>Change password  <i class="fa fa-key"></i></h3> 
+      <div className="data-containers"><a href="/users/password/forget">Change password</a></div>
+      </div>
+      </div>
+      </div>
      );
 }
- 
-export default EmployeeTechProfile;
+}

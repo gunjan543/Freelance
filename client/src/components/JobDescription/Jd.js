@@ -24,8 +24,8 @@ export default class JobDescription extends Component {
             skills:'',
             yearsOfExperience:'',
             location:'',
-            postalCode:''
-            
+            postalCode:'',
+            ctc:''
         };
         
       } 
@@ -50,15 +50,11 @@ export default class JobDescription extends Component {
             this.props.history.push("/employerDash");
             
         }
-
-
         )
         .catch(err => {
             console.log(err);
               
-            });
-           
-
+            });   
     };    
         
     render(){
@@ -76,15 +72,36 @@ export default class JobDescription extends Component {
                 <div class="input_field"><label>Organisation Name</label><input type="text" className="input" onChange={this.handleChange('organisationName')}/></div>
                 <div class="input_field"><label>Title</label><input type="text" className="input"  onChange={this.handleChange('title')} required/></div>
                 <div class="input_field"><label>Description</label><input type="text" className="input"  onChange={this.handleChange('description')} required/></div>
-                <div class="input_field"><label>Category</label><input type="text" className="input"  onChange={this.handleChange('category')} required/></div>
+                <div class="input_field"><label>Category</label>
+                <div class="custom_select">
+                <select onChange={this.handleChange('category')}>
+                <option value="">Select</option>
+                <option value="Technical">Technical</option>
+                <option value="Non Technical">Non Technical</option>
+                </select>
+                </div>
+                </div>
                 <div class="input_field"><label>Contact Number</label><input type="text" className="input"  onChange={this.handleChange('contactNumber')} required/></div>
-                <div class="input_field"><label>Duration</label><input type="text" className="input"  onChange={this.handleChange('duration')} required/></div>
-                <div class="input_field"><label>Specialisation</label><input type="text" className="input"  onChange={this.handleChange('specialisation')} required/></div>
+                <div class="input_field"><label>Duration(in months)</label><input type="text" className="input"  onChange={this.handleChange('duration')} required/></div>
+                <div class="input_field"><label>Specialisation</label>
+                <div class="custom_select">
+                <select onChange={this.handleChange('specialisation')}>
+                <option value="">Select</option>
+                <option value="Painter">Painter</option>
+                <option value="Plumber">Plumber</option>
+                <option value="Staff">Staff</option>
+                <option value="House Worker/Maid">House Worker/Maid</option>
+                <option value="Engineer/Freelancer">Engineer/Freelancer</option>
+                <option value="Teacher">Teacher</option>
+                </select>
+                </div>
+                </div>
                 <div class="input_field"><label>Skills</label><input type="text" className="input"  onChange={this.handleChange('skills')} required/></div>
                 <div class="input_field"><label>Years Of Experience</label><input type="text" className="input"  onChange={this.handleChange('yearsOfExperience')} required/></div>
+                <div class="input_field"><label>Package Offered(LPA)</label><input type="text" className="input"  onChange={this.handleChange('ctc')} required/></div>
                 <div class="input_field"><label>Location</label><input type="text" className="input"  onChange={this.handleChange('location')} required/></div>
                 <div class="input_field"><label>Postal Code</label><input type="text" className="input"  onChange={this.handleChange('postalCode')} required/></div>
-                <button type = "submit">Submit</button>
+                <div class="input_field"><input type="submit" className="btn" value="Submit"/></div>
             </form>
             </div>
             </div>
