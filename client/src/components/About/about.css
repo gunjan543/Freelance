@@ -1,78 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
 
-#about{
-	padding-top:6rem;
-	border:10px solid #182628;
-	font-family: "Quicksand", sans-serif;
-	background-color: white;
-	text-align:center;
-	padding-bottom: 5rem;
-	overflow: hidden;
-
-
-
-}
-.about-block{
-	
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 10px;
-	width:100%;
-	color:white;
-	margin:100px auto;
-	margin-top:50px;
-	background-image: linear-gradient(to bottom right, #182628, #3B945E); 
-	padding:4rem;
-	overflow: hidden;
-}
-
-.about-block p{
-
-	margin-top: 25px;
-	font-size: 15px;
-
-	
-
-}
-
-.about-section{
-    background: url("images/Freelancing-1.jpg") no-repeat left;
-    background-size: 55%;
-    background-color: red;
-    overflow: hidden;
-    padding: 100px 0;
-    
- 
-}
-
-.inner-container{
-
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 10px;
-    width: 55%;
-    float: right;
-    background-color: #fdfdfd;
-    background-image: linear-gradient(to bottom right, #182628, #3B945E); 
-    padding: 100px;
-    color:#f2f2f2;
-    margin:auto;
-}
-
-.inner-container h1{
-    margin-bottom: 30px;
-    font-size: 30px;
-    font-weight: 900;
-}
-
-.text{
-    font-size: 13px;
-    
-    line-height: 30px;
-    text-align: justify;
-    margin-bottom: 40px;
-    color:#f2f2f2;
-}
 
 
 .profile-block{
@@ -88,7 +15,7 @@
 	margin:20px 40px;
 	background-color: #182628;
 	font-family: "Quicksand", sans-serif;
-	/*color:#f2f2f2;*/
+	color:#f2f2f2;
 }
 
 
@@ -149,8 +76,78 @@
 
 }
 
+.about-us-section{
+
+    background-color: #f2f2f2;
+    height:100vh;
+    display: grid;
+    align-content: center;
+}
 
 
+.about-us-content{
+
+  padding:24vw;
+  text-align: center;
+  
+}
+
+.about-us-content p{
+    font-size: 15px;
+}
+.about-us-heading{
+    text-align: center !important;
+    font-family: 'oswald';
+    font-size: 4.5rem;
+    margin-bottom: 2rem;;
+}
+.right-color{
+    width:25vw;
+    height:70vh;
+    background-color: #f2f2f2;
+}
+
+.vertical-text{
+    color:#ffffff;
+	writing-mode: vertical-rl;
+	font-size: 1.5rem;
+    text-orientation: upright;
+    font-family: 'Oswald', sans-serif;
+}
+.horizontal-text{
+
+    display: none;
+}
+/* Underline From Center */
+.hvr-underline-from-center {
+    
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+  .hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: #57BA98;
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+  }
 @media screen and (max-width:1200px){
     .inner-container{
         padding: 80px;
@@ -182,6 +179,19 @@
 		flex-direction: column;
 	}
 
+	.vertical-text{
+	display:none;
+    }
+    .horizontal-text{
+        
+        color:#ffffff;
+        display:initial;
+        text-align: center;
+        margin-bottom: 2rem;
+        
+    }
+
+    
 	.profile{
 		display:flex;
 		flex-direction: column;

@@ -35,8 +35,9 @@ class App extends Component{
         <Route path="/" exact strict render={props =>
           <div>
            < Header />
-           <About/>
            <Services/>
+           <About/>
+          
            <Footer/>
          </div>
 } />  

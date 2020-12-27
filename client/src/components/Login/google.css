@@ -18,7 +18,7 @@
     padding-right: 10px;
 }
 
- button:hover{
+ .google button:hover{
     background-color:#182628;
     transform: scale(1.02);
 }
