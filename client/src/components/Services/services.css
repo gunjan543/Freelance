@@ -1,33 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+*{
+	scroll-behavior: smooth;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
 
+.outer-section{
 
-
-#services{
-	padding: 5rem;
-	font-family: "Quicksand", sans-serif;
-	background-color: #f2f2f2;
-	text-align:center;
+	background-image: none;
+	color:#111111;
+	
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	font-family: "quicksand", sans-serif;
+	height:100vh;
 
 }
 
-.services i{
-
-	color:#3B945E;
-	font-size:4rem;
-	margin-bottom: 1rem;
+.services-title-text{
+	
+	height: 100vh;
+	justify-content: center;
+	width:50vw;
+	position:absolute;
+	color: #182628;
+	display: grid;
+	
+	align-self: center;
+	align-items: center;
+	align-content: center;
+	vertical-align: middle;
+	
+	padding:10px 150px;
 }
 
-.block{
-	-webkit-border-radius: 25px;
--moz-border-radius: 25px;
-border-radius: 25px;
-cursor: pointer;
-background-color: white;
+.services-section{
+	background-color: #ffffff;
+	
+	margin-right:10vw;
+	margin-top: 15vh;
+	float:right;
+	justify-content: center;
+	width:45vw;
+	position: relative;;
+	padding:50px;
+	display: grid;
+	border-radius: 10px;
+	align-self: center;
+	align-items: center;
+	align-content: center;
+	vertical-align: middle;
 }
 
-.block:hover{
-
-	-webkit-box-shadow: -2px 1px 21px -6px rgba(24,38,40,1);
--moz-box-shadow: -2px 1px 21px -6px rgba(24,38,40,1);
-box-shadow: -2px 1px 21px -6px rgba(24,38,40,1);
+.services-section .row{
+	padding:20px;
 }
+
+
+
+.services-title-text h1{
+	font-family: 'Oswald', sans-serif;
+	text-align: left;
+	font-size: 3.7rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	
+}
+
+
+.line{
+	position: relative;
+	width:40px;
+	height:5px;
+	background-color: #182628;
+	margin-bottom: 10px;;
+}
+.services-title-text p{
+	
+	text-align: left;
+}
+
+.services-section{
+	text-align: center;
+}
+
+.service-icon{
+	align-content: center;
+	width:6.5rem;
+	height: 5.5rem;
+	border-radius: 50%;
+
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
+@media (max-width:1075px){
+
+	.outer-section{
+		background:#409E7C ;
+		height:200vh;
+		
+	}
+	.line{
+		display: none;
+	}
+	.services-title-text{
+		
+		width:100vw;
+		align-content: center;
+		align-self: center;
+		height: 70vh;
+		
+	}
+	.services-title-text h1{
+		text-align: center;
+	}
+
+	.services-title-text p{
+		text-align: center;
+	}
+
+	.services-section{
+
+		float:none;
+		position: absolute;
+		margin-top:50vh;
+		margin-left: 15vw;
+		width:70vw;
+		
+	
+
+		
+	}
+}
+

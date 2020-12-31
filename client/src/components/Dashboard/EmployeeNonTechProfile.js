@@ -1,7 +1,8 @@
 import React ,{Component} from 'react';
 import Navbar2 from './Navbar2';
 import Axios from 'axios';
-
+import {Redirect} from "react-router-dom";
+import {isAuth} from "../../helpers/auth"
 export default class EmployeeNonTechProfile extends Component {
 
   constructor(){
@@ -27,6 +28,7 @@ export default class EmployeeNonTechProfile extends Component {
   render(){  
   return ( 
       <div>
+       {!isAuth()?<Redirect to='/login'/> :null}
       <Navbar2 />
       <button class="logoutBtn">
       <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
@@ -57,10 +59,6 @@ export default class EmployeeNonTechProfile extends Component {
       <div className="data-containers"><h4>Specialisation - </h4><p>{this.state.user.specialisation}</p></div>
       <div className="data-containers"><h4>Skills - </h4><p>{this.state.user.skills}</p></div>
       <div className="data-containers"><h4>Years of experience - </h4><p>{this.state.user.yearsOfExperience}</p></div>
-      </div>
-      <div className="data-container">
-      <h3>Duration Available<i class="fa fa-clock-o"></i></h3>
-      <input type="checkbox" id="duration" name="duration" value="Available" /><label for="Duration"> Available </label>
       </div>
       <div className="data-container">
       <h3>Change password  <i class="fa fa-key"></i></h3> 

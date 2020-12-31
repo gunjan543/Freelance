@@ -1,16 +1,16 @@
 import React from 'react';
 import "./footer.css" ;
-import logo from "./logo.png";
+import logo from "../images/logo.png";
 
 function Contact(){
 
 
 
 	return(
-    <footer id = "#footer">
+    <footer id = "footer">
       <nav className="footer-inner">
         <section className="footer-item">
-          <img src={logo} alt = ""/>
+          <img src={logo} href = "/" alt = ""/>
 
           <h2>Become your own boss<br/>
             <b className="color">No 9 to 5</b>

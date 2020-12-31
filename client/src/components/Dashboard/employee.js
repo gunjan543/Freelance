@@ -64,7 +64,7 @@ class EmployeeDash extends React.Component {
 
     return (
       <div className="employeeDash">
-        {/* select category */}
+        
          <Navbar2 />
          <button class="logoutBtn">
         <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">

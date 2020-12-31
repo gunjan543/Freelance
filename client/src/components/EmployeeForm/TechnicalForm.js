@@ -16,7 +16,6 @@ export default class TechnicalForm extends Component {
             category:category,
             dateOfBirth:'',
             contactNumber:0,
-            durationAvailable:'',
             highestQualification:'',
             specialisation:'',
             skills:'',
@@ -74,7 +73,6 @@ export default class TechnicalForm extends Component {
                 <div class="input_field"><label>Date of Birth</label><input type="date" className="input" onChange = {this.handleChange('dateOfBirth')} required/></div>
                 <div class="input_field"><label>Email address</label><input type="email" className="input" value = {this.state.email} required/></div>
                 <div class="input_field"><label>Contact Number</label><input type="text" className="input" onChange = {this.handleChange('contactNumber')} required/></div>
-                <div class="input_field"><label>Duration available(in months)</label><input type="number" className="input" onChange = {this.handleChange('durationAvailable')} required/></div>
                 <div class="input_field"><label>Highest Qualification</label><input type="text" className="input" onChange = {this.handleChange('highestQualification')} required/></div>
                 
                 <div class="input_field" onChange = {this.handleChange('specialisation')}><label>Specialisation</label>

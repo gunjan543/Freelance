@@ -3,6 +3,8 @@ import './profile.css';
 import './styles.css';
 import Navbar2 from './Navbar2';
 import Axios from 'axios';
+import {Redirect} from "react-router-dom";
+import {isAuth} from "../../helpers/auth"
 export default class EmployerProfile extends Component {
 
   constructor(){
@@ -28,6 +30,7 @@ export default class EmployerProfile extends Component {
     render(){ 
     return ( 
         <div>
+         {!isAuth()?<Redirect to='/login'/> :null}
           <Navbar2 />
           <button class="logoutBtn">
           <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">

@@ -3,7 +3,7 @@ import Logo from '../Logo/logo';
 import './employee.css';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
+import {  isAuth } from '../../helpers/auth';
 
 export default class EmployerForm extends Component {
     
@@ -62,7 +62,7 @@ export default class EmployerForm extends Component {
     return (  
         
         <div>
-       
+             {!isAuth()?<Redirect to='/login'/> :null}
             <Logo />
             <div className="box3">
             <div class="title">  

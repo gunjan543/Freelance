@@ -1,10 +1,13 @@
 import React from 'react';
 import './dashboard.css';
 import Navbar2 from './Navbar2';
-
+import {Redirect} from "react-router-dom";
+import {isAuth} from "../../helpers/auth"
 const Help = () => {
     return ( 
+		
         <div className="help">
+		 {!isAuth()?<Redirect to='/login'/> :null}
         <div className="dash">
         <Navbar2 />
         </div>

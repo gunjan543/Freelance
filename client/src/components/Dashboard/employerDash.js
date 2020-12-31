@@ -5,6 +5,7 @@ import { Component } from 'react';
 import lady from "../images/lady.png";
 
 export default class EmployerDash extends Component {
+
   constructor(props){
     super();
     let { name } = JSON.parse(localStorage.getItem('user'));

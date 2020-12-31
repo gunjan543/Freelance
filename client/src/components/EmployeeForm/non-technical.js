@@ -18,7 +18,7 @@ export default class NonTechnicalForm extends Component{
           category:category,
           dateOfBirth:'',
           contactNumber:0,
-          durationAvailable:'',
+      
           highestQualification:'',
           specialisation:'',
           skills:'',
@@ -64,7 +64,7 @@ export default class NonTechnicalForm extends Component{
   render() {
   return ( 
     <div>
-         {isAuth() ? <Redirect to='/' /> : null}
+        
             <Logo />
             <div className="box3">
             <div class="title">  
@@ -76,9 +76,7 @@ export default class NonTechnicalForm extends Component{
                <div class="input_field"><label>Name</label><input type="text" className="input" required value = {this.state.name}/></div>
                 <div class="input_field"><label>Date of Birth</label><input type="date" className="input" onChange = {this.handleChange('dateOfBirth')} required/></div>
                 <div class="input_field"><label>Email address</label><input type="email" className="input" value = {this.state.email} required/></div>
-                <div class="input_field"><label>Contact Number</label><input type="text" className="input" onChange = {this.handleChange('contactNumber')} required/></div>
-                <div class="input_field"><label>Duration available(in months)</label><input type="number" className="input" onChange = {this.handleChange('durationAvailable')} required/></div>
-                
+                <div class="input_field"><label>Contact Number</label><input type="text" className="input" onChange = {this.handleChange('contactNumber')} required/></div> 
                 <div class="input_field" onChange = {this.handleChange('specialisation')}><label>Specialisation</label>
 
                 <div class="custom_select">

@@ -48,9 +48,7 @@ const userSchema = new mongoose.Schema({
         contactNumber:{
           type:String
         },
-        durationAvailable:{
-          type:Number
-        },
+ 
         highestQualification:{
           type:String
         },
