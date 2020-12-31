@@ -33,8 +33,8 @@
 
 .profile .profile-img{
 
-	height:260px;
-	width:260px;
+	height:310px;
+	width:300px;
 	border-radius:50%;
 	filter:grayscale(100%);
 	cursor: pointer;
@@ -45,6 +45,26 @@
 
 	filter:grayscale(0);
 }
+
+
+.profile-portfolio{
+ text-align: left !important;
+ color: #ffffff !important;
+ 
+}
+
+.profile-portfolio a{
+    text-align: left !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+   }
+  
+ .profile-portfolio a:hover{
+    text-align: left !important;
+    color: #57BA98 !important;
+    font-weight: bold !important;
+   }
+   
 
 .user-name{
 
@@ -79,7 +99,7 @@
 .about-us-section{
 
     background-color: #f2f2f2;
-    height:100vh;
+   
     display: grid;
     align-content: center;
 }
@@ -87,9 +107,16 @@
 
 .about-us-content{
 
-  padding:24vw;
-  text-align: center;
+  padding:10vw 24vw;
+  text-align: justify;
   
+}
+
+.about-us-content a:hover{
+    color:#57BA98;
+
+
+
 }
 
 .about-us-content p{
@@ -100,7 +127,10 @@
     font-family: 'oswald';
     font-size: 4.5rem;
     margin-bottom: 2rem;;
+    display: inline-block;
 }
+
+
 .right-color{
     width:25vw;
     height:70vh;

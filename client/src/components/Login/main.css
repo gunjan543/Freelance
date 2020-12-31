@@ -1,4 +1,4 @@
-/* body{
+ body{
   background-color: #f2f2f2;
   font-family: 'Quicksand', sans-serif;
   overflow-x: hidden;
@@ -30,7 +30,7 @@ text-align: center;
 margin-top: 120px;
 }
 /*dividing-main*/
-/*
+
 #wrapper {
   display: flex;
   margin-left: 1rem;
@@ -51,7 +51,7 @@ margin-top: 120px;
 }
 
 /*vertical line*/ 
-/*.vertical-row{
+.vertical-row{
   height: 50%;
   width: 3px;
   background:#65ccb8;
@@ -62,7 +62,7 @@ margin-top: 120px;
 }
 
 /*-----------------------------------------------------------------Welcome Signup Page------------------------------------------------------------------------*/
-/*
+
 .welcome-img{
 max-width: 70%;
 }
@@ -146,4 +146,4 @@ background: #57ba98;
 .welcome-img{
   max-width: 50vh;
 }
-} */
+} 

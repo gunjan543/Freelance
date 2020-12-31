@@ -1,0 +1,247 @@
+.navbar2 {
+    font-size: 25px;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #182425;
+    --bg-secondary: #202f31;
+    --transition-speed: 600ms;
+    color: black;
+    background-color: white;
+    margin: 0;
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 600ms ease;
+    z-index: 500;
+    padding: 0;
+  }
+ 
+  .navbar2-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .nav2-item {
+    width: 100%;
+  }
+  
+  .nav2-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+  }
+  
+  .nav2-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  
+  .link2-text {
+    display: none;
+    margin-left: 1rem;
+    text-decoration: none;
+  }
+  
+  .nav2-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+  
+  .fa-primary {
+    color: #57ba98;
+  }
+  
+  .fa-secondary {
+    color: #3b945e;
+  }
+  
+  .fa-primary,
+  .fa-secondary {
+    transition: var(--transition-speed);
+  }
+  
+  .logo2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #f2f2f2;
+    background: var(--bg-secondary);
+    font-size: 1.8rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+  }
+  
+  .logo2 svg {
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+  }
+  
+  .logo2-text
+  {
+    display: inline;
+    position: absolute;
+    left: -999px;
+    transition: var(--transition-speed);
+  }
+  
+  .navbar2:hover .logo2 svg {
+    transform: rotate(-180deg);
+  }
+
+    
+  /* Small screens */
+  @media only screen and (max-width: 600px) {
+    .navbar2 {
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+    }
+  
+    .logo2 {
+      display: none;
+    }
+  
+    .navbar2-nav {
+      flex-direction: row;
+    }
+  
+    .nav2-link {
+      justify-content: center;
+    }
+ 
+  }
+  
+  /* Large screens */
+  @media only screen and (min-width: 600px) {
+    .navbar2 {
+      top: 0;
+      width: 5rem;
+      height: 100vh;
+    }
+  
+    .navbar2:hover {
+      width: 16rem;
+    }
+  
+    .navbar2:hover .link2-text {
+      display: inline;
+    }
+  
+    .navbar2:hover .logo2 svg
+    {
+      margin-left: 11rem;
+    }
+  
+    .navbar2:hover .logo2-text
+    {
+      left: 0px;
+    }
+    .logoutBtn{
+      width: 20%;
+    }
+  }
+  .logoutBtn {
+    position:fixed; 
+    top:20px;
+    right:50px;
+    width:120px; 
+    height:50px; /****set height****/
+    margin:auto;
+    display: inline-block;
+    font-weight: 1100;
+    font-size: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    background: #182628;
+    outline: none;
+    transition: 1s ease-in-out;
+    border: 0px;
+    box-shadow: 2px 2px 3px grey;
+    
+}
+.logoutBtn svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+.logoutBtn:hover {
+  transition: 1s ease-in-out;
+  background: #182425;
+}
+
+.logoutBtn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.logoutBtn span {
+  color:#3b945e;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.employerUser{
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.employerUser h2{
+  font-weight: 700;
+  color:#182628;
+}
+.employerUser h6{
+  color:#57ba98;
+  font-weight: 800;
+}
+
+.employerUser h4{
+  margin-top: 10rem;
+  font-weight: 600;
+  margin-left: 24px;
+}
+
+.employerUser button{
+  width: 20%;
+}
+
+.employerUser h5{
+  color: #57ba98;
+  font-weight: 800;
+  font-size: 15px;
+  padding-top: 1rem;
+  margin-left: 57px;
+}
+
+.employerUser img{
+  height:30vh;
+  width:35vh;
+  margin:auto;
+ padding-top: 1rem;
+}
+
+.employerUser h5{
+  font-weight: 800;
+  font-size: 1rem;
+  color: #3b945e;
+}
+
+.requests h1{
+  font-size: 20rem;
+}

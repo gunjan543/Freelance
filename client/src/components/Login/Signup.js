@@ -2,22 +2,18 @@ import React, {useState} from 'react';
 import Logo from '../Logo/logo';
 //import authSvg from "../assets/auth.svg";
 import {ToastContainer, toast} from 'react-toastify';
-import {authenticate, isAuth} from "../../helpers/auth";
+import {isAuth} from "../../helpers/auth";
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
 import "./main.css";
 import "./Signup.css";
 import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
-import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
-
 
 
 const Register = (history) => {
-  //const history=useHistory();
     const [formData, setFormData] = useState({
 
         name:"",

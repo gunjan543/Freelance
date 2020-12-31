@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import Logo from '../Logo/logo';
-//import authSvg from "../assets/auth.svg";
 import {ToastContainer, toast} from 'react-toastify';
 import {authenticate, isAuth} from "../../helpers/auth";
 import axios from 'axios';
-import {Link,Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import "./main.css";
 import "./Signup.css";
 import "./google.css";
@@ -21,7 +20,7 @@ const Login = ({history}) => {
         textChange: 'Sign In'
       });
 
-      const { email, password1, textChange } = formData;
+      const { email, password1 } = formData;
       const handleChange = text => e => {
         setFormData({ ...formData, [text]: e.target.value });
       };
@@ -92,7 +91,7 @@ const Login = ({history}) => {
                     if(isAuth().subCategory==='technical')
                     history.push('/employeeDash/technical')
                     else
-                    history.push('/employeeDash/nonTechnical')
+                    history.push('/nonTechnical')
                   }
                 }
                 else {
@@ -122,8 +121,9 @@ const Login = ({history}) => {
 
 
     return ( 
-
+     
         <div className="Signup">
+         {isAuth()?<Redirect to='/'/> :null}
             <Logo />
             <ToastContainer/>
             <h1>Log In to BYOB</h1>

@@ -1,0 +1,45 @@
+.requests {
+    margin-top: 5rem;
+}
+.request-data{
+    margin-left: 30%;
+    border-radius: 2rem;
+    width: 50%;
+    margin-top: 3rem;
+    border-left-width: 8px;
+    width:40%;
+    padding:1em;
+    background-color: #ecf3f9;
+    box-shadow: 5px 5px 2px grey;
+}
+
+.rq h3{
+   margin-left: 45%;
+    
+    font-size: 1.8rem;
+}
+
+.request-data h4{
+    font-weight: 800;
+    text-align: center;
+} 
+.request-data h6{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left:2rem ;
+
+     
+}
+
+.request-data h5{
+    color: #57ba98;
+    font-weight: 800;
+    text-align: center; 
+
+}
+.request-data p{
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-left:2rem ;
+
+}

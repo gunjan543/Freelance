@@ -195,21 +195,9 @@ header ul.menu-right li.menu-cta a {
   font-size: 2.5em;
   color: #182628;
   line-height: 1.5em;
-  position: relative;
-  margin-bottom: 1em;
+
 }
 
-#intro .intro-left h1:after {
-  position: absolute;
-  bottom: -24px;
-  left: 0;
-  width: 40px;
-  height: 4px;
-  content: "";
-  border-radius: 5px;
-  background: rgb(192, 50, 50);
-  
-}
 
 #intro .intro-left p {
   font-size: 1.125em;
@@ -226,7 +214,7 @@ header ul.menu-right li.menu-cta a {
   margin-right: 10px;
   padding: 1em;
   text-align: center;
-  color: #fff;
+  color: #f2f2f2;
   border-style: solid;
   border-radius: 5px;
   background: #57BA98;
@@ -272,11 +260,13 @@ header ul.menu-right li.menu-cta a {
 
   header {
     padding: 0 !important;
-    background: #fff;
+   
   }
 
   header.active {
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
+    background-color: #f2f2f2;
+    height: auto;
   }
 
   header.fixed {
@@ -292,7 +282,7 @@ header ul.menu-right li.menu-cta a {
     height: 40px;
     padding-top: 6px;
     border: none;
-    background: #fff;
+    background: #f2f2f2;
   }
 
   header button span {
@@ -394,8 +384,15 @@ header ul.menu-right li.menu-cta a {
     height: 100px;
     border-radius: 50%;
   }
+
+  #intro .intro-right{
+
+    margin:auto;
+    padding-top: 0;
+  }
   #intro .intro-right img {
     width: 380px;
+
   }
 
   #intro h1 {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './profile.css';
-import Accordion from 'react-bootstrap/Accordion';
-import "../Header/header.css";
-import Card from 'react-bootstrap/Card';
-import Navbars from './Navbar';
+import './styles.css';
+import Navbar2 from './Navbar2';
 import Axios from 'axios';
+import {Redirect} from "react-router-dom";
+import {isAuth} from "../../helpers/auth"
 export default class EmployerProfile extends Component {
 
   constructor(){
@@ -15,9 +15,7 @@ export default class EmployerProfile extends Component {
       user:{}
     
     }
-  
     }
-    
     componentDidMount(){
   
       console.log(this.state.email);
@@ -32,49 +30,35 @@ export default class EmployerProfile extends Component {
     render(){ 
     return ( 
         <div>
-          <div className="header"><Navbars /></div>
-       
-        <div className="accord">
-        <Accordion>
-        <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="0">
-        <h1><i class="fa fa-user"></i>Personal Info</h1>
-        </Accordion.Toggle>
-        <Accordion.Collapse eventKey="0">
-        <Card.Body>
-        <div className="container"><h4>Organisation Name - </h4><p>{this.state.user.organisationName}</p></div>
-        <div className="container"><h4>Full Name - </h4><p>{this.state.user.name}</p></div>
-        <div className="container"><h4>Date of Birth - </h4><p>{this.state.user.dateOfBirth}</p></div>         
-        </Card.Body>
-        </Accordion.Collapse>
-        </Card>
-        <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="1">
-        <h1><i class="fa fa-address-book"></i>Contact Details</h1>
-       </Accordion.Toggle>
-       <Accordion.Collapse eventKey="1">
-       <Card.Body>
-        <div className="container"><h4>Email - </h4><p>{this.state.user.email}</p></div>
-        <div className="container"><h4>Contact Number - </h4><p>{this.state.user.contactNumber}</p></div>
-        <div className="container"><h4>ID Proof - </h4><p>{this.state.user.idProof}-{this.state.user.idNumber}</p></div>
-        <div className="container"><h4>Address-</h4><p>{this.state.user.address}</p></div>
-        <div className="container"><h4>Postal Code - </h4><p>{this.state.user.postalCode}</p></div>
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card>
-  <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="4">
-        <h1><i class="fa fa-key"></i>Change password</h1>
-       </Accordion.Toggle>
-       <Accordion.Collapse eventKey="4">
-       <Card.Body>
-        
-        <div className="container"><a href="/users/password/forget">Change password</a></div>
-        </Card.Body>
-    </Accordion.Collapse>
-  </Card>
-</Accordion>
-</div>
+         {!isAuth()?<Redirect to='/login'/> :null}
+          <Navbar2 />
+          <button class="logoutBtn">
+          <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+          </svg>
+          <span>Logout</span>
+          </button>
+        <div className="data"> 
+        <div className="data-container">
+        <h3>Personal Info  <i class="fa fa-user"></i></h3>
+        <div className="data-containers"><h4>Organisation Name -  </h4><p> {this.state.user.organisationName}</p></div>
+        <div className="data-containers"><h4>Full Name - </h4><p>{this.state.user.name}</p></div>
+        <div className="data-containers"><h4>Date of Birth - </h4><p>{this.state.user.dateOfBirth}</p></div>    
+        </div>
+        <div className="data-container">
+        <h3>Contact Details  <i class="fa fa-address-book"></i></h3>
+        <div className="data-containers"><h4>Email - </h4><p>{this.state.user.email}</p></div>
+        <div className="data-containers"><h4>Contact Number - </h4><p>{this.state.user.contactNumber}</p></div>
+        <div className="data-containers"><h4>ID Proof - </h4><p>{this.state.user.idProof}-{this.state.user.idNumber}</p></div>
+        <div className="data-containers"><h4>Address-</h4><p>{this.state.user.address}</p></div>
+        <div className="data-containers"><h4>Postal Code - </h4><p>{this.state.user.postalCode}</p></div>
+        </div>
+        <div className="data-container">
+        <h3>Change password  <i class="fa fa-key"></i></h3> 
+        <div className="data-containers"><a href="/users/password/forget">Change password</a></div>
+        </div>
+        </div>
         </div>
         
      );

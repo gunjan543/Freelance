@@ -14,50 +14,47 @@ function Services(){
 	return(
 		  
 	    
-	<section className = "outer-section">
+	<section id = "services" className = "outer-section">
 	
 	<div className = "services-title-text">
 
 		<h1>Our Services</h1>
 		<div className="line"></div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
 	</div>
 	<div className="container services-section">
 		<div className = "row">
 			<div className = "col">
-			<img src = {find} className = "service-icon"></img>
-				<h2>
-				
-					Connect
-				</h2>
-				<p>Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.</p>
+			<img src = {find} alt = "find" className = "service-icon"></img>
+				<h4>
+				Find suitable employees.
+					
+				</h4>
+				<p>Simply post a job and find best person to finish your task.</p>
 			</div>
 			<div className = "col">
-			<img src = {variety} className = "service-icon"></img>
-				<h2>
-				
-					Connect
-				</h2>
-				<p>Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.</p>
+			<img src = {variety} alt = "variety" className = "service-icon"></img>
+				<h4>
+				Variety of Services
+				</h4>
+				<p>We provide a large range of services for all working classes from developers to house workers.</p>
 			</div>
 		</div>
 		<div className = "row">
 		<div className = "col">
-			<img src = {findjob} className = "service-icon"></img>
-				<h2>
+			<img src = {findjob} alt= "find job" className = "service-icon"></img>
+				<h4>
 				
-					Connect
-				</h2>
-				<p>Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.</p>
+					Find Job
+				</h4>
+				<p>Find the perfect job for you depending as per your skillset.</p>
 			</div>
 			<div className = "col">
-			<img src = {help} className = "service-icon"></img>
-				<h2>
+			<img src = {help} alt = "help" className = "service-icon"></img>
+				<h4>
 				
-					Connect
-				</h2>
-				<p>Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.Lorem ipsum sit dolor amet.</p>
+					Help
+				</h4>
+				<p> Contact our developers any time and receive instant support. </p>
 			</div>
 		</div>
 
@@ -73,27 +70,3 @@ function Services(){
 export default Services;
 
 
-
-// <section id = "services" className = "services">
-	
-// <div className="section-padding">
-// <div className="container">
-// <div className="row">
-// 	<div class = "col-lg-12">
-// 		<div class = "section-header text-center">
-// 			<h2> Our Services</h2>
-// 			<p>What we do</p>
-// 		</div>
-// 	</div>
-// </div>
-// 	<div className = "row">
-		
-// 			{data.map(createEntry)}
-			
-// 		</div>
-// 	</div>
-// </div>
-
-
-
-// </section>

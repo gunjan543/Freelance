@@ -1,4 +1,4 @@
-/* 
+
 .Signup h1{
     text-align: center;
     font-weight: 900;
@@ -14,7 +14,7 @@
       text-align: center;
   }
   /*Form*/
-  /*
+  
   .box{
     flex: 0 0 50%;
     margin-top: 5rem;
@@ -102,4 +102,4 @@
   .Signup a:hover{
     color: #3B945E;
     text-decoration: none;
-  } */
+  }
