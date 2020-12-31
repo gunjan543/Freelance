@@ -37,7 +37,7 @@ function About(){
 					The employees just need to sign up and scroll through a list of jobs that interest them and just simply apply and wait to hear from their employers! 
 					<br></br>
 					<br></br>
-					<h5>BYOB is getting better everyday. Check out some of our amazing upcoming features <a href= "/futureAdvacements" style = {{fontWeight:"bold"}}>here.</a></h5>
+					<h5>BYOB is getting better everyday. Check out some of our amazing upcoming features <a href= "/future" style = {{fontWeight:"bold"}}>here.</a></h5>
 
 				</p>
                 </div>

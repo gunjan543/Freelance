@@ -23,6 +23,7 @@ import EmployerProfile from './components/Dashboard/employerProfile';
 import EmployerDash from './components/Dashboard/employerDash';
 import JobDescription from './components/JobDescription/Jd';
 import Requests from './components/Dashboard/request';
+import Future from './components/Dashboard/future';
 
 class App extends Component{
   render(){
@@ -41,7 +42,7 @@ class App extends Component{
            <Footer/>
          </div>
 } />  
-      
+       <Route path="/future" exact strict component ={Future} />
       <Route path="/employeeDash/technical" exact render={props => <EmployeeDash {...props}/>} />
       <Route path="/nonTechnical" exact strict component={EmployeeDash} />
       <Route path="/employeeDash/technical/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />
