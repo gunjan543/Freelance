@@ -68,7 +68,7 @@ const Register = (history) => {
                   password2: ''
                   
                 });
-                console.log(err.response);
+                console.log(err);
                 toast.error(err.response.data.errors);
               });
           } else {
