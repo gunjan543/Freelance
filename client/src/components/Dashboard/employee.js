@@ -4,6 +4,8 @@ import Navbar2 from './Navbar2';
 import './dashboard.css';
 import './styles.css';
 import lady from "../images/lady.png";
+import {removeCookie, removeLocalStorage} from '../../helpers/auth';
+
 
 class EmployeeDash extends React.Component {
   constructor(props) {
@@ -53,7 +55,12 @@ class EmployeeDash extends React.Component {
   }
 
   render() {
-    
+    const {history} = this.props;
+    function signout(){
+      removeCookie('token');
+      removeLocalStorage('user');
+      history.push('/');
+    }
 
     const CategoryuniqueJobs = this.getUnique(this.state.jobs, "category");
     const jobs = this.state.jobs;
@@ -66,7 +73,7 @@ class EmployeeDash extends React.Component {
       <div className="employeeDash">
         
          <Navbar2 />
-         <button class="logoutBtn">
+         <button class="logoutBtn" onClick={signout}>
         <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
         <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
         <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />

@@ -4,10 +4,12 @@ import './styles.css';
 import Navbar2 from './Navbar2';
 import Axios from 'axios';
 import {Redirect} from "react-router-dom";
-import {isAuth} from "../../helpers/auth"
+import {isAuth} from "../../helpers/auth";
+import {removeCookie, removeLocalStorage} from '../../helpers/auth';
+
 export default class EmployerProfile extends Component {
 
-  constructor(){
+  constructor(props){
     super();
     let { email} = JSON.parse(localStorage.getItem('user'));
     this.state = {
@@ -27,12 +29,18 @@ export default class EmployerProfile extends Component {
     }
       )
     }
-    render(){ 
+    render(){
+      const {history} = this.props;
+      function signout(){
+        removeCookie('token');
+        removeLocalStorage('user');
+        history.push('/');
+      } 
     return ( 
         <div>
          {!isAuth()?<Redirect to='/login'/> :null}
           <Navbar2 />
-          <button class="logoutBtn">
+          <button class="logoutBtn"  onClick = {signout}>
           <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />

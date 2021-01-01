@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Navbar2 from './Navbar2';
 import './request.css';
 import Axios from 'axios';
+import {removeCookie, removeLocalStorage} from '../../helpers/auth';
+
 
 export default class Requests extends Component{
     constructor(props){
@@ -25,10 +27,16 @@ export default class Requests extends Component{
           }
          
     render(){
+        const {history} = this.props;
+        function signout(){
+            removeCookie('token');
+            removeLocalStorage('user');
+            history.push('/');
+          }
         return(
             <div className="requests">
             <Navbar2 />
-            <button class="logoutBtn">
+            <button class="logoutBtn"  onClick = {signout}>
         <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />

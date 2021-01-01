@@ -124,7 +124,7 @@ const Register = (history) => {
                   alignRight
                   className="category"
                   title="Choose Category"
-                  id="dropdown  -menu-align-right"
+                  id="dropdown"
                   onSelect={handleSelect}
                 >
                   <Dropdown.Item eventKey="employee">Register As Employee</Dropdown.Item>
@@ -134,17 +134,8 @@ const Register = (history) => {
                 <input type="submit" name="Signup" value="submit" />
             </form>
             </div>
-
-            <div className="vertical-row"></div>
-
             
-            <div className="right">
-            
-            </div>
         </div>
-    
-
-
         </div>
      );
 }

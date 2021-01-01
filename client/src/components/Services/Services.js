@@ -12,16 +12,12 @@ function Services(){
 
 
 	return(
-		  
-	    
-	<section id = "services" className = "outer-section">
-	
-	<div className = "services-title-text">
-
-		<h1>Our Services</h1>
-		<div className="line"></div>
+	<div id = "services" className = "outer-section">
+	<div className = "services-title-text ">
+		<h1 className="hvr-underline-from-center2">Our Services</h1>
+		
 	</div>
-	<div className="container services-section">
+	
 		<div className = "row">
 			<div className = "col">
 			<img src = {find} alt = "find" className = "service-icon"></img>
@@ -37,9 +33,7 @@ function Services(){
 				Variety of Services
 				</h4>
 				<p>We provide a large range of services for all working classes from developers to house workers.</p>
-			</div>
-		</div>
-		<div className = "row">
+</div>
 		<div className = "col">
 			<img src = {findjob} alt= "find job" className = "service-icon"></img>
 				<h4>
@@ -51,17 +45,16 @@ function Services(){
 			<div className = "col">
 			<img src = {help} alt = "help" className = "service-icon"></img>
 				<h4>
-				
 					Help
 				</h4>
 				<p> Contact our developers any time and receive instant support. </p>
 			</div>
-		</div>
+		
 
+
+ </div>
 
 	</div>
-
-	</section>
 	 
 	  
 	);

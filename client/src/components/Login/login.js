@@ -41,9 +41,25 @@ const Login = ({history}) => {
       };
       const informParent = response => {
         authenticate(response, () => {
-          isAuth() && isAuth().role === 'admin'
-            ? history.push('/admin')
-            : history.push('/private');
+          if(isAuth() && isAuth().category === 'employee'){
+            if(isAuth().form === false)
+            history.push('/employee');
+            else
+            {
+              if(isAuth().subCategory==='technical')
+              history.push('/employeeDash/technical')
+              else
+              history.push('/nonTechnical')
+            }
+          }
+          else {
+            if(isAuth().form === false)
+            history.push('/employer');
+            else
+            history.push('/employerDash');
+          }
+          
+        
         });
       };
     
@@ -150,15 +166,11 @@ const Login = ({history}) => {
                 <br></br>
                 <a href="/users/password/forget">Forgot Password ?</a>
                 <br></br>
-                <input type="submit" value="Login"/>     
+                <input type="submit" className="loginSubmit" value="Login"/>     
             </form>
-           
+           <p>OR</p>
             </div>
-
-            <div className="vertical-row"></div>
-
-            
-            <div class="right">
+            </div>
             <GoogleLogin
                   clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
                   onSuccess={responseGoogle}
@@ -172,9 +184,8 @@ const Login = ({history}) => {
                     ><h6><i className='fab fa-google'></i>  Log in with Google</h6></button>
                   )}
                 ></GoogleLogin>
-            </div>
         </div>
-        </div>
+       
      );
 }
  
