@@ -9,9 +9,9 @@
   .wrap
   {
       display: flex;
-      margin-left: 1rem;
-      margin-right: 1rem;
+      align-items: center;
       text-align: center;
+      margin-left: 30%;
   }
   /*Form*/
   
@@ -102,4 +102,19 @@
   .Signup a:hover{
     color: #3B945E;
     text-decoration: none;
+  }
+
+  #dropdown{
+    min-width:25rem ;
+  }
+
+  @media(max-width:590px){
+    .wrap{
+      margin: auto;
+      margin-left: 8rem;
+    }
+
+    #dropdown{
+      min-width:20rem ;
+    }
   }

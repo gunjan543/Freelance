@@ -29,26 +29,24 @@ function Contact(){
         <section className="footer-item">
           <h3>Visit</h3>
           
-          <p>H. No. 123</p>
           <p>Mansarovar, Jaipur</p>
           <p>Rajasthan, India 302020</p>
-          <h3 className="desktop">New Business</h3>
-          <p className="desktop">engage@weareenvoy.com</p>
-          <p className="desktop">949.333.3106</p>
+          <h3 className="desktop">BYOB</h3>
+          <p className="desktop">Byobfreelance@gmail.com</p>
+          
         </section>
 
         <section className="footer-item">
-          <h3>New Business</h3>
-          <p>Email us: abc@gmail.com</p>
-          <p>949.333.3106</p>
+          <h3>BYOB</h3>
+          <p>Email us: Byobfreelance@gmail.com</p>
+        
         </section>
 
         <section className="footer-item">
-          <h3>Follow</h3>
+          <h3>LinkedIn</h3>
           <ul>
-            <li><a href = "#">Instagram</a></li>
-            <li><a href = "#">Twitter</a></li>
-            <li><a href = "#">LinkedIn</a></li>
+            <li><a target="_blank" rel="noopener noreferrer"  href = "https://www.linkedin.com/in/aditi-singh-0081451ab/">Aditi Singh</a></li>
+            <li>  <a target="_blank" rel="noopener noreferrer"  href = "https://www.linkedin.com/in/gunjan-agarwal-7b0109168">Gunjan Agarwal</a></li>
           </ul>
         </section>
       
