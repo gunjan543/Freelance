@@ -38,6 +38,15 @@ const { connect } = require("http2");
 
 
 app.use('/api/', authRouter);
+if(process.env.NODE_ENV === 'production'){
+
+    app.use(express.static('client/build'));
+
+    app.get('*', (req,res)=>{
+        res.sendFile(path.resolve(__dirname, 'client','build','index.html'));
+    });
+}
+
 app.use((req, res, next) => {
 
     res.status(404).json({
@@ -49,14 +58,6 @@ app.use((req, res, next) => {
 });
 
 
-if(process.env.NODE_ENV === 'production'){
-
-    app.use(express.static('client/build'));
-
-    app.get('*', (req,res)=>{
-        res.sendFile(path.resolve(__dirname, 'client','build','index.html'));
-    });
-}
 
 
 const PORT = process.env.PORT;
