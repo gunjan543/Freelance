@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import authSvg from '../assests/welcome.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
@@ -20,17 +19,17 @@ const Activate = ({ match, history }) => {
     /*get token from params */
     let token = match.params.token;
     let { name } = jwt.decode(token);
-    console.log(match);
+   
     if (token) {
       setFormData({ ...formData, name, token });
     }
 
   
   }, [match.params]);
-  const { name, token, show } = formData;
+  const { name, token} = formData;
 
   const handleSubmit = e => {
-    let {category} = jwt.decode(token);
+    
     e.preventDefault();
 
     axios
@@ -47,7 +46,6 @@ const Activate = ({ match, history }) => {
         history.push('/activate/login');
       })
       .catch(err => {
-        console.log(err);
         toast.error(err.response.data.errors);
       });
   };
@@ -66,7 +64,7 @@ const Activate = ({ match, history }) => {
         </form>
         </div>
         <div className="rt">
-        <img className="welcome-img" src={welcome}></img>
+        <img className="welcome-img" src={welcome} alt = "welcome"></img>
 
         </div>
         </div>

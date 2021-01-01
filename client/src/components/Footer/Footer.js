@@ -20,7 +20,7 @@ function Contact(){
         <section className="footer-item">
           <h3>Explore</h3>
           <ul>
-            <li><a href = "#">Home</a></li>
+            <li><a href = "/">Home</a></li>
             <li><a href = "#about">About</a></li>
             <li><a href = "#services">Services</a></li>
           </ul>

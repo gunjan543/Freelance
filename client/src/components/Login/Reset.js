@@ -17,7 +17,7 @@ const ResetPassword = ({match}) => {
         token: '',
       textChange: 'Submit'
     });
-      const { password1, password2, textChange, token } = formData;
+      const { password1, password2, token } = formData;
       
       useEffect(() => {
           let token = match.params.token
@@ -27,13 +27,13 @@ const ResetPassword = ({match}) => {
           
       }, [])
     const handleChange = text => e => {
-      setFormData({ ...formData, [text]: e.target.value });
+      setFormData({ ...formData});
     };
       const handleSubmit = e => {
         console.log(password1, password2)
       e.preventDefault();
       if ((password1 === password2) && password1 && password2) {
-        setFormData({ ...formData, textChange: 'Submitting' });
+        setFormData({ ...formData });
         axios
           .put(`${process.env.REACT_APP_API_URL}/resetpassword`, {
               newPassword: password1,

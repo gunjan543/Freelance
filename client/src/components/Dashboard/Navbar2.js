@@ -1,6 +1,8 @@
 import React from 'react';
 import { Component } from 'react';
 import './styles.css';
+import "../Header/header.css";
+import {Nav,Navbar,Button} from 'react-bootstrap';
 export default class navbar2 extends Component{
   
   constructor(props){
@@ -31,7 +33,7 @@ export default class navbar2 extends Component{
              <nav class="navbar2">
             <ul class="navbar2-nav">
             <li class="logo2">
-            <a href="#" class="nav2-link">
+            <a href="/" class="nav2-link">
           <span class="link2-text logo2-text">BYOB</span>
           <svg
             aria-hidden="true"
@@ -127,7 +129,7 @@ export default class navbar2 extends Component{
           <nav class="navbar2">
     <ul class="navbar2-nav">
       <li class="logo2">
-        <a href="#" class="nav2-link">
+        <a href="/" class="nav2-link">
           <span class="link2-text logo2-text">BYOB</span>
           <svg
             aria-hidden="true"
@@ -223,7 +225,7 @@ export default class navbar2 extends Component{
     <nav class="navbar2">
     <ul class="navbar2-nav">
       <li class="logo2">
-        <a href="#" class="nav2-link">
+        <a href="/" class="nav2-link">
           <span class="link2-text logo2-text">BYOB</span>
           <svg
             aria-hidden="true"

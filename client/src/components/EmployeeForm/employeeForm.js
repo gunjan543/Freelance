@@ -1,8 +1,6 @@
 import React from 'react';
 import Logo from '../Logo/logo';
 import './employee.css';
-import {  isAuth } from '../../helpers/auth';
-import { Redirect } from 'react-router-dom';
 import Axios from 'axios';
 
 const EmployeeForm = () => {

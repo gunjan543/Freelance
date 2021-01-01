@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import Logo from '../Logo/logo';
-import {  isAuth } from '../../helpers/auth';
-import { Redirect } from 'react-router-dom';
 import './employee.css';
-import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
 import Axios from 'axios';
 
 
