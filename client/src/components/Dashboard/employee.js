@@ -37,14 +37,14 @@ class EmployeeDash extends React.Component {
     
     let {_id} = JSON.parse(localStorage.getItem('user'));
 
-    Axios.post(`${process.env.REACT_APP_API_URL}/jobApplied`,{jobID: jobs._id, employeeID:_id,employerId:jobs.employerId,jobTitle:jobs.title})
+    Axios.post(`$/api/jobApplied`,{jobID: jobs._id, employeeID:_id,employerId:jobs.employerId,jobTitle:jobs.title})
     .then(res =>{
   
     })
   }
   componentDidMount() {
     Axios
-        .post(`${process.env.REACT_APP_API_URL}/getJobs`, this.state)
+        .post(`/api/getJobs`, this.state)
         .then( res=>{ 
          
          

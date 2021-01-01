@@ -42,7 +42,7 @@ export default class TechnicalForm extends Component {
 
         this.setState({...this.state});
         Axios
-        .post(`${process.env.REACT_APP_API_URL}/technicalForm`,
+        .post(`/api/technicalForm`,
           this.state
            
         )

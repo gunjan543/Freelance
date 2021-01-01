@@ -35,7 +35,7 @@ const ResetPassword = ({match}) => {
       if ((password1 === password2) && password1 && password2) {
         setFormData({ ...formData });
         axios
-          .put(`${process.env.REACT_APP_API_URL}/resetpassword`, {
+          .put(`/api/resetpassword`, {
               newPassword: password1,
               resetPasswordLink: token
           })

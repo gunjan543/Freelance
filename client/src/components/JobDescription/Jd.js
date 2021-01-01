@@ -42,7 +42,7 @@ export default class JobDescription extends Component {
         
         this.setState({...this.state});
         Axios
-        .post(`${process.env.REACT_APP_API_URL}/addJob`,
+        .post(`/api/addJob`,
           this.state
            
         )

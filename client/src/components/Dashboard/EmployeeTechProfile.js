@@ -21,7 +21,7 @@ export default class EmployeeTechProfile extends Component {
 
     console.log(this.state.email);
    Axios
-    .post(`${process.env.REACT_APP_API_URL}/getUser`, this.state)
+    .post(`/api/getUser`, this.state)
     .then( res=>{ 
      const user = res.data;
      this.setState({user});

@@ -11,7 +11,7 @@ const EmployeeForm = () => {
         localStorage.setItem('subCategory', e.target.value);
         
         Axios
-        .post(`${process.env.REACT_APP_API_URL}/technicalForm`,
+        .post(`/api/technicalForm`,
           user
            
         )

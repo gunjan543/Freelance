@@ -27,7 +27,7 @@ const Login = ({history}) => {
     
       const sendGoogleToken = tokenId => {
         axios
-          .post(`${process.env.REACT_APP_API_URL}/googlelogin`, {
+          .post(`/api/googlelogin`, {
             idToken: tokenId
           })
           .then(res => {

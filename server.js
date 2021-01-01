@@ -36,7 +36,6 @@ if (process.env.NODE_ENV === 'development') {
 const authRouter = require('./routes/auth.route');
 const { connect } = require("http2");
 
-
 app.use('/api/', authRouter);
 if(process.env.NODE_ENV === 'production'){
 
@@ -60,7 +59,7 @@ app.use((req, res, next) => {
 
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, ()=>{
 
