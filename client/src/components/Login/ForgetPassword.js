@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Logo from '../Logo/logo';
-//import authSvg from "../assets/auth.svg";
 import {ToastContainer, toast} from 'react-toastify';
 
 import axios from 'axios';
@@ -16,14 +15,14 @@ const Forget = ({history}) => {
         email: '',
         textChange: 'Submit'
       });
-      const { email, textChange } = formData;
+      const { email } = formData;
       const handleChange = text => e => {
-        setFormData({ ...formData, [text]: e.target.value });
+        setFormData({ ...formData});
       };
       const handleSubmit = e => {
         e.preventDefault();
         if (email) {
-          setFormData({ ...formData, textChange: 'Submitting' });
+          setFormData({ ...formData });
           axios
             .put(`${process.env.REACT_APP_API_URL}/forgotpassword`, {
               email
@@ -41,7 +40,7 @@ const Forget = ({history}) => {
             .catch(err => {
                
             console.log(err)
-              //toast.error(err.response.data.error);
+              toast.error(err.response.data.error);
             });
         } else {
           toast.error('Please fill all fields');

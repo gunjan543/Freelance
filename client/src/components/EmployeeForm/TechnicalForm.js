@@ -25,7 +25,7 @@ export default class TechnicalForm extends Component {
             idNumber:'',
             address:'',
             postalCode:'',
-            resume:{},
+          
             form:true
         };
         console.log(name);
@@ -112,7 +112,6 @@ export default class TechnicalForm extends Component {
                 <div class="input_field" onChange = {this.handleChange('idNumber')}><label>ID Number</label><input type="number" className="input" required/></div>
                 <div class="input_field" onChange = {this.handleChange('address')}><label>Address</label><textarea className="textarea"></textarea></div>
                 <div class="input_field" onChange = {this.handleChange('postalCode')}><label>Postal Code</label><input type="text" className="input"  required/></div>
-                <div class="input_field"><label>Resume</label><input type="text" className="input" onChange={this.handleChange('resume')} /></div>
                 <div class="input_field"><input type="submit" className="btn" value="Submit"/></div>
                 
             </form>

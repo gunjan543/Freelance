@@ -100,6 +100,29 @@
     transform: rotate(-180deg);
   }
 
+  .employerUser button{
+    
+      cursor: pointer;
+      background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(59, 148, 94, 1));
+      text-transform: uppercase;
+      width: 30%;
+      border-radius: 6px;
+      font-weight: 800;
+      padding: 7px;
+      margin-top: 2rem;
+      border-color: #57ba98;
+      color: #182628;
+    
+    
+
+  }
+
+  .employerUser button:hover{
+    background-color: #3B945E;
+    text-decoration: none;
+  }
+  
+
     
   /* Small screens */
   @media only screen and (max-width: 600px) {

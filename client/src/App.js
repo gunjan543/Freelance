@@ -1,33 +1,35 @@
-import React,{Component} from 'react'
+import { BrowserRouter as Router} from 'react-router-dom';
+import Route from 'react-router-dom/Route';
+import {Switch} from 'react-router-dom';
+import React,{Component, Suspense} from 'react'
+//const Home = React.lazy(() => import('./modules/pages/Home'));
 import Services from './components/Services/Services';
 import Header from './components/Header/Header';
 import About from './components/About/About'
 import Footer from './components/Footer/Footer';
-import Login from './components/Login/login';
-import Register from './components/Login/Signup';
-import Activate from './components/Login/activate';
-import Reset from './components/Login/Reset';
-import Forget from './components/Login/ForgetPassword';
-import { BrowserRouter as Router ,useHistory} from 'react-router-dom';
-import Route from 'react-router-dom/Route';
-import {Switch} from 'react-router-dom';
-import EmployeeForm from './components/EmployeeForm/employeeForm';
-import EmployerForm from './components/EmployeeForm/employerForm';
-import TechnicalForm from './components/EmployeeForm/TechnicalForm';
-import NonTechnicalForm from './components/EmployeeForm/non-technical';
-import EmployeeDash from './components/Dashboard/employee';
-import EmployeeNonTechProfile from './components/Dashboard/EmployeeNonTechProfile';
-import EmployeeTechProfile from './components/Dashboard/EmployeeTechProfile';
-import Help from './components/Dashboard/help';
-import EmployerProfile from './components/Dashboard/employerProfile';
-import EmployerDash from './components/Dashboard/employerDash';
-import JobDescription from './components/JobDescription/Jd';
-import Requests from './components/Dashboard/request';
-import Future from './components/Dashboard/future';
+const Login = React.lazy(()=>import('./components/Login/login'));
+const Activate= React.lazy(()=>import('./components/Login/activate'));
+const Register= React.lazy(()=>import( './components/Login/Signup'));
+const Reset= React.lazy(()=>import( './components/Login/Reset'));
+const Forget= React.lazy(()=>import( './components/Login/ForgetPassword'));
+const EmployeeForm= React.lazy(()=>import( './components/EmployeeForm/employeeForm'));
+const EmployerForm= React.lazy(()=>import( './components/EmployeeForm/employerForm'));
+const TechnicalForm= React.lazy(()=>import( './components/EmployeeForm/TechnicalForm'));
+const NonTechnicalForm= React.lazy(()=>import( './components/EmployeeForm/non-technical'));
+const EmployeeDash = React.lazy(()=>import('./components/Dashboard/employee'));
+const EmployeeNonTechProfile = React.lazy(()=>import('./components/Dashboard/EmployeeNonTechProfile'));
+const EmployeeTechProfile = React.lazy(()=>import('./components/Dashboard/EmployeeTechProfile'));
+const Help = React.lazy(()=>import('./components/Dashboard/help'));
+const EmployerProfile = React.lazy(()=>import('./components/Dashboard/employerProfile'));
+const EmployerDash= React.lazy(()=>import( './components/Dashboard/employerDash'));
+const JobDescription = React.lazy(()=>import('./components/JobDescription/Jd'));
+const Requests = React.lazy(()=>import('./components/Dashboard/request'));
+const Future = React.lazy(()=>import('./components/Dashboard/future'));
 
 class App extends Component{
   render(){
   return (
+    <Suspense fallback={<h1>Loading...</h1>}>
     <Router>
     <Switch>
      {/* A <Switch> looks through its children <Route>s and
@@ -42,6 +44,8 @@ class App extends Component{
            <Footer/>
          </div>
 } />  
+
+  
        <Route path="/future" exact strict component ={Future} />
       <Route path="/employeeDash/technical" exact render={props => <EmployeeDash {...props}/>} />
       <Route path="/nonTechnical" exact strict component={EmployeeDash} />
@@ -64,9 +68,13 @@ class App extends Component{
       <Route path='/users/password/reset/:token' exact render={props => <Reset {...props} />} />
       <Route path='/activate/login' exact render={props => <Login {...props} />} />
       <Route path='/employerDash/requests' exact render={props => <Requests {...props} />} />
+      
       </div>
+    
       </Switch>   
-    </Router>  
+    
+    </Router> 
+    </Suspense>
   );
 }}
 

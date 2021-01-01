@@ -27,7 +27,7 @@ const {
 
 router.post('/getUser', (req, res)=>{
 
-    console.log(req.body.email);
+   
     User.findOne({email:req.body.email}, function(err, user){
 
         if(!err){
@@ -41,10 +41,10 @@ router.post('/getUser', (req, res)=>{
 })
 
 router.post('/getUsers', (req, res)=>{
-    console.log(req.body);
+  
     User.find({category:req.body.category}).
     then(users =>{
-        console.log(users);
+      
         res.send(users);
     })
     })
@@ -55,8 +55,7 @@ router.post('/getUsers', (req, res)=>{
         User.find({_id:req.body._id}).
         then(users =>{
            users[0].request.map((currentValue) => {
-            console.log(currentValue.personId);
-            console.log(currentValue.jobTitle);
+         
              User.find({_id:currentValue.personId}).then(
                  applicant=>{
                        applicants.push({applicant:applicant[0],jobTitle:currentValue.jobTitle});  
@@ -65,7 +64,7 @@ router.post('/getUsers', (req, res)=>{
            }
         )
         res.send(applicants);
-        console.log(applicants);
+       
         applicants =[]
     }) 
       })
@@ -109,7 +108,6 @@ router.post('/jobApplied',(req,res)=>{
 
 router.post("/addJob",(req,res)=>{
 
-    console.log(req.body);
     console.log("Request Received");
     const {
     employerId,
@@ -155,10 +153,10 @@ router.post("/addJob",(req,res)=>{
 })
 
 router.post('/getJobs', (req, res)=>{
-    console.log(req.body);
+   
     Job.find({}).
     then(jobs =>{
-        console.log(jobs);
+       
         res.send(jobs);
     })
     })
