@@ -9,7 +9,7 @@ const Future = () => {
     return ( 
         <div className="future">
            <div className="future-logo"> <img src={logo}></img></div>
-           <a href="/home">Home</a>
+           <a href="/">Home</a>
             <h1>
                 Future Advancements
             </h1>

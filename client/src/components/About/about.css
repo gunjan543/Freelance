@@ -33,19 +33,12 @@
 
 .profile .profile-img{
 
-	height:310px;
-	width:300px;
+	height:360px;
+	width:310px;
 	border-radius:50%;
-	filter:grayscale(100%);
 	cursor: pointer;
 	transition:400ms;
 }
-
-.profile-img:hover{
-
-	filter:grayscale(0);
-}
-
 
 .profile-portfolio{
  text-align: left !important;
@@ -108,7 +101,7 @@
 .about-us-content{
 
   padding:10vw 24vw;
-  text-align: justify;
+  text-align: center;
   
 }
 
