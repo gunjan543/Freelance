@@ -136,3 +136,16 @@
 	}
 }
 
+
+@media (max-width:860px){
+	.outer-section{
+		height:200vw;
+	}
+
+}
+@media (max-width:860px){
+	.outer-section{
+		height:200vw;
+	}
+
+}
