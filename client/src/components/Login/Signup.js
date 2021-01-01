@@ -38,7 +38,7 @@ const Register = (history) => {
           if (password1 === password2) {
             setFormData({ ...formData });
             axios
-              .post( `${process.env.REACT_APP_API_URL}/register`, {
+              .post( `/api/register`, {
                 name,
                 email,
                 category,
