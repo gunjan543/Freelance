@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# BYOB: Be Your Own Boss
+[![Contributors][contributors-shield]][contributors-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield-2]][linkedin-url-2]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*BYOB is developed with a vision of expanding the idea of freelancing from just hiring developers to day-to-day chores such as electrician, plumbing etcetra. We, at BYOB, aim to provide the easiest user interface; allowing users with minimal technical knowledge to work with ease.*
 
-## Available Scripts
+#### Check out our website: http://peaceful-oasis-65710.herokuapp.com/
 
-In the project directory, you can run:
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-### `npm start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![Product Name Screen Shot][product-screenshot]](https://i.ibb.co/xmtWfZW/Screenshot-from-2021-01-02-11-52-17.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+We provide an online portal, wherein, prospective employers can post jobs:temporary or permanent. The employers can expect a list of suitable employees who are just a call away.
+And for the employees, they can browse through a variety of jobs that match their skill-set. They will find a suitable work that interests them and also pays well, without much hassle.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
 
-### `npm run build`
+### Frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [ReactJs](https://reactjs.org/docs/getting-started.html)
+* [JQuery](https://api.jquery.com/)
+* [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+* [React-Bootstrap](https://react-bootstrap.github.io/)
+* [HTML](https://www.w3schools.com/TAGS/default.ASP)
+* [CSS](https://devdocs.io/css/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* [NodeJs](https://nodejs.org/en/docs/)
+* [MongoDB](https://docs.mongodb.com/)
+* [Express](http://expressjs.com/en/api.html)
+* [Mongoose](https://mongoosejs.com/docs/api.html)
 
-### `npm run eject`
+### IDE: [Visual Studio Code](https://code.visualstudio.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Getting Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* NodeJs: v.14.15.1 or above
+* Express-jwt: v.6.0.0 or above
+* Mongoose: v.5.11.3 or above
+* React: v.17.0.1 or above
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. Clone the repository : 
+```sh
+   git clone https://github.com/gunjan543/Freelance
+   ```
+2. Install NPM packages :
+  Backend:
+  ```sh
+  npm init
+  ```
+  ```sh
+  cd client
+  npm init
+  ```
+3. Enter your API keys in `config/config.env` and `client/config.env`:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```
+  API_KEY = 'ENTER YOUR API';
+  ```
+  
+4. Run Server:
+  
+  Backend Server:
+  ```sh
+  npm run dev
+  ```
+  or
+  ```sh
+  nodemon server.js
+  ```
+  Frontend Server:
+  
+  ```sh
+  cd client
+  npm start
+  ```
+  
+  ## Usage
+  
+  #### 1. For Employers:
+  ##### Find suitable Employee for your work.
+  *The employers register and login on our portal, and post as many jobs as they wish to. The employers are required to give necessary details about the job.
+  On posting the job, the employers will be notified about any interested applicants for all the jobs they posted.*
+    [![EmployerDashboard][employer-screenshot]](https://linkpicture.com/q/Screenshot-from-2021-01-02-12-38-56.png)
+  
+  
+  #### 2. For Employees:
+  ##### Find perfect jobs depending upon your skillset.
+  *The employees just need to sign up and scroll through a list of jobs that interest them and just simply apply and wait to hear from their employers!*
+   [![EmployeeDashboard][employee-screenshot]](https://linkpicture.com/q/Screenshot-from-2021-01-02-12-47-45.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Mail us at: byobfreelance@gmail.com
 
-### Analyzing the Bundle Size
+* Aditi - 
+Email: aditisingh1400@gmail.com
+Linkedin: https://www.linkedin.com/in/aditi-singh-0081451ab/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Gunjan - 
+Email: gunjanagarwal54321@gmail.com
+Linkedin: https://www.linkedin.com/in/gunjan-agarwal-7b0109168/
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[contributors-shield]: https://img.shields.io/github/contributors/gunjan543/Freelance?color=rgb&style=for-the-badge
+[contributors-url]: https://github.com/gunjan543/Freelance/graphs/contributors
+[linkedin-shield]:https://img.shields.io/badge/Aditi-Linkedin-blue?style=for-the-badge&logo=appveyor
+[linkedin-url]:https://www.linkedin.com/in/aditi-singh-0081451ab/
+[linkedin-shield-2]:https://img.shields.io/badge/Gunjan-Linkedin-blue?style=for-the-badge&logo=appveyor
+[linkedin-url-2]:https://www.linkedin.com/in/gunjan-agarwal-7b0109168/
+[employer-screenshot]:https://linkpicture.com/q/Screenshot-from-2021-01-02-12-38-56.png
+[employee-screenshot]:https://linkpicture.com/q/Screenshot-from-2021-01-02-12-47-45.png
+[product-screenshot]: https://i.ibb.co/xmtWfZW/Screenshot-from-2021-01-02-11-52-17.png
