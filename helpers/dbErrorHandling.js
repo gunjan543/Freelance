@@ -36,7 +36,7 @@ exports.errorHandler = error => {
                 message = uniqueMessage(error);
                 break;
             default:
-                message = "Something went wrong";
+                message = `Something went wrong  ${error}`;
         }
     } else {
         for (let errorName in error.errorors) {
