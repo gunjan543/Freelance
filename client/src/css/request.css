@@ -2,21 +2,30 @@
     margin-top: 5rem;
 }
 .request-data{
-    margin-left: 30%;
+    width: 90%;
+    max-width: 31rem;
     border-radius: 2rem;
-    width: 50%;
+    text-align: left;
     margin-top: 3rem;
     border-left-width: 8px;
-    width:40%;
-    padding:1em;
+    padding: 1em;
     background-color: #ecf3f9;
-    box-shadow: 5px 5px 2px grey;
+    box-shadow: 5px 5px 2px grey
+}
+.data-container.rq {
+    text-align: -webkit-center;
+    width: auto;
+}
+
+.rq-outer-container{
+    text-align: -webkit-center;
 }
 
 .rq h3{
-   margin-left: 45%;
-    
+   
+    text-align: center;
     font-size: 1.8rem;
+    width:auto;
 }
 
 .request-data h4{

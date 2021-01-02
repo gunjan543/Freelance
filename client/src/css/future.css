@@ -59,12 +59,14 @@
 }
 
 .future a{
-    margin-left: 80%;
+    float: right;
+    margin-right: 2%;
     background-color: #182628;
     border:3px solid #182628;
    padding: 0.8rem 1.5rem;          
   color: #f2f2f2;
   font-weight: 900;
+
     
 }
 .future a:hover{

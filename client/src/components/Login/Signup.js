@@ -5,9 +5,6 @@ import {ToastContainer, toast} from 'react-toastify';
 import {isAuth} from "../../helpers/auth";
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
-import "./main.css";
-import "./Signup.css";
-import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'

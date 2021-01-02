@@ -1,0 +1,19 @@
+.logo{
+    margin-top: 1rem;
+    margin-left: 1rem;
+ 
+}
+
+.logo img{
+    width:15%;
+    height:15%;
+    max-width: 7rem;
+    max-height: 6.5rem;
+    margin-right: 30px;
+}
+
+.logo:hover
+{
+    opacity: 0.7;
+}
+

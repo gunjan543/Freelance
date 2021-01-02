@@ -1,5 +1,4 @@
 import React from 'react';
-import "./main.css";
 import Logo from '../Logo/logo';
 
  const Main = () => {

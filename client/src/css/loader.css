@@ -1,0 +1,73 @@
+
+  .loader-body{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .text-load {
+    font-family: 'Oswald', sans-serif;
+    font-size: 27px;
+    position: absolute;
+    bottom: -27px;
+    left: -85px;
+    font-weight: bold;
+    margin-right: 45px;
+   
+}
+  
+  .loader{
+ 
+    background: #f2f2f2;
+      width: 80px;
+      height: 67px;
+      margin: auto;
+      position: relative;
+  }
+  .loader .square{
+      background: #57BA98;
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      border-radius: 4px;
+    animation-fill-mode: both;
+      animation: motion 2.5s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
+  }
+  .loader .path{
+      height: 10px;
+      width: 110px;
+      overflow: hidden;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+  }
+  .loader .path > div{
+      background: #444;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      margin: 0 15px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation-fill-mode: both;
+      animation: dynamic 5s infinite cubic-bezier(0.89, 0.03, 0.06, 1.5);
+  }
+  .loader .path > div:nth-child(1){ left: 40px; }
+  .loader .path > div:nth-child(2){ left: 80px; }
+  .loader .path > div:nth-child(3){ left: 120px; }
+  .loader .path > div:nth-child(4){ left: 160px; }
+  .loader .path > div:nth-child(5){ left: 200px; }
+  .loader .path > div:nth-child(6){ left: 240px; }
+  .loader .path > div:nth-child(7){ left: 280px; }
+  @keyframes motion{
+      50%{ transform: rotate(90deg); }
+      100%{ transform: rotate(180deg); }
+  }
+  @keyframes dynamic{
+      0%{ transform: translateX(-40px); }
+      25%{ transform: translateX(-80px); }
+      50%{ transform: translateX(-120px); }
+      75%{ transform: translateX(-160px); }
+      100%{ transform: translateX(-200px); }
+  }

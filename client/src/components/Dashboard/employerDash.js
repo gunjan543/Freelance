@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar2 from './Navbar2';
-import './styles.css';
 import { Component } from 'react';
 import lady from "../images/lady.png";
 import {removeCookie, removeLocalStorage} from '../../helpers/auth';
@@ -40,7 +39,7 @@ export default class EmployerDash extends Component {
     </div>
     {/* <div>{ this.displayUser()}</div> */}
     <button class="logoutBtn" onClick = {signout}>
-        <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
+        <svg width="103px" height="41px" viewBox="0 0 180 60" class="border">
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
         </svg>

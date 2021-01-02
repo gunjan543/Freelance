@@ -1,6 +1,4 @@
 import React from "react";
-
-import "./services.css"
 import find from "../images/find.png";
 import findjob from "../images/findjob.png";
 import help from "../images/help.png";

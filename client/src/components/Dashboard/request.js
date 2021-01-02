@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Navbar2 from './Navbar2';
-import './request.css';
 import Axios from 'axios';
 import {removeCookie, removeLocalStorage} from '../../helpers/auth';
 
@@ -37,12 +36,13 @@ export default class Requests extends Component{
             <div className="requests">
             <Navbar2 />
             <button class="logoutBtn"  onClick = {signout}>
-        <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
+        <svg width="103px" height="41px" viewBox="0 0 180 60" class="border">
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
           <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
         </svg>
         <span>Logout</span>
       </button>
+      <div className = "rq-outer-container">
       <div className="data-container rq">
       <h3>Applicants</h3>
       </div>
@@ -59,7 +59,7 @@ export default class Requests extends Component{
                    </div>
                )
            })}
-         
+           </div>
           </div>
         )
     }

@@ -1,10 +1,11 @@
 import React from "react";
 import Axios from 'axios';
 import Navbar2 from './Navbar2';
-import './dashboard.css';
-import './styles.css';
 import lady from "../images/lady.png";
 import {removeCookie, removeLocalStorage} from '../../helpers/auth';
+
+
+
 
 
 class EmployeeDash extends React.Component {
@@ -73,7 +74,7 @@ class EmployeeDash extends React.Component {
         
          <Navbar2 />
          <button class="logoutBtn" onClick={signout}>
-        <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
+        <svg width="103px" height="41px" viewBox="0 0 180 60" class="border">
         <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
         <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
         </svg>
@@ -97,7 +98,7 @@ class EmployeeDash extends React.Component {
             </select>
         </div>
         </div>
-          <div>
+          <div class = "outer-employee">
             {filterCategoryDropdown.map(job => (
               <div key={job._id}  className="dropdownEmployee">
                 <div className="data-containerss"><h3>Organisation Name : </h3><p>{job.organisationName}</p></div>

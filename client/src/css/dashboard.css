@@ -35,8 +35,13 @@
 }
 
 .employee{
-    margin-left: 42%;
-    margin-top: 3%;
+text-align: -webkit-center;
+margin-top: 2rem;
+
+}
+
+.outer-employee{
+    text-align: -webkit-center;
 }
 
 .select select { 
@@ -89,12 +94,12 @@ select::-ms-expand {
 } 
   
 .dropdownEmployee{
-    margin-left: 30%;
+    max-width: 28rem;
     border-radius: 2rem;
     margin-top: 3rem;
     border-left-width: 8px;
-    width:40%;
-    padding:1em;
+    width: 90%;
+    padding: 1em;
     background-color: #ecf3f9;
     box-shadow: 5px 5px 2px grey;
 }
@@ -121,7 +126,7 @@ select::-ms-expand {
 
 @media only screen and (max-width: 600px){
   .employeeDash {
-    margin-top: 13%;
+    margin-top: 23%;
   }
 
   .employeeDash h4{
@@ -130,11 +135,9 @@ select::-ms-expand {
   }
   .select{
       width: 16em;
-      margin-left: -20%;
+   
   }
-  .dropdownEmployee{
-      width:60%;
-  }
+
   .dropdownEmployee button{
       width:40%;
   }

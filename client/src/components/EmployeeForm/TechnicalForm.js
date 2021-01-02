@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from '../Logo/logo';
-import './employee.css';
 import { Component } from 'react';
 import Axios from 'axios';
 

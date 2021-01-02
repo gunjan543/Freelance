@@ -11,7 +11,10 @@
       display: flex;
       align-items: center;
       text-align: center;
-      margin-left: 30%;
+ 
+
+      place-content: center;
+
   }
   /*Form*/
   
@@ -24,13 +27,15 @@
   {
     padding: 10px 0;
     margin-bottom: 30px;
-    width: 70%;
+    width: 90%;
     box-sizing: border-box;
     box-shadow: none;
     outline: none;
     border: none;
     background-color: #f2f2f2;
     border-bottom: 2px solid #182628;
+    max-width: 35rem;
+    
   }
   
   .box input[type="submit"]
@@ -111,7 +116,7 @@
   @media(max-width:590px){
     .wrap{
       margin: auto;
-      margin-left: 8rem;
+ 
     }
 
     #dropdown{

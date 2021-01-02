@@ -1,8 +1,25 @@
 import { BrowserRouter as Router} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import {Switch} from 'react-router-dom';
-import React,{Component, Suspense} from 'react'
+import React,{Component, Suspense} from 'react';
+
+import './css/about.css';
+import './css/dashboard.css';
+import './css/employee.css';
+import './css/footer.css';
+import './css/future.css';
+import './css/google.css';
+import './css/header.css';
+import './css/logo.css';
+import './css/main.css';
+import './css/profile.css';
+import './css/request.css';
+import './css/services.css';
+import './css/Signup.css';
+import './css/styles.css';
+import './css/loader.css';
 //const Home = React.lazy(() => import('./modules/pages/Home'));
+import Loader from './components/Loader'
 import Services from './components/Services/Services';
 import Header from './components/Header/Header';
 import About from './components/About/About'
@@ -26,10 +43,11 @@ const JobDescription = React.lazy(()=>import('./components/JobDescription/Jd'));
 const Requests = React.lazy(()=>import('./components/Dashboard/request'));
 const Future = React.lazy(()=>import('./components/Dashboard/future'));
 
+
 class App extends Component{
   render(){
   return (
-    <Suspense fallback={<h1>Loading...</h1>}>
+    <Suspense fallback={<Loader/>}>
     <Router>
     <Switch>
      {/* A <Switch> looks through its children <Route>s and
@@ -68,7 +86,7 @@ class App extends Component{
       <Route path='/users/password/reset/:token' exact render={props => <Reset {...props} />} />
       <Route path='/activate/login' exact render={props => <Login {...props} />} />
       <Route path='/employerDash/requests' exact render={props => <Requests {...props} />} />
-      
+    
       </div>
     
       </Switch>   

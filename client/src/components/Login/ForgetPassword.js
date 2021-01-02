@@ -3,10 +3,6 @@ import Logo from '../Logo/logo';
 import {ToastContainer, toast} from 'react-toastify';
 
 import axios from 'axios';
-
-import "./main.css";
-import "./Signup.css";
-import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Forget = ({history}) => {

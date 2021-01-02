@@ -1,7 +1,6 @@
 
 .google {
-    margin-top: 2rem;
-    margin-left: 42%;
+    margin-top: 1rem;
     font-weight: 900;
     width: 230px;
     padding-top: 10px;
@@ -28,9 +27,6 @@
         min-width: 200px;
     }
 
-    .google{
-        margin-left: 34%;
-    }
 }
 
 @media(max-width:830px){
@@ -38,16 +34,12 @@
         min-width: 200px;
     }
 
-    .google{
-        margin-left: 32%;
-    }
+
 }
 
 @media(max-width:590px){
     .loginSubmit{
         min-width: 200px;
     }
-    .google{
-        margin-left: 25%;
-    }
+
 }

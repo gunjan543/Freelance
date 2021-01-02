@@ -1,5 +1,4 @@
 import React from "react";
-import "./about.css";
 import aditi from "../images/aditi.jpg";
 import gunjan from "../images/gunjan.jpg";
 

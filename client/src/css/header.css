@@ -51,7 +51,7 @@ header img {
   float: left;
   width: 200px;
   margin-left: -12px;
-  padding: 13px 80px 20px 0;
+ 
 }
 
 header ul.menu-left {
@@ -258,6 +258,12 @@ header ul.menu-right li.menu-cta a {
    
 }
 
+.intro-left h1{
+  font-size: 1.5rem;
+}
+  .line{
+    display: none;
+  }
   header {
     padding: 0 !important;
    
@@ -395,9 +401,6 @@ header ul.menu-right li.menu-cta a {
 
   }
 
-  #intro h1 {
-    font-size: 24px !important;
-  }
 
   #intro h1::after {
     margin-left: 180px;
@@ -409,4 +412,6 @@ header ul.menu-right li.menu-cta a {
   }
 
 }
+
+
 

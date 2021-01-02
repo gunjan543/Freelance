@@ -1,6 +1,5 @@
 import React from 'react';
 import { Component } from 'react';
-import './styles.css';
 export default class navbar1 extends Component{
   
     componentDidMount(){

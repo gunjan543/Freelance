@@ -23,11 +23,13 @@
 
 .data-container{
   padding: 1rem;
+  padding-left: 4rem;
+
 }
 
 .data-container h4,a{
     color: #182628;
-    font-size: 1rem;
+    font-size:0.937rem;
     font-weight: 800;
 }
 .data-container h3{
@@ -38,7 +40,7 @@
 }
 .data-container p{
     color: #3b945e;
-    font-size: 1rem;
+    font-size: 0.937rem;
     margin-top: -5px;
 }
 .data-container a:hover{

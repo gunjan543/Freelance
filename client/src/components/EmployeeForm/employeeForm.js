@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from '../Logo/logo';
-import './employee.css';
 import Axios from 'axios';
 
 const EmployeeForm = () => {

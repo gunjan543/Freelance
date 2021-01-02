@@ -39,7 +39,7 @@ export default class EmployeeNonTechProfile extends Component {
        {!isAuth()?<Redirect to='/login'/> :null}
       <Navbar2 />
       <button class="logoutBtn"  onClick = {signout}>
-      <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
+      <svg width="103px" height="41px" viewBox="0 0 180 60" class="border">
       <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
       <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
       </svg>
