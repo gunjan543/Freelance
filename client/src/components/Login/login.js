@@ -27,7 +27,7 @@ const Login = ({history}) => {
     
       const sendGoogleToken = tokenId => {
         axios
-          .post(`/api/googlelogin`, {
+          .post(`https://peaceful-oasis-65710.herokuapp.com/api/googlelogin`, {
             idToken: tokenId
           })
           .then(res => {
