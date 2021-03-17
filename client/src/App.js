@@ -2,7 +2,6 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import {Switch} from 'react-router-dom';
 import React,{Component, Suspense} from 'react';
-
 import './css/about.css';
 import './css/dashboard.css';
 import './css/employee.css';
@@ -18,12 +17,14 @@ import './css/services.css';
 import './css/Signup.css';
 import './css/styles.css';
 import './css/loader.css';
+import './css/categories.css';
 //const Home = React.lazy(() => import('./modules/pages/Home'));
 import Loader from './components/Loader'
 import Services from './components/Services/Services';
 import Header from './components/Header/Header';
 import About from './components/About/About'
 import Footer from './components/Footer/Footer';
+import Categories from './components/Categories/Categories';
 const Login = React.lazy(()=>import('./components/Login/login'));
 const Activate= React.lazy(()=>import('./components/Login/activate'));
 const Register= React.lazy(()=>import( './components/Login/Signup'));
@@ -56,9 +57,9 @@ class App extends Component{
         <Route path="/" exact strict render={props =>
           <div>
            < Header />
-           <Services/>
+           <Services/> 
            <About/>
-          
+            <Categories/>
            <Footer/>
          </div>
 } />  

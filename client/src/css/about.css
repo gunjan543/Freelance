@@ -1,6 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
 
 
+ .carousel {
+    padding: 20px;
+    perspective: 500px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel > * {
+    flex: 0 0 auto;
+  }
+  .carousel figure {
+    margin: 0;
+    width: 40%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  .carousel figure img {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0px;
+  }
+  .carousel figure img:not(:first-of-type) {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .carousel nav {
+    width: 14rem;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0;
+  }
+  .carousel nav button {
+    flex: 0 0 auto;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #333;
+    background: none;
+    border: 1px solid;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+  }
+
+/*
 
 .profile-block{
 
@@ -140,8 +185,8 @@
 .horizontal-text{
 
     display: none;
-}
-/* Underline From Center */
+}*/
+/* Underline From Center 
 .hvr-underline-from-center {
     
     vertical-align: middle;
@@ -244,4 +289,4 @@
 	}
 
 }
-
+ */

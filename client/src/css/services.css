@@ -11,7 +11,9 @@
 	margin-bottom: 10px;;
 }
 
-
+.services-title-text{
+	text-align: center;
+}
 
 .service-icon{
 	width:150px;
@@ -23,7 +25,6 @@
 	background-color:#56a375;
 	margin-top: 8%;
 	padding-top: 55px;
-	
 }
 
 .outer-section h4,.outer-section p{
@@ -31,16 +32,17 @@
 }
 
 .outer-section h1{
-	font-family: 'Oswald', sans-serif;
-	font-size:3.5rem;
-	text-align: center;
-	margin-bottom: 2rem;
-	text-transform: uppercase;
-	text-decoration: underline;
+	text-align: center !important;
+    font-family: 'oswald';
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+	
 }
 
 
-.outer-section col{
+.outer-section .col{
 
-	padding:10px;
+	text-align: center;
+	padding:25px !important;
 }

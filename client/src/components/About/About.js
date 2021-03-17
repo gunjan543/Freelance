@@ -1,92 +1,106 @@
 import React from "react";
-import aditi from "../images/aditi.jpg";
-import gunjan from "../images/gunjan.jpg";
-
+import teacher from '../images/teacher.png'
+import photographer from '../images/photographer.png'
 function About(){
 
+	window.addEventListener('load', () => {
+		var
+			carousels = document.querySelectorAll('.carousel')
+		;
+	
+		for (var i = 0; i < carousels.length; i++) {
+			carousel(carousels[i]);
+		}
+	});
+	
+	function carousel(root) {
+		var
+			figure = root.querySelector('figure'),
+			nav = root.querySelector('nav'),
+			images = figure.children,
+			n = images.length,
+			gap = root.dataset.gap || 0,
+			bfc = 'bfc' in root.dataset,
+			
+			theta =  2 * Math.PI / n,
+			currImage = 0
+		;
+		
+		setupCarousel(n, parseFloat(getComputedStyle(images[0]).width));
+		window.addEventListener('resize', () => { 
+			setupCarousel(n, parseFloat(getComputedStyle(images[0]).width)) 
+		});
+	
+		setupNavigation();
+	
+		function setupCarousel(n, s) {
+			var	
+				apothem = s / (2 * Math.tan(Math.PI / n))
+			;
+			
+			figure.style.transformOrigin = `50% 50% ${- apothem}px`;
+	
+			for (var i = 0; i < n; i++)
+				images[i].style.padding = `${gap}px`;
+			for (i = 1; i < n; i++) {
+				images[i].style.transformOrigin = `50% 50% ${- apothem}px`;
+				images[i].style.transform = `rotateY(${i * theta}rad)`;
+			}
+			if (bfc)
+				for (i = 0; i < n; i++)
+					 images[i].style.backfaceVisibility = 'hidden';
+			
+			rotateCarousel(currImage);
+		}
+	
+		function setupNavigation() {
+			nav.addEventListener('click', onClick, true);
+			
+			function onClick(e) {
+				e.stopPropagation();
+				
+				var t = e.target;
+				if (t.tagName.toUpperCase() != 'BUTTON')
+					return;
+				
+				if (t.classList.contains('next')) {
+					currImage++;
+				}
+				else {
+					currImage--;
+				}
+				
+				rotateCarousel(currImage);
+			}
+				
+		}
+	
+		function rotateCarousel(imageIndex) {
+			figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
+		}
+		
+	}
 	return(
-		
+		<div>
 
-<div>  
+<div class="carousel" data-gap="20" data-bfc>
+	<figure>
+    <img src={teacher} alt=""></img>
+		<img src={photographer} alt=""></img>
+		<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt=""></img>
+		<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt=""></img>
+		<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt=""></img>
+		<img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt=""></img>
+		<img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt=""></img>
+		<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt=""></img>
+	</figure>
+	<nav>
+		<button class="nav prev">Prev</button>
+		<button class="nav next">Next</button>
+	</nav>
+</div>
 
- 
-    
-        <section id = "about" className = "about-us-section">
-                <div className = "about-us-content">
-                <h2 className = "about-us-heading hvr-underline-from-center">About Us</h2>
-				<p>
-					<h3 style = {{fontWeight:"bold"}}>BYOB:Be Your Own Boss</h3>
-					<br></br>
-					BYOB is developed with a vision of expanding the idea of freelancing from just hiring developers to day-to-day chores such as electrician, plumbing etcetra.
-					We, at BYOB, aim to provide the easiest user interface; allowing users with minimal technical knowledge to work with ease.
-					<br></br>
-					<br></br>
-					We provide an online portal, wherein, prospective employers can post jobs:temporary or permanent. The employers can expect a list of suitable
-					employees who are just a call away. 
-					<br></br>
-					
-					And for the employees, they can browse through a variety of jobs that match their skill-set. They will find a suitable work that interests them and also pays well, without much hassle.
-					<br></br>
-					
-					<span style = {{fontWeight:"bold", fontSize:"1.5rem"}}>How BYOB works?</span>
-					<br></br>
-					The employers register and login on our portal, and post as many jobs as they wish to. The employers are required to give necessary details about the job.
-					On posting the job, the employers will be notified about any interested applicants for all the jobs they posted.
-					<br></br>
-					The employees just need to sign up and scroll through a list of jobs that interest them and just simply apply and wait to hear from their employers! 
-					<br></br>
-					<br></br>
-					<h5>BYOB is getting better everyday. Check out some of our amazing upcoming features <a href= "/future" style = {{fontWeight:"bold"}}>here.</a></h5>
-
-				</p>
-                </div>
-           
-         
-        
-          
-  
-        </section>
-        
-  
-		<div id = "team" className = "profile-block">
-        
-		<div className = "profiles">
-        <h1 className = "horizontal-text">Meet Our Team</h1>
-		<div className = "profile">
-       
-        <img src = {gunjan} className = "profile-img" alt = "profile"/>
-		<h3 className = "user-name">Gunjan</h3>
-		<h5 className = "user-role">Full Stack Developer</h5>
-		<p>
-		Class of 2022
-		<br></br>
-		Rajasthan Technical University, Kota
-		<br></br>
-		<h5 className = "profile-portfolio">Know More :  <a target="_blank" rel="noopener noreferrer" href = "https://gunjan543.github.io/Portfolio">gunjan543.github.io/Portfolio</a></h5> 
-		</p>
-		</div>
-
-		
-	
-       
-		<div className = "profile">
-		<img src = {aditi} className = "profile-img" alt = "profile"/>
-		<h3 className = "user-name">Aditi</h3>
-		<h5>Full Stack Developer</h5>
-		<p>
-		Class of 2022
-		<br></br>
-		Rajasthan Technical University, Kota
-		<br></br>
-		
-		<h5 className = "profile-portfolio">Know More :  <a target="_blank" rel="noopener noreferrer" href = "https://aditi-1400.github.io/Portfolio-Website/">aditi.github.io/Portfolio</a></h5> 
-		</p> 	
-		</div>
-		</div>
-		</div>
-
-	</div>	
-	
+</div>
 	);
 }
 

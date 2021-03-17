@@ -46,7 +46,7 @@ router.post('/getUsers', (req, res)=>{
     then(users =>{
       
         res.send(users);
-    })
+    })  
     })
     let applicants = [{applicant:{}, jobTitle:" "}]
     router.post('/getApplicants', (req, res)=>{
