@@ -1,7 +1,5 @@
 import React from 'react';
 import { Component } from 'react';
-import './styles.css';
-import "../Header/header.css";
 import {Nav,Navbar,Button} from 'react-bootstrap';
 export default class navbar2 extends Component{
   

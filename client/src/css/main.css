@@ -1,0 +1,149 @@
+ body{
+  background-color: #f2f2f2;
+  font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
+}
+
+
+
+button{
+  cursor: pointer;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(59, 148, 94, 1));
+  color: #f2f2f2;
+  text-transform: uppercase;
+  width: 30%;
+  border-radius: 6px;
+  font-weight: 800;
+  padding: 7px;
+  margin-top: 2rem;
+  border-color: #57ba98;
+  color: #182628;
+}
+
+button:hover{
+opacity: 0.8;
+outline: none;
+}
+
+.main h5{
+text-align: center;
+margin-top: 120px;
+}
+/*dividing-main*/
+
+#wrapper {
+  display: flex;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  font-weight: 900;
+}
+
+#left {
+  margin-top: 12rem;
+  flex: 0 0 50%;
+
+}
+
+#right {
+  margin-top:12rem;
+  flex: 1;
+}
+
+/*vertical line*/ 
+.vertical-row{
+  height: 50%;
+  width: 3px;
+  background:#65ccb8;
+  top: 18rem;
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+}
+
+/*-----------------------------------------------------------------Welcome Signup Page------------------------------------------------------------------------*/
+
+.welcome-img{
+max-width: 70%;
+}
+
+.lt {
+
+flex: 0 0 50%;
+}
+
+.rt {
+
+flex: 1;
+}
+
+.lt h2{
+font-weight: 900;
+color: #182628;
+margin-bottom: 2rem;
+}
+
+.lt p{
+font-weight: 600;
+margin: 4rem;
+margin-top: 4rem;
+display: flex;
+flex-direction: row;
+}
+
+.lt p:before, .lt p:after{
+content: "";
+flex: 1 1;
+border-bottom: 2px solid #3B945E;
+margin: auto;
+margin-left: 7rem;
+margin-right: 7rem;
+}
+.lt p:before {
+margin-right: 10px
+}
+.lt p:after {
+margin-left: 10px
+}
+
+.lt input[type="submit"]
+{
+cursor: pointer;
+background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(59, 148, 94, 1));
+color: #f2f2f2;
+text-transform: uppercase;
+width: 30%;
+border-radius: 6px;
+font-weight: 800;
+padding: 7px;
+margin-top: 2rem;
+border-color: #57ba98;
+color: #182628;
+}
+
+.lt input[type="submit"]:hover
+{
+background: #57ba98;
+}
+
+@media (max-width:900px){
+ #wrapper{
+  flex-direction: column;
+ }
+.lt input[type="submit"]
+{
+  width: 100%;
+}
+.welcome-img{
+  max-width: 50%;
+}
+}
+@media (max-width: 1400px) {
+.lt input[type="submit"]
+{
+  width: 60%;
+}
+.welcome-img{
+  max-width: 50vh;
+}
+} 

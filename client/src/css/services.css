@@ -1,0 +1,48 @@
+*{
+	scroll-behavior: smooth;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+
+.line{
+	
+	width:40px;
+	height:5px;
+	background-color: #182628;
+	margin-bottom: 10px;;
+}
+
+.services-title-text{
+	text-align: center;
+}
+
+.service-icon{
+	width:150px;
+	height:130px;
+}
+
+.outer-section{
+	padding:110px;
+	background-color:#56a375;
+	margin-top: 8%;
+	padding-top: 55px;
+}
+
+.outer-section h4,.outer-section p{
+	font-weight: 900;
+}
+
+.outer-section h1{
+	text-align: center !important;
+    font-family: 'oswald';
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+	
+}
+
+
+.outer-section .col{
+
+	text-align: center;
+	padding:25px !important;
+}

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Navbar2 from './Navbar2';
-import './profile.css';
 import Axios from 'axios';
 import {Redirect} from "react-router-dom";
 import {isAuth} from "../../helpers/auth";
@@ -21,7 +20,7 @@ export default class EmployeeTechProfile extends Component {
 
     console.log(this.state.email);
    Axios
-    .post(`${process.env.REACT_APP_API_URL}/getUser`, this.state)
+    .post(`/api/getUser`, this.state)
     .then( res=>{ 
      const user = res.data;
      this.setState({user});
@@ -40,7 +39,7 @@ export default class EmployeeTechProfile extends Component {
          {!isAuth()?<Redirect to='/login'/> :null}
         <Navbar2 />
         <button class="logoutBtn"  onClick = {signout}>
-        <svg width="120px" height="50px" viewBox="0 0 180 60" class="border">
+        <svg width="103px" height="41px"viewBox="0 0 180 60" class="border">
         <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
         <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
         </svg>

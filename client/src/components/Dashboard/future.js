@@ -1,14 +1,15 @@
 import React from 'react'
-import './future.css';
 import Recommend from "../images/recommend.png";
 import Bid from "../images/bid.jpg";
 import Online from "../images/online.jpg";
 import Feedback from "../images/feedback.jpg";
-import logo from '../images/logo.png';
+import Logo from '../Logo/logo';
 const Future = () => {
     return ( 
+        <div>
+        <Logo/>
         <div className="future">
-           <div className="future-logo"> <img src={logo} alt = "logo"></img></div>
+         
            <a href="/">Home</a>
             <h1>
                 Future Advancements
@@ -23,6 +24,7 @@ const Future = () => {
                 <img className="future-imgs" src={Feedback} alt = "feedback"/>  
                 <p>Customising Employee preferences <br></br>based on Employer Feedback</p>
             </div>
+        </div>
         </div>
      );
 }

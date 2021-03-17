@@ -1,0 +1,45 @@
+
+.google {
+    margin-top: 1rem;
+    font-weight: 900;
+    width: 230px;
+    padding-top: 10px;
+    height:3rem;
+    background-color:#4285F4;
+    background-image: none;
+    color: #f2f2f2;
+    border: none;
+
+}
+
+.google i{
+    color:#f2f2f2;
+    padding-right: 10px;
+}
+
+ .google button:hover{
+    background-color:#182628;
+    transform: scale(1.02);
+}
+
+@media(max-width:920px){
+    .loginSubmit{
+        min-width: 200px;
+    }
+
+}
+
+@media(max-width:830px){
+    .loginSubmit{
+        min-width: 200px;
+    }
+
+
+}
+
+@media(max-width:590px){
+    .loginSubmit{
+        min-width: 200px;
+    }
+
+}

@@ -1,0 +1,168 @@
+.box2{
+    background-color: #182628;
+    color: #f2f2f2;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px;
+    height: 470px;
+    box-sizing: border-box;
+    box-shadow: 0 35px 35px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.box2 button{
+  cursor: pointer;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(59, 148, 94, 1));
+  text-transform: uppercase;
+  width: 30%;
+  border-radius: 6px;
+  font-weight: 800;
+  padding: 7px;
+  margin-top: 2rem;
+  border-color: #57ba98;
+  color: #182628;
+}
+
+.box2 button:hover{
+  background-color: #3B945E;
+  text-decoration: none;
+}
+
+.box2 h2
+{
+  margin: 0 0 1rem;
+  padding: 0;
+  color: #f2f2f2;
+  font-weight: 900;
+
+}
+
+
+
+.box2 p
+{
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.box3
+{
+  max-width: 500px;
+  width: 100%;
+  background:#65CCB8;
+  margin:20px auto ;
+  padding: 30px;
+  box-shadow: 6px 6px 3px rgba(0,0,0,0.125);
+}
+
+.box3 .title{
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.box3 .form{
+  width: 100%;
+}
+
+.box3 .form .input_field{
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.box3 .form .input_field label{
+  width: 200px;
+  color:#182628;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.box3 .form .input_field .input,
+.box3 .form .input_field .textarea
+{
+  width: 100%;
+  outline: none;
+  border: 1px solid #57ba98;
+  font-size: 15px;
+  padding:8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+
+.box3 .form .input_field .textarea{
+  resize: none;
+  height: 80px;
+}
+
+.box3 .form .input_field .custom_select{
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+
+.box3 .form .input_field .custom_select select{
+  background-color: #f2f2f2;
+  border: 1px solid #57ba98;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  padding: 8px 10px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.box3 .form .input_field .custom_select:before{
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid;
+  border-color:#3b945e transparent transparent transparent;
+  pointer-events: none;
+}
+
+.box3 .form .input_field .input:focus,
+.box3 .form .input_field .textarea:focus,
+.box3 .form .input_field select:focus{
+  border:1.5px solid #3B945E;
+}
+
+.box3 .form .input_field .btn{
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 18px;
+  border: 0;
+  background:#f2f2f2;
+  color: #65CCB8;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  font-weight: 900;
+}
+
+.box3 .form .input_field:last-child{
+  margin-bottom: 0;
+}
+
+.box3 .form .input_field .btn:hover{
+  background: #182628;
+}
+
+@media (max-width:420px){
+  .box3 .form .input_field{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .box3 .form .input_field{
+    margin-bottom: 5px;
+  }
+}

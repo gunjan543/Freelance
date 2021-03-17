@@ -4,9 +4,6 @@ import {ToastContainer, toast} from 'react-toastify';
 import {authenticate, isAuth} from "../../helpers/auth";
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
-import "./main.css";
-import "./Signup.css";
-import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
 import {GoogleLogin} from 'react-google-login';
 
@@ -27,7 +24,7 @@ const Login = ({history}) => {
     
       const sendGoogleToken = tokenId => {
         axios
-          .post(`${process.env.REACT_APP_API_URL}/googlelogin`, {
+          .post(`https://peaceful-oasis-65710.herokuapp.com/api/googlelogin`, {
             idToken: tokenId
           })
           .then(res => {
@@ -169,9 +166,7 @@ const Login = ({history}) => {
                 <input type="submit" className="loginSubmit" value="Login"/>     
             </form>
            <p>OR</p>
-            </div>
-            </div>
-            <GoogleLogin
+           <GoogleLogin
                   clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
                   onSuccess={responseGoogle}
                   onFailure={responseGoogle}
@@ -184,6 +179,9 @@ const Login = ({history}) => {
                     ><h6><i className='fab fa-google'></i>  Log in with Google</h6></button>
                   )}
                 ></GoogleLogin>
+            </div>
+            </div>
+            
         </div>
        
      );

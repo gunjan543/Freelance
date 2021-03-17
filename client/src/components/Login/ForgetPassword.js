@@ -3,10 +3,6 @@ import Logo from '../Logo/logo';
 import {ToastContainer, toast} from 'react-toastify';
 
 import axios from 'axios';
-
-import "./main.css";
-import "./Signup.css";
-import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Forget = ({history}) => {
@@ -24,7 +20,7 @@ const Forget = ({history}) => {
         if (email) {
           setFormData({ ...formData });
           axios
-            .put(`${process.env.REACT_APP_API_URL}/forgotpassword`, {
+            .put(`/api/forgotpassword`, {
               email
             })
 

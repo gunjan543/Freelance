@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './header.css';
 import Logo from '../Logo/logo';
 import landingpage from '../images/landingpage.png';
 

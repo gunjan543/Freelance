@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Logo from '../Logo/logo';
-import './employee.css';
 import Axios from 'axios';
 
 
@@ -43,7 +42,7 @@ export default class NonTechnicalForm extends Component{
 
       this.setState({...this.state});
       Axios
-      .post(`${process.env.REACT_APP_API_URL}/technicalForm`,
+      .post(`/api/technicalForm`,
         this.state
          
       )

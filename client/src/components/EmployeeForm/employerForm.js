@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import Logo from '../Logo/logo';
-import './employee.css';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import {  isAuth } from '../../helpers/auth';
@@ -38,7 +37,7 @@ export default class EmployerForm extends Component {
         
         this.setState({...this.state});
         Axios
-        .post(`${process.env.REACT_APP_API_URL}/technicalForm`,
+        .post(`/api/technicalForm`,
           this.state
            
         )

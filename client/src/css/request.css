@@ -1,0 +1,54 @@
+.requests {
+    margin-top: 5rem;
+}
+.request-data{
+    width: 90%;
+    max-width: 31rem;
+    border-radius: 2rem;
+    text-align: left;
+    margin-top: 3rem;
+    border-left-width: 8px;
+    padding: 1em;
+    background-color: #ecf3f9;
+    box-shadow: 5px 5px 2px grey
+}
+.data-container.rq {
+    text-align: -webkit-center;
+    width: auto;
+}
+
+.rq-outer-container{
+    text-align: -webkit-center;
+}
+
+.rq h3{
+   
+    text-align: center;
+    font-size: 1.8rem;
+    width:auto;
+}
+
+.request-data h4{
+    font-weight: 800;
+    text-align: center;
+} 
+.request-data h6{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left:2rem ;
+
+     
+}
+
+.request-data h5{
+    color: #57ba98;
+    font-weight: 800;
+    text-align: center; 
+
+}
+.request-data p{
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-left:2rem ;
+
+}

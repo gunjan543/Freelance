@@ -3,10 +3,6 @@ import Logo from '../Logo/logo';
 import {ToastContainer, toast} from 'react-toastify';
 
 import axios from 'axios';
-
-import "./main.css";
-import "./Signup.css";
-import "./google.css";
 import 'react-toastify/dist/ReactToastify.css';
 
 const ResetPassword = ({match}) => {
@@ -35,7 +31,7 @@ const ResetPassword = ({match}) => {
       if ((password1 === password2) && password1 && password2) {
         setFormData({ ...formData });
         axios
-          .put(`${process.env.REACT_APP_API_URL}/resetpassword`, {
+          .put(`/api/resetpassword`, {
               newPassword: password1,
               resetPasswordLink: token
           })
