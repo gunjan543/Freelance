@@ -1,0 +1,75 @@
+.future{
+    text-align: center;
+}
+.future h1{
+    font-weight: 800;
+    font-size: 3.8vh;
+    width: 12em;
+    line-height: 1.2em;
+    margin:auto;
+    padding-top: 3rem;
+    background: conic-gradient(
+      #182628 16.666%, 
+      #65ccb8 16.666%, 
+      #57ba98 33.333%, 
+      #3b945e 33.333%,
+      #182628 50%, 
+      #65ccb8 50%, 
+      #57ba98 66.666%, 
+      #3b945e 66.666%, 
+      #182628 83.333%, 
+      #65ccb8 83.333%  
+     );
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    animation: rainbow-text-animation-rev 0.5s ease forwards;
+    cursor: pointer;
+    padding-bottom: 2rem;
+}
+
+.future h1:hover{
+    animation: rainbow-text-animation 0.5s ease forwards;
+}
+
+.future-img{
+    width: 35vh;
+    height: 35vh;
+}
+.future-imgs{
+    width: 45vh;
+    height: 35vh;
+}
+
+.future-divs p{
+  font-size: 2.5vh;
+  padding: 5%;
+  font-weight: 900;
+  color:#182628;
+}
+
+.future-logo img{
+    margin-right: 90%;
+    margin-top: 1rem;
+    
+}
+.future-logo img:hover{
+    opacity: 0.5;
+}
+
+.future a{
+    float: right;
+    margin-right: 2%;
+    background-color: #182628;
+    border:3px solid #182628;
+   padding: 0.8rem 1.5rem;          
+  color: #f2f2f2;
+  font-weight: 900;
+
+    
+}
+.future a:hover{
+    background-color: #3b945e;
+    text-decoration: none;
+}
