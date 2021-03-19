@@ -39,7 +39,7 @@ export default class NonTechnicalForm extends Component{
 
     handleSubmit = e => {
       e.preventDefault();
-
+      console.log("Reach");
       this.setState({...this.state});
       Axios
       .post(`/api/technicalForm`,
@@ -55,7 +55,7 @@ export default class NonTechnicalForm extends Component{
           console.log(err);
             
           });
-          this.props.history.push('/employeeDash/nonTechnical')
+          this.props.history.push('/nonTechnical')
   };
   render() {
   return ( 
