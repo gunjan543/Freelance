@@ -24,7 +24,7 @@ render()
   {
     return (
       <div>
-    <p className = "lang-switch"><a href = "/hi">हिन्दी</a> | <span className = "highlight">English </span></p>
+     <p className = "lang-switch"><a href = "/">English</a> | <span className = "highlight">हिन्दी</span></p>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <header id="header">
     <div className="header-wrapper">
@@ -35,22 +35,23 @@ render()
             <span></span>
             <span></span>
         </button>
+
+
         <ul className="menu-left">
             <li>
-                <a href="#services">Features</a>
+                <a href="#services">विशेषताएं</a>
             </li>
             <li>
-                <a href="#about">Services</a>
-            </li>
-            
+                <a href="#about">सेवाएं</a>
+            </li>          
             <li>
-                <a href="#footer">Contact</a>
+                <a href="#footer">संपर्क</a>
             </li>
         </ul>
         <ul className="menu-right" >
             <li className="menu-cta hvr-bounce-to-top hvr-grow-shadow">
-                <a href="/register">
-                    Get Started
+                <a href="/register">                   
+                शुरू करें
                 </a>
             </li>
         </ul>
@@ -62,34 +63,26 @@ render()
     <div className="top-right-gradient"></div>
     <div className="header-wrapper">
         <div className="intro-left">
-            <h1>Freelancing Redefined.</h1>
+            <h1>
+            फ्रीलांसिंग परिभाषित </h1>
             <div className="line"></div>
             <p>
-            Reducing distance between employers and employees.<br></br>
-            Whatever you need, there will be a freelancer to get it done: from web design, to house-hold chores to painting
-            (and a lot more).
-
+            नियोक्ताओं और कर्मचारियों के बीच की दूरी को कम करने की कोशिश <br></br>
+            आपको जो भी चाहिए, उसे पूरा करने के लिए एक फ्रीलांसर होगा: वेब डिज़ाइन से लेकर घर के काम, पेंटिंग आदि|
             </p>
-          
             <a href="/login" className="intro-cta hvr-grow-shadow" >
-                Post a Job
+            नियुक्त करें
             </a>
             <a href="/login" className="intro-cta hvr-grow-shadow employee-button" >
-                Find a Job
+            नौकरी ढूंढे
             </a>
         </div>
         <div className="intro-right">
-           
-            <img src={landingpage} alt="freelancing"></img>
+           <img src={landingpage} alt="freelancing"></img>
         </div>
     </div>
     <div className="bottom-left-gradient"></div>
 </section>
-
-
-
-
-
 </div>
 
 );}}

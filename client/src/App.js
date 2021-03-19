@@ -22,6 +22,7 @@ import './css/categories.css';
 import Loader from './components/Loader'
 import Services from './components/Services/Services';
 import Header from './components/Header/Header';
+import HeaderHindi from './components/Header/HeaderHindi';
 import About from './components/About/About'
 import Footer from './components/Footer/Footer';
 import Categories from './components/Categories/Categories';
@@ -56,13 +57,19 @@ class App extends Component{
       <div>
         <Route path="/" exact strict render={props =>
           <div>
-           < Header />
+           <Header />
            <Services/> 
            <About/>
-            <Categories/>
+           <Categories/>
            <Footer/>
          </div>
-} />  
+        } />  
+        <Route path="/hi" exact strict render={props =>
+          <div>
+           <HeaderHindi />
+          
+         </div>
+        } />  
 
   
        <Route path="/future" exact strict component ={Future} />
