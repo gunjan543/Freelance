@@ -73,8 +73,7 @@ class App extends Component{
         } />  
 
   
-       <Route path="/future" exact strict component ={Future} />
-       <Route path="/employerDash/jobs" exact strict component ={Jobs} />
+      <Route path="/future" exact strict component ={Future} />
       <Route path="/employeeDash/technical" exact render={props => <EmployeeDash {...props}/>} />
       <Route path="/nonTechnical" exact strict component={EmployeeDash} />
       <Route path="/employeeDash/technical/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />
@@ -83,6 +82,7 @@ class App extends Component{
       <Route path="/nonTechnical/help" exact strict component={Help} />
       <Route path="/employerDash/help" exact strict component={Help} />
       <Route path="/employerDash/employerProfile" exact strict component={EmployerProfile} />
+      <Route path="/employerDash/jobs" exact strict component ={Jobs} />
       <Route path="/employerDash" exact strict component={EmployerDash} />
       <Route path="/addJob" exact strict component={JobDescription} />
       <Route path='/employee/technical' exact render={props => <TechnicalForm {...props}/>} />
