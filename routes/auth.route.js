@@ -106,6 +106,29 @@ router.post('/jobApplied',(req,res)=>{
       return res.send('Succesfully saved.');
 })
 
+router.post('/getEmployerJobs',(req,res)=>{
+
+    let employerId = req.body.id;
+    Job.find({employerId:employerId}).
+    then(jobs =>{
+       res.send(jobs);
+       }
+    )
+ 
+})
+
+router.post('/deleteJob',(req,res)=>{
+
+    let id = req.body.id;
+    Job.deleteOne({_id:id}).
+    then((err)=>{
+        console.log("Deleted")
+        
+    }
+    )
+ 
+})
+
 router.post("/addJob",(req,res)=>{
 
     console.log("Request Received");

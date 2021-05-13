@@ -44,6 +44,7 @@ const EmployerDash= React.lazy(()=>import( './components/Dashboard/employerDash'
 const JobDescription = React.lazy(()=>import('./components/JobDescription/Jd'));
 const Requests = React.lazy(()=>import('./components/Dashboard/request'));
 const Future = React.lazy(()=>import('./components/Dashboard/future'));
+const Jobs = React.lazy(()=>import('./components/Dashboard/Jobs'));
 
 
 class App extends Component{
@@ -73,6 +74,7 @@ class App extends Component{
 
   
        <Route path="/future" exact strict component ={Future} />
+       <Route path="/employerDash/jobs" exact strict component ={Jobs} />
       <Route path="/employeeDash/technical" exact render={props => <EmployeeDash {...props}/>} />
       <Route path="/nonTechnical" exact strict component={EmployeeDash} />
       <Route path="/employeeDash/technical/EmployeeTechProfile" exact strict component={EmployeeTechProfile} />

@@ -50,6 +50,7 @@ export default class EmployerDash extends Component {
     <h6>Nice to see you again!</h6>
     <h4>Want a suitable employee for your work?</h4>
     <button type = "Submit" onClick = {handleClick}>Just Add a Job </button>
+    
     <h5>You will soon be hearing from interested employees in the requests tab</h5>
     <img  className="empImg" src={lady} alt = ""/>
     </div>
