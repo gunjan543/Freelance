@@ -312,7 +312,7 @@ export default class navbar2 extends Component{
           <span class="link2-text">Requests</span>
         </a>
       </li>
-      {/* <li class="nav2-item">
+      <li class="nav2-item">
         <a href="/employerDash/jobs" class="nav2-link">
         <svg 
         aria-hidden="true"
@@ -330,7 +330,7 @@ export default class navbar2 extends Component{
         ></path></svg>
           <span class="link2-text">Jobs</span>
         </a>
-      </li> */}
+      </li>
 
 
       <li class="nav2-item">
