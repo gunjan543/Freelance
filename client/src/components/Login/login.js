@@ -7,10 +7,14 @@ import {Redirect} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import {GoogleLogin} from 'react-google-login';
 
-
+let category = '';
+let subCategory = '';
 const Login = ({history}) => {
 
-
+    if(isAuth()){
+      category = JSON.parse(localStorage.getItem('user')).category;
+      subCategory = JSON.parse(localStorage.getItem('user')).subCategory;}
+ 
     const [formData, setFormData] = useState({
         email: '',
         password1: '',
@@ -136,7 +140,7 @@ const Login = ({history}) => {
     return ( 
      
         <div className="Signup">
-         {isAuth()?<Redirect to='/'/> :null}
+         {!isAuth()?null: category === "employee"?subCategory === 'technical'?<Redirect to = '/employeeDash/technical'/>:<Redirect to = '/nonTechnical' />:<Redirect to = '/employerDash' />}
             <Logo />
             <ToastContainer/>
             <h1>Log In to BYOB</h1>

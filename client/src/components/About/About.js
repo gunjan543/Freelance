@@ -1,6 +1,19 @@
 import React from "react";
-import teacher from '../images/teacher.png'
-import photographer from '../images/photographer.png'
+import one from '../images/people/1.png';
+import two from '../images/people/2.png';
+import three from '../images/people/4.png';
+import four from '../images/people/5.png';
+import five from '../images/people/6.png';
+import six from '../images/people/3.png';
+import seven from '../images/people/7.png';
+import eight from '../images/people/8.png';
+import $ from 'jquery';
+
+
+
+
+
+
 function About(){
 
 	window.addEventListener('load', () => {
@@ -78,25 +91,42 @@ function About(){
 		function rotateCarousel(imageIndex) {
 			figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
 		}
+		$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+  .fadeOut(1000)
+  .next()
+  .fadeIn(1000)
+  .end()
+  .appendTo('#slideshow');
+}, 3000);
+
 		
 	}
 	return(
-		<div>
-
-<div class="carousel" data-gap="20" data-bfc>
+	<div class = "features">
+	<div className = "services-title-text ">
+		<h1 className="services-head"> Our Services </h1>	
+	</div>
+	<div class="carousel" data-gap="20" data-bfc>
 	<figure>
-    <img src={teacher} alt=""></img>
-		<img src={photographer} alt=""></img>
-		<img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt=""></img>
-		<img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt=""></img>
-		<img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt=""></img>
-		<img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt=""></img>
-		<img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt=""></img>
-		<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt=""></img>
-	</figure>
+	<img src={four} alt=""></img>
+	<img src={two} alt=""></img>
+	<img src={three} alt=""></img>
+	<img src={five} alt=""></img>
+	<img src={six} alt=""></img>
+	<img src={seven} alt=""></img>
+	<img src={eight} alt=""></img>
+	<img src={one} alt=""></img>
+
+	
+	{/* <img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt=""></img>
+	<img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt=""></img> */}
+</figure>
 	<nav>
-		<button class="nav prev">Prev</button>
-		<button class="nav next">Next</button>
+		<button class="nav prev">&larr;</button>
+		<button class="nav next">&rarr;</button>
 	</nav>
 </div>
 

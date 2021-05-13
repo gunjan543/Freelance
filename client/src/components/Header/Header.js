@@ -24,7 +24,7 @@ render()
   {
     return (
       <div>
-    <p className = "lang-switch"><a href = "/hi">हिन्दी</a> | <span className = "highlight">English </span></p>
+    {/* <p className = "lang-switch"></p> */}
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <header id="header">
     <div className="header-wrapper">
@@ -41,10 +41,12 @@ render()
             </li>
             <li>
                 <a href="#about">Services</a>
-            </li>
-            
+            </li>            
             <li>
                 <a href="#footer">Contact</a>
+            </li>
+            <li>
+            <a href = "/hi">हिन्दी</a> | <span className = "highlight">English </span>
             </li>
         </ul>
         <ul className="menu-right" >
@@ -80,7 +82,7 @@ render()
         </div>
         <div className="intro-right">
            
-            <img src={landingpage} alt="freelancing"></img>
+            <img src={landingpage} class = "floating" alt="freelancing"></img>
         </div>
     </div>
     <div className="bottom-left-gradient"></div>

@@ -1,7 +1,6 @@
 import React from "react";
 
 
-
 function Categories(){
 
 	return(
@@ -18,7 +17,7 @@ function Categories(){
                         <div class="service-icon">
                             <i class="fas fa-layer-group"></i>
                         </div>
-                        <h4>Web Application</h4>
+                        <h4>Multilingual</h4>
 
                     </div>
                 </div>
@@ -27,7 +26,7 @@ function Categories(){
                         <div class="service-icon">
                             <i class="far fa-chart-bar"></i>
                         </div>
-                        <h4>Highly customizable</h4>
+                        <h4>Easy to use</h4>
 
                     </div>
                 </div>
@@ -45,7 +44,7 @@ function Categories(){
                         <div class="service-icon">
                             <i class="fas fa-cogs"></i>
                         </div>
-                        <h4>service & plugins</h4>
+                        <h4>Recommendation System</h4>
 
                     </div>
                 </div>

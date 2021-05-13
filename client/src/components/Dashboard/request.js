@@ -16,7 +16,7 @@ export default class Requests extends Component{
          
             let {_id} = JSON.parse(localStorage.getItem('user'));
             Axios
-            .post(`/api/getApplicants`, {_id})
+            .post(`${process.env.REACT_APP_API_URL}/getApplicants`, {_id})
             .then( res=>{ 
              const users = res.data;
              this.setState({users});

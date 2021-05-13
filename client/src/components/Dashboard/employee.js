@@ -19,7 +19,7 @@ class EmployeeDash extends React.Component {
     };
   }
   handleChangeCategory = event => {
-    this.setState({ category: event.target.value });
+    this.setState({ specialisation: event.target.value });
   };
 
 
@@ -38,7 +38,7 @@ class EmployeeDash extends React.Component {
     
     let {_id} = JSON.parse(localStorage.getItem('user'));
 
-    Axios.post(`$/api/jobApplied`,{jobID: jobs._id, employeeID:_id,employerId:jobs.employerId,jobTitle:jobs.title})
+    Axios.post(`${process.env.REACT_APP_API_URL}/jobApplied`,{jobID: jobs._id, employeeID:_id,employerId:jobs.employerId,jobTitle:jobs.title})
     .then(res =>{
   
     })
@@ -62,11 +62,11 @@ class EmployeeDash extends React.Component {
       history.push('/');
     }
 
-    const CategoryuniqueJobs = this.getUnique(this.state.jobs, "category");
+    const CategoryuniqueJobs = this.getUnique(this.state.jobs, "specialisation");
     const jobs = this.state.jobs;
-    const category = this.state.category;
+    const specialisation = this.state.specialisation;
     const filterCategoryDropdown = jobs.filter(function(result) {
-      return result.category === category;
+      return result.specialisation === specialisation;
     });
 
     return (
@@ -91,8 +91,8 @@ class EmployeeDash extends React.Component {
             >
               <option id="first">Select category</option>
               {CategoryuniqueJobs.map(job => (
-                <option key={job._id} value={job.category}>
-                  {job.category}
+                <option key={job._id} value={job.specialisation}>
+                  {job.specialisation}
                 </option>
               ))}
             </select>
