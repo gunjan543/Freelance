@@ -11,6 +11,9 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 
 const Register = (history) => {
+
+  let category1='';
+  let subCategory='';
     const [formData, setFormData] = useState({
 
         name:"",
@@ -77,10 +80,14 @@ const Register = (history) => {
         }
       };
 
+      if (isAuth()){
+        category1 = JSON.parse(localStorage.getItem('user')).category;
+        subCategory = JSON.parse(localStorage.getItem('user')).subCategory;}
 
     return ( 
         <div className="Signup">
-        {isAuth()?<Redirect to='/'/> :null}
+        {isAuth()? category1 === "employee"?subCategory === 'technical'?<Redirect to = '/employeeDash/technical'/>:<Redirect to = '/nonTechnical' />:<Redirect to = '/employerDash' />:null}
+        
         <ToastContainer/>
             <Logo />
             <h1>Sign Up to BYOB</h1>

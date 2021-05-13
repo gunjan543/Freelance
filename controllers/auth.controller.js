@@ -58,10 +58,10 @@ can be executed by means of a callback or the exec method. */
       subject: 'Account activation link',
       html: `
                 <h1>Please use the following to activate your account</h1>
-                <p>https://peaceful-oasis-65710.herokuapp.com/users/activate/${token}</p>
+                <p>https://localhost:3000/users/activate/${token}</p>
                 <hr />
                 <p>This email may containe sensetive information</p>
-                <p>https://peaceful-oasis-65710.herokuapp.com</p>
+                <p>https://localhost:300</p>
             `
     };
 

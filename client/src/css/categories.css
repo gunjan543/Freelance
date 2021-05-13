@@ -1,5 +1,8 @@
 .service-grid {
-    background: #f2f2f2;
+    
+   background:#ffffff;
+      
+      
 }
 .service-icon {
     position: relative;
@@ -36,6 +39,7 @@
 .service-wrap {
     padding: 50px 30px;
       position: relative;
+      text-align: -webkit-center;
 }
 
 .service-wrap p{
