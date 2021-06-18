@@ -17,8 +17,6 @@ export default class EmployeeNonTechProfile extends Component {
   }
   
   componentDidMount(){
-
-    console.log(this.state.email);
    Axios
     .post(`/api/getUser`, this.state)
     .then( res=>{ 
