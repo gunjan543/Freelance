@@ -4,10 +4,6 @@ import Navbar2 from './Navbar2';
 import lady from "../images/lady.png";
 import {removeCookie, removeLocalStorage} from '../../helpers/auth';
 
-
-
-
-
 class EmployeeDash extends React.Component {
   constructor(props) {
     super(props);
